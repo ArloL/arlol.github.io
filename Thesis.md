@@ -1,3 +1,8 @@
+---
+layout: default
+title: Welcome
+---
+
 # IntAirAct
 
 ## A Framework enabling Device Interaction using REST.
@@ -42,11 +47,9 @@ Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgar
 
 ##	Motivation
 
-Why am I doing this?
+> Why am I doing this?
 
-
-
-Devices are gaining popularity in everyday and professional life. This ubiquity enables many applications that were previously unthinkable. But all of these applications are designed with a single user model in mind. Team scenarios are achieved by using web technologies to communicate with a server that acts as a hub for the devices. For remote situations this architecture is sensible. But for local situations it is sensible to have the devices communicate directly with each other. This enables device interaction using local information such as gestures and location. 
+The number of devices used in everyday and professional life is increasing daily. Currently most of the applications for these devices focus on a single user and, if necessary, use web technologies for collaboration. A server acts as the hub for the devices. For remote situations this architecture is sensible. But in local situations the devices should communicate directly with each other. This is more efficient and opens up the possibility for new usage scenarios: namely Device Interaction. These interactions can consist of basic sharing of information such as contacts or be more advanced using gestures and location data.
 In this thesis I will present a framework that enables these local situations. Namely this will include device discovery, device capabilities and direct communication.
 
 # Related Work
@@ -62,15 +65,17 @@ An overview of research in the field of device interaction.
 
 ##	Framework
 
-A Framework has …
+> What is a Framework to me?
 
 ## Device Interaction
 
-There are obviously two parts here:
+> What is Device Interaction to me?
+
+There are obviously two parts here: Device and Interaction.
 
 ### Devices
 
-Basically just a list of possible devices:
+Basically just a list of all the possible devices:
 
 *	Mobile devices
 	*	Tablets
@@ -102,7 +107,8 @@ Device Interaction is an exchange between devices.
 
 ## REST
 
-Describe what I understand as REST in the context of my thesis.
+> What is REST for me?
+
 I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].
 
 # Application domains
