@@ -50,7 +50,8 @@ Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgar
 > Why am I doing this?
 
 The number of devices used in everyday and professional life is increasing daily. Currently most of the applications for these devices focus on a single user and, if necessary, use web technologies for collaboration. A server acts as the hub for the devices. For remote situations this architecture is sensible. But in local situations the devices should communicate directly with each other. This is more efficient and opens up the possibility for new usage scenarios: namely Device Interaction. These interactions can consist of basic sharing of information such as contacts or be more advanced using gestures and location data.
-In this thesis I will present a framework that enables these local situations. Namely this will include device discovery, device capabilities and direct communication.
+
+In this thesis I will present a framework that enables these interactions.
 
 # Related Work
 
