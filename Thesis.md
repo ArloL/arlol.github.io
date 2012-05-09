@@ -212,26 +212,26 @@ Look at the messaging system parameter from EAI and include it here.
 ## Design decisions
 
 *	ZeroConf
-	Enables device discovery
-	Enables ad-hoc situations
-	Firewall has to enable port XX
+	*	Enables device discovery
+	*	Enables ad-hoc situations
+	*	Firewall has to enable port XX
 *	TCP
-	Adresses Low Entry-Barrier
-	This could be a performance hog, but messages using this system are expected to work with this. If no, then an optimised protocol can be negotiated. After discovering the device, etc.
+	*	Adresses Low Entry-Barrier
+	*	This could be a performance hog, but messages using this system are expected to work with this. If no, then an optimised protocol can be negotiated. After discovering the device, etc.
 *	HTTP
-	Adresses Low Entry-Barrier
-	Lots of existing client and server side libraries.
-	Security -> HTTPS
+	*	Adresses Low Entry-Barrier
+	*	Lots of existing client and server side libraries.
+	*	Security -> HTTPS
 *	REST
-	Adresses Low Entry-Barrier
-	Lots of existing client and server side libraries.
+	*	Adresses Low Entry-Barrier
+	*	Lots of existing client and server side libraries.
 *	JSON
-	Adresses Low Entry-Barrier
-	Lots of existing client and server side libraries.
+	*	Adresses Low Entry-Barrier
+	*	Lots of existing client and server side libraries.
 *	Service orientation
-	Adresses Extensibility
-	Authentication -> Service
-	Rights/Users/etc. -> Service
+	*	Adresses Extensibility
+	*	Authentication -> Service
+	*	Rights/Users/etc. -> Service
 
 ## Technology evaluation
 
