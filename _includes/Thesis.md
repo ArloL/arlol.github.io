@@ -14,7 +14,7 @@ Thanks to Chris Burns for reviewing my code and giving me feedback.
 
 Thanks to Paul Hegarty and [Leland Stanford Junior University](http://www.stanford.edu) for the course [CS193P "iPad and iPhone Application Development"](http://www.stanford.edu/class/cs193p) that is available for free via [iTunes U](http://itunes.stanford.edu/).
 
-Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgary.ca/) for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.
+Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgary.ca/ase/Frank.Maurer.php) for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.
 
 # Zusammenfassung
 
@@ -23,14 +23,31 @@ Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgar
 # Content
 
 1.	Introduction
+	1.	Motivation
+	2.	Research Goals
 2.	Related Work
-3.	Definitions
-4.	Application domains
-5.	Mission statement
+3.	REST
+4.	Range of Applications
 6.	Requirements
+	1.	Devices
+	2.	Operating Systems
+	3.	Programming Languages
+	4.	Application Requirements
+	5.	API requirements
 7.	Design
+	1.	Restrictions
+	2.	Design Decisions
+	3.	Technology Evaluation
 8.	Implementation
+	1.	Architecture
+	2.	Application Stack
 9.	Evaluation
+	1.	Performance
+	2.	API Usability
+	3.	Device Interaction
+	4.	User Experience
+10.	Conclusions
+	1.	Future Work
 
 # List of Figures
 
@@ -48,86 +65,11 @@ The number of devices used in everyday and professional life is increasing daily
 
 In this thesis I will present a framework that enables these interactions.
 
-# Related Work
+## Research goals
 
-An overview of research in the field of device interaction.
+The basis of these research goals comes from the [Google Web Toolkit](https://developers.google.com/web-toolkit/) and many parts are copied or adapted from it's [mission statement](https://developers.google.com/web-toolkit/makinggwtbetter#introduction).
 
-*	Ubiquitious Computing
-*	Multi-surface
-*	Device interaction
-*	Multiple devices
-
-# Definitions
-
-##	Framework
-
-> What is a Framework to me?
-
-## Device Interaction
-
-> What is Device Interaction to me?
-
-There are obviously two parts here: Device and Interaction.
-
-### Devices
-
-Basically just a list of all the possible devices:
-
-*	Mobile devices
-	*	Tablets
-		*	iPad
-		*	Android
-	*	Phones
-		*	iPhone
-		*	Android
-		*	Windows Phone
-		*	Blackberry
-*	Touch Tables
-*	TV
-*	Sound station
-
-###	Interaction
-
-A conversation or exchange between people.
-
-*	Share
-	*	Data
-	*	Presentations
-	*	Images
-	*	Videos
-	*	General Messages
-	
-### What is Device Interaction
-
-Device Interaction is an exchange between devices.
-
-## REST
-
-> What is REST for me?
-
-I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].
-
-# Application domains
-
-## Existing examples for Device Interaction
-
-*	AirPlay (AirTunes)
-*	AirDrop
-*	Remote App(s) for iOS
-*	Bump
-*	Joypad
-*	Remote Apps for Android
-*	DLNA
-
-## Usage scenarios
-
-Example applications of device interaction.
-	
-# Mission statement
-
-The idea of a mission statement comes from the [Google Web Toolkit](https://developers.google.com/web-toolkit/) project and many parts are copied or adapted from it's [mission statement](https://developers.google.com/web-toolkit/makinggwtbetter#introduction).
-
-IntAirAct's mission is to radically improve the user experience by enabling developers to use web technologies to build interacting applications for any modern operating system.
+IntAirAct's goal is to radically improve the user experience by enabling developers to use web technologies to build interacting applications for any modern operating system.
 
 **to radically improve**
 
@@ -153,9 +95,87 @@ We strongly believe that device interaction will play a big role in future appli
 
 IntAirAct should be as portable as it can be so long as it doesn't involve sacrificing user experience in any significant way.
 
+# Related Work
+
+> An overview of the field of communication: MOM, protocols, TCP/IP, HTTP, GameKit
+
+# REST
+
+> What is REST for me?
+
+I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].
+
+# Range of applications
+
+*	Multi-Surface Environments
+*	Ubiquitious Computing
+*	Device interaction
+*	Multiple devices
+
+###	Interaction
+
+A conversation or exchange between people.
+
+*	Share
+	*	Data
+	*	Presentations
+	*	Images
+	*	Videos
+	*	General Messages
+	
+## Device Interaction
+
+> What is Device Interaction to me?
+
+There are obviously two parts here: Device and Interaction.
+	
+### What is Device Interaction
+
+Device Interaction is an exchange between devices.
+
+## Existing examples for Device Interaction
+
+*	AirPlay (AirTunes)
+*	AirDrop
+*	Remote App(s) for iOS
+*	Bump
+*	Joypad
+*	Remote Apps for Android
+*	DLNA
+
+## Usage scenarios
+
+Example applications of device interaction.
+
 # Requirements
 
-##	Application Domain Requirements
+> Take the range of applications and build up a list of requirements.
+
+### Devices
+
+Basically just a list of all the possible devices:
+
+*	Mobile devices
+	*	Tablets
+		*	iPad
+		*	Android Tablets
+	*	Phones
+		*	iPhone
+		*	Android Phones
+		*	Windows Phone 7
+		*	Blackberry
+*	Touch Tables
+	*	Microsoft Surface
+*	TV
+	*	Restriction: with a computer/media center connected
+	*	Apple TV
+	*	Boxee
+	*	XBMC
+	*	Windows Media Center
+*	Sound station
+	*	Restriction: with a computer/media center connected
+
+##	Application Requirements
 
 *	No central server
 *	Ad-Hoc-Situations
@@ -165,9 +185,9 @@ IntAirAct should be as portable as it can be so long as it doesn't involve sacri
 *	Location
 	It should enable the tracking of location
 
-## API requirements
+## API Requirements
 
-Look at the messaging system parameter from EAI and include it here.
+Look at the messaging system parameters from EAI and include it here.
 
 *	State-of-the-art programming models
 	*	iOS specific
@@ -191,21 +211,22 @@ Look at the messaging system parameter from EAI and include it here.
 	*	Objective C
 	*	Java
 	*	C#
+	
+> Summarize what combinations of platforms and languages we're going to have.
 
 # Design
 
-## Restrictions
+## Architecture
 
-*	Same (W-)LAN
-	*	Bluetooth sucks
-*	Focus on iOS
-	*	because it is mainly used inside lab
-*	Proof of concept for other OSs
-*	Security is not a real issue
-	But it should be able to be added later
-*	Not solving the problem of automated stuff. I consume services that I know (!) about.
+> Describe the basic architecture of the system. This has to be device, operating system and programming language independent.
 
-## Design decisions
+## Application stack
+
+> Build a layered description of the framework and describe the tasks provided by each layer. This has to be device, operating system and programming language independent.
+
+## Design Decisions
+
+> Take each layer of the application stack and describe the possible technologies and then describe the decision made in favor of one.
 
 *	ZeroConf
 	*	Enables device discovery
@@ -229,24 +250,63 @@ Look at the messaging system parameter from EAI and include it here.
 	*	Authentication -> Service
 	*	Rights/Users/etc. -> Service
 
-## Technology evaluation
+# Implementation
 
-*	CocoaHTTPServer + RoutingHTTPServer
-*	RestKit vs. Resty
-	*	RestKit
-	*	Resty
+## Restrictions
+
+> If there are restrictions introduced by the design decisions summarize them here.
+
+*	Same (W-)LAN
+	*	introduced by ZeroConf
+	*	Bluetooth sucks
+*	Focus on iOS
+	*	because it is mainly used inside lab, has highest markt percentage, etc.
+*	Proof of concept for other OSs
+*	Security is not a real issue
+	But it should be able to be added later
+*	Not solving the problem of automated stuff. I consume services that I know (!) about.
+
+> The automated stuff has to be a design decision as well.
+
+## Technology Evaluation
+
+> For each task introduced by the layers of the application stack and the design decisions describe possible technologies for the different environments.
+
+*	iOS
+	*	CocoaHTTPServer + RoutingHTTPServer
+	*	RestKit vs. Resty
+		*	RestKit
+		*	Resty
+*	Java
+	*	jmDNS
+*	Android
+	*	jmDNS
+*	C#
+	*	Apple Bonjour SDK
 
 # Evaluation
 
 ## Performance
 
-Test this by playing ping pong.
+> Write up a test scenario, implement it and run it. A simple example would be to just return fixed values. This should include one device only tests, two-device and three-device tests. Also cross-platform tests to show that it works cross-platform.
 
-## API Usage Experience Results
+## API Usability
 
 Finish the API and then have people use it.
 Prepare an interview with them and analyse the results.
 
-Donate to Robby Hanson and ask for a code review.
+> Donate to Robby Hanson and ask him to use the system. How about Taras Kalapun? Or other guys that do awesome stuff!?
 
 Evaluate the usage in the Multi-Surface Environment and Facet projects.
+
+## User experience
+
+> If we have a focus group in the Facet project perhaps I can use them to do a user experience study. Or perhaps Chris and Teddy will do sth. similar for their thesis.
+
+# Conclusion
+
+> Look at the Research goals and compare them with the evaluation.
+
+## Future work
+
+> What is going to happen with this in the future?
