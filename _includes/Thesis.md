@@ -28,23 +28,24 @@ Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgar
 2.	Related Work
 3.	REST
 4.	Range of Applications
+	1.	Device Interaction
+	2.	Multi-Surface Environments
+	3.	Ubiquitous Computing
+	4.	Other Usage Scenarios
 6.	Requirements
-	1.	Devices
-	2.	Operating Systems
-	3.	Programming Languages
-	4.	Application Requirements
-	5.	API requirements
+	1.	Platforms
+	2.	Application Requirements
+	3.	API requirements
 7.	Design
-	1.	Restrictions
-	2.	Design Decisions
-	3.	Technology Evaluation
-8.	Implementation
 	1.	Architecture
 	2.	Application Stack
+	3.	Design Decisions
+8.	Implementation
+	1.	Restrictions
+	2.	Technology Evaluation
 9.	Evaluation
 	1.	Performance
 	2.	API Usability
-	3.	Device Interaction
 	4.	User Experience
 10.	Conclusions
 	1.	Future Work
@@ -69,7 +70,7 @@ In this thesis I will present a framework that enables these interactions.
 
 The basis of these research goals comes from the [Google Web Toolkit](https://developers.google.com/web-toolkit/) and many parts are copied or adapted from it's [mission statement](https://developers.google.com/web-toolkit/makinggwtbetter#introduction).
 
-IntAirAct's goal is to radically improve the user experience by enabling developers to use web technologies to build interacting applications for any modern operating system.
+IntAirAct's goal is to radically improve the user experience by enabling developers to use web technologies to build interacting applications for any modern device.
 
 **to radically improve**
 
@@ -85,13 +86,13 @@ IntAirAct is about enabling developers to do great things, not necessarily spoon
 
 **web technologies**
 
-The web is everywhere. A lot of developers start by learning web oriented languages such as HTML, CSS and PHP. We want to utilize this existing knowledge and move it into the local domain. This makes the learning curve very steep - as in you learn a lot very quickly.
+The web is everywhere. A lot of developers start by learning web oriented languages such as HTML, CSS and PHP. We want to utilize this existing knowledge and move it into the local domain. This makes the learning curve very steep. Steep as in you learn a lot very quickly.
 
 **interacting applications**
 
 We strongly believe that device interaction will play a big role in future application development and therefore we should start creating the basic frameworks for developers to use.
 
-**any modern operating system**
+**any modern device**
 
 IntAirAct should be as portable as it can be so long as it doesn't involve sacrificing user experience in any significant way.
 
@@ -107,10 +108,15 @@ I understand it rather as the REST API than the architecture style described by 
 
 # Range of applications
 
-*	Multi-Surface Environments
-*	Ubiquitious Computing
 *	Device interaction
-*	Multiple devices
+*	Multi-Surface Environments
+*	Ubiquitous Computing
+
+## Device Interaction
+
+> What is Device Interaction to me?
+
+There are obviously two parts here: Device and Interaction. What a device is, is obvious. But what exactly do I mean by interaction.
 
 ###	Interaction
 
@@ -123,17 +129,11 @@ A conversation or exchange between people.
 	*	Videos
 	*	General Messages
 	
-## Device Interaction
-
-> What is Device Interaction to me?
-
-There are obviously two parts here: Device and Interaction.
-	
 ### What is Device Interaction
 
 Device Interaction is an exchange between devices.
 
-## Existing examples for Device Interaction
+### Existing examples for Device Interaction
 
 *	AirPlay (AirTunes)
 *	AirDrop
@@ -143,32 +143,43 @@ Device Interaction is an exchange between devices.
 *	Remote Apps for Android
 *	DLNA
 
-## Usage scenarios
+## Multi-surface environments
 
-Example applications of device interaction.
+>	Look at the Multi-Surface papers from Chris and Teddy
+>	The Avengers, Minority Report ;)
+
+## Ubiquitous Computing
+
+>	Take usage scenarios out of the Ubiquitous Computing field that can use this technology.
+
+## Other Usage Scenarios
+
+> Can I think of more?
 
 # Requirements
 
 > Take the range of applications and build up a list of requirements.
 
-### Devices
+## Platforms
 
-Basically just a list of all the possible devices:
+> A platform is a combination of device/OS/language. This is a list of the platforms that should be supported.
+
+One of the goals is to support all modern devices. Here is a list of the devices that are meant by "modern device". Additionally all the Operating Systems are listed as well as the programming languages that have to be supported by the framework.
 
 *	Mobile devices
 	*	Tablets
-		*	iPad
-		*	Android Tablets
+		*	iPad (iOS >= 4.0)
+		*	Android Tablets (Android >= 2.3)
 	*	Phones
-		*	iPhone
-		*	Android Phones
-		*	Windows Phone 7
-		*	Blackberry
+		*	iPhone (iOS >= 4.0)
+		*	Android Phones (Android >= 2.3)
+		*	Windows Phone (>= 7)
+		*	Blackberry 
 *	Touch Tables
 	*	Microsoft Surface
 *	TV
 	*	Restriction: with a computer/media center connected
-	*	Apple TV
+	*	Apple TV (uses OS X, but is not an open platform)
 	*	Boxee
 	*	XBMC
 	*	Windows Media Center
@@ -177,6 +188,8 @@ Basically just a list of all the possible devices:
 
 ##	Application Requirements
 
+> A list of the requirements introduced by the usage scenarios.
+
 *	No central server
 *	Ad-Hoc-Situations
 	Introduced by mobile devices.
@@ -184,8 +197,25 @@ Basically just a list of all the possible devices:
 	=> This enables touch or movement based interactions
 *	Location
 	It should enable the tracking of location
+*	Performance
+	This should satisfy the restrictions introduced by location.
+	100 messages / second
+	10ms / message
+*	Protocol switch
+	If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.
+*	Discovery
+*	Platform independent
+	*	Windows
+	*	Mac
+	*	Linux
+*	Language independent
+	*	Objective C
+	*	Java
+	*	C#
 
 ## API Requirements
+
+> A list of the requirements to achieve the goal of "enabling developers".
 
 Look at the messaging system parameters from EAI and include it here.
 
@@ -196,23 +226,6 @@ Look at the messaging system parameters from EAI and include it here.
 	*	Little code as possible
 *	Extensibility
 *	Security
-*	Discovery
-*	Performance
-	This should satisfy the restrictions introduced by location.
-	100 messages / second
-	10ms / message
-*	Protocol switch
-	If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.
-*	Platform independent
-	*	Windows
-	*	Mac
-	*	Linux
-*	Language independent
-	*	Objective C
-	*	Java
-	*	C#
-	
-> Summarize what combinations of platforms and languages we're going to have.
 
 # Design
 
