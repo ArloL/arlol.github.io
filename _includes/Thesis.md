@@ -14,7 +14,7 @@ Thanks to Chris Burns for reviewing my code and giving me feedback.
 
 Thanks to Paul Hegarty and [Leland Stanford Junior University](http://www.stanford.edu) for the course [CS193P "iPad and iPhone Application Development"](http://www.stanford.edu/class/cs193p) that is available for free via [iTunes U](http://itunes.stanford.edu/).
 
-Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgary.ca/ase/Frank.Maurer.php) for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.
+Thanks to Prof. Dr. Manfred Meyer and [Prof. Dr. Frank Maurer](http://ase.cpsc.ucalgary.ca/ase/Frank.Maurer.php) for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.
 
 # Zusammenfassung
 
@@ -47,7 +47,7 @@ Thanks to Prof. Dr. Manfred Meyer and [Dr. Frank Maurer](http://ase.cpsc.ucalgar
 	1.	Performance
 	2.	API Usability
 	4.	User Experience
-10.	Conclusions
+10.	Conclusion
 	1.	Future Work
 
 # List of Figures
@@ -98,7 +98,20 @@ IntAirAct should be as portable as it can be so long as it doesn't involve sacri
 
 # Related Work
 
-> An overview of the field of communication: MOM, protocols, TCP/IP, HTTP, GameKit
+> I want to show how my research is unique. Distinguish differences of other approaches.
+> IEEE Explore
+> Scopus
+> ACM DL (Scopus indexes ACM)
+> 
+
+In this section I briefly present some of the research literature related to device communication.
+
+> MOM, protocols, TCP/IP, HTTP, GameKit
+
+> Since I don't have that many papers about related stuff I first explain the main problem: Then I write that there is nothing that does what I do.
+Thus I explain parts of what I will achieve and for that I can then go through related work.
+An example: We need device discovery. For device discovery we can use UPNP, Bonjour and JINI.
+Then later in design decisions I just compare the advantages and disadvantages of the systems and explain my choice.
 
 # REST
 
@@ -298,6 +311,8 @@ Look at the messaging system parameters from EAI and include it here.
 	*	Apple Bonjour SDK
 
 # Evaluation
+
+> Check with Ethics
 
 ## Performance
 
