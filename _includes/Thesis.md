@@ -24,30 +24,33 @@ Thanks to Prof. Dr. Manfred Meyer and [Prof. Dr. Frank Maurer](http://ase.cpsc.u
 
 1.	Introduction
 	1.	Motivation
-	2.	Research Goals
+	2.	Device Interaction - An Overview
+		1.	…
+		2.	Range of Applications
+			1.	Device Interaction
+			2.	Multi-Surface Environments
+			3.	Ubiquitous Computing
+			4.	Other Usage Scenarios
+	3.	REST
+	4.	Research Questions
+	5.	Goals
 2.	Related Work
-3.	REST
-4.	Range of Applications
-	1.	Device Interaction
-	2.	Multi-Surface Environments
-	3.	Ubiquitous Computing
-	4.	Other Usage Scenarios
-6.	Requirements
+3.	Requirements
 	1.	Platforms
 	2.	Application Requirements
 	3.	API requirements
-7.	Design
+4.	Design
 	1.	Architecture
 	2.	Application Stack
 	3.	Design Decisions
-8.	Implementation
+5.	Implementation
 	1.	Restrictions
 	2.	Technology Evaluation
-9.	Evaluation
+6.	Evaluation
 	1.	Performance
 	2.	API Usability
 	4.	User Experience
-10.	Conclusion
+7.	Conclusion
 	1.	Future Work
 
 # List of Figures
@@ -67,6 +70,8 @@ The number of devices used in everyday and professional life is increasing daily
 In this thesis I will present a framework that enables these interactions.
 
 ## Research goals
+
+> Turn these into research goals and not framework stuff.
 
 The basis of these research goals comes from the [Google Web Toolkit](https://developers.google.com/web-toolkit/) and many parts are copied or adapted from it's [mission statement](https://developers.google.com/web-toolkit/makinggwtbetter#introduction).
 
@@ -106,20 +111,32 @@ IntAirAct should be as portable as it can be so long as it doesn't involve sacri
 
 In this section I briefly present some of the research literature related to device communication.
 
-> MOM, protocols, TCP/IP, HTTP, GameKit
-
-> Since I don't have that many papers about related stuff I first explain the main problem: Then I write that there is nothing that does what I do.
+> Since I don't have that many papers about related stuff I first explain the main problem: Then I write that there is nothing that does what I do. GameKit kind of does what I need but it's iOS only.
 Thus I explain parts of what I will achieve and for that I can then go through related work.
-An example: We need device discovery. For device discovery we can use UPNP, Bonjour and JINI.
+
+>Communication in General: MOMs do some of the stuff. Mostly for server-side integration. Server-oriented and not mobile device. Thus no available implementations.
+
+>An example: We need device discovery. For device discovery we can use UPNP, Bonjour and JINI.
 Then later in design decisions I just compare the advantages and disadvantages of the systems and explain my choice.
+
+>Connection: LAN, Wi-Fi, Bluetooth
+
+>Communication Protocols: SCTP, TCP/IP, HTTP, SPDY, RTSP+RTP
+
+>Wire-Protocols: JSON, XML, BSON
 
 # REST
 
 > What is REST for me?
+> This might actually fit under Related Work too…
+> The idea is to use web technologies. In the web there are lots of architecture styles available for APIs. REST is the most popular one.
 
 I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].
 
 # Range of applications
+
+> Keep this brief and focussed on the tasks we will solve in the lab.
+> Describe what we actually want to achieve with the API in the lab. From there talk about other application areas.
 
 *	Device interaction
 *	Multi-Surface Environments
@@ -155,6 +172,7 @@ Device Interaction is an exchange between devices.
 *	Joypad
 *	Remote Apps for Android
 *	DLNA
+*	Canon Wi-Fi Sharing for Photos
 
 ## Multi-surface environments
 
@@ -302,7 +320,16 @@ Look at the messaging system parameters from EAI and include it here.
 	*	CocoaHTTPServer + RoutingHTTPServer
 	*	RestKit vs. Resty
 		*	RestKit
+			*	- Manual RPC
+			*	+ Object Mapping
+			*	- Difficult, but powerful, no good examples
+			*	- Bloated
+			*	- Bad documentation
+			*	+ Blocks (with additional code)
 		*	Resty
+			*	- Manual RPC
+			*	- Manual De/Serialization
+			*	+ Blocks
 *	Java
 	*	jmDNS
 *	Android
