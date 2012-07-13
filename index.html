@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Arlo Louis O’Keeffe" />
+  <meta name="date" content="2012-08-15" />
+  <title>IntAirAct2 - A Framework enabling Device Interaction using REST</title>
+  <link rel="stylesheet" href="css/markdown.css" type="text/css" />
+  <link rel="stylesheet" href="css/additions.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">IntAirAct2 - A Framework enabling Device Interaction using REST</h1>
+<h2 class="author">Arlo Louis O’Keeffe</h2>
+<h3 class="date">August 15, 2012</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#acknowledgement"><span class="toc-section-number">1</span> Acknowledgement</a></li>
+<li><a href="#zusammenfassung"><span class="toc-section-number">2</span> Zusammenfassung</a></li>
+<li><a href="#abstract"><span class="toc-section-number">3</span> Abstract</a></li>
+<li><a href="#content"><span class="toc-section-number">4</span> Content</a></li>
+<li><a href="#list-of-figures"><span class="toc-section-number">5</span> List of Figures</a></li>
+<li><a href="#list-of-tables"><span class="toc-section-number">6</span> List of Tables</a></li>
+<li><a href="#list-of-listings"><span class="toc-section-number">7</span> List of Listings</a></li>
+<li><a href="#introduction"><span class="toc-section-number">8</span> Introduction</a><ul>
+<li><a href="#motivation"><span class="toc-section-number">8.1</span> Motivation</a></li>
+<li><a href="#device-interaction"><span class="toc-section-number">8.2</span> Device Interaction</a><ul>
+<li><a href="#what-is-device-interaction"><span class="toc-section-number">8.2.1</span> What is Device Interaction?</a></li>
+<li><a href="#why-device-interaction"><span class="toc-section-number">8.2.2</span> Why Device Interaction?</a></li>
+<li><a href="#what-is-required-to-achieve-device-interaction"><span class="toc-section-number">8.2.3</span> What is required to achieve Device Interaction?</a></li>
+<li><a href="#what-are-current-popular-communication-styles"><span class="toc-section-number">8.2.4</span> What are current popular communication styles?</a><ul>
+<li><a href="#what-is-the-problem-of-using-cs"><span class="toc-section-number">8.2.4.1</span> What is the problem of using CS?</a></li>
+<li><a href="#what-is-the-advantage-of-using-cs"><span class="toc-section-number">8.2.4.2</span> What is the advantage of using CS?</a></li>
+</ul></li>
+<li><a href="#what-are-the-problems-of-these-styles"><span class="toc-section-number">8.2.5</span> What are the problems of these styles?</a></li>
+<li><a href="#why-enable"><span class="toc-section-number">8.2.6</span> Why enable?</a></li>
+</ul></li>
+<li><a href="#research-questions"><span class="toc-section-number">8.3</span> Research questions</a></li>
+<li><a href="#goals"><span class="toc-section-number">8.4</span> Goals</a></li>
+<li><a href="#conclusion"><span class="toc-section-number">8.5</span> Conclusion</a></li>
+<li><a href="#goals-of-the-framework"><span class="toc-section-number">8.6</span> Goals of the Framework</a></li>
+</ul></li>
+<li><a href="#related-work"><span class="toc-section-number">9</span> Related Work</a></li>
+<li><a href="#rest"><span class="toc-section-number">10</span> REST</a></li>
+<li><a href="#range-of-applications"><span class="toc-section-number">11</span> Range of applications</a><ul>
+<li><a href="#device-interaction-1"><span class="toc-section-number">11.1</span> Device Interaction</a><ul>
+<li><a href="#interaction"><span class="toc-section-number">11.1.1</span> Interaction</a></li>
+<li><a href="#what-is-device-interaction-1"><span class="toc-section-number">11.1.2</span> What is Device Interaction</a></li>
+<li><a href="#existing-examples-for-device-interaction"><span class="toc-section-number">11.1.3</span> Existing examples for Device Interaction</a></li>
+</ul></li>
+<li><a href="#multi-surface-environments"><span class="toc-section-number">11.2</span> Multi-surface environments</a></li>
+<li><a href="#ubiquitous-computing"><span class="toc-section-number">11.3</span> Ubiquitous Computing</a></li>
+<li><a href="#other-usage-scenarios"><span class="toc-section-number">11.4</span> Other Usage Scenarios</a></li>
+</ul></li>
+<li><a href="#requirements"><span class="toc-section-number">12</span> Requirements</a><ul>
+<li><a href="#platforms"><span class="toc-section-number">12.1</span> Platforms</a></li>
+<li><a href="#application-requirements"><span class="toc-section-number">12.2</span> Application Requirements</a></li>
+<li><a href="#api-requirements"><span class="toc-section-number">12.3</span> API Requirements</a></li>
+</ul></li>
+<li><a href="#design"><span class="toc-section-number">13</span> Design</a><ul>
+<li><a href="#architecture"><span class="toc-section-number">13.1</span> Architecture</a></li>
+<li><a href="#application-stack"><span class="toc-section-number">13.2</span> Application stack</a></li>
+<li><a href="#design-decisions"><span class="toc-section-number">13.3</span> Design Decisions</a></li>
+</ul></li>
+<li><a href="#implementation"><span class="toc-section-number">14</span> Implementation</a><ul>
+<li><a href="#restrictions"><span class="toc-section-number">14.1</span> Restrictions</a></li>
+<li><a href="#technology-evaluation"><span class="toc-section-number">14.2</span> Technology Evaluation</a></li>
+</ul></li>
+<li><a href="#evaluation"><span class="toc-section-number">15</span> Evaluation</a><ul>
+<li><a href="#performance"><span class="toc-section-number">15.1</span> Performance</a></li>
+<li><a href="#api-usability"><span class="toc-section-number">15.2</span> API Usability</a></li>
+<li><a href="#user-experience"><span class="toc-section-number">15.3</span> User experience</a></li>
+</ul></li>
+<li><a href="#conclusion-1"><span class="toc-section-number">16</span> Conclusion</a><ul>
+<li><a href="#future-work"><span class="toc-section-number">16.1</span> Future work</a></li>
+</ul></li>
+<li><a href="#references"><span class="toc-section-number">17</span> References</a></li>
+</ul>
+</div>
+<blockquote>
+<p>Ziel: Die Darstellung der zu lösenden Aufgabe, der beschrittenen Lösungswege und der Ergebnisse ist prä̈zise und kompakt auszuführen.</p>
+</blockquote>
+<p>Here is an inline note.<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup></p>
+<div class="figure">
+<img src="images/Icon-1024.png" alt="This is the caption" /><p class="caption">This is the caption</p>
+</div>
+<p>And this is the next paragraph.</p>
+<h1 id="acknowledgement"><a href="#TOC"><span class="header-section-number">1</span> Acknowledgement</a></h1>
+<p>Thanks to <a href="http://deusty.blogspot.ca/">Robbie Hanson</a>, <a href="http://codeworkshop.net/">Matt Stevens</a>, <a href="https://github.com/blakewatters">Blake Watters</a>, <a href="http://jeffverkoeyen.com">Jeff Verkoeyen</a> and <a href="http://kalapun.com/">Taras Kalapun</a> for creating incredibly good open source code that I could learn a lot from and re-use it.</p>
+<p>Also many thanks to all the contributors of <a href="https://github.com/RestKit/RestKit">RestKit</a>, <a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a>, <a href="https://github.com/mattstevens/RoutingHTTPServer">RoutingHTTPServer</a>, <a href="https://github.com/robbiehanson/CocoaHTTPServer">CocoaHTTPServer</a>, <a href="https://github.com/robbiehanson/CocoaLumberjack">CocoaLumberjack</a> and <a href="https://github.com/jverkoey/iOS-Framework">iOS-Framework</a>.</p>
+<p>Thanks to Chris Burns for reviewing my code and giving me feedback.</p>
+<p>Thanks to Paul Hegarty and <a href="http://www.stanford.edu">Leland Stanford Junior University</a> for the course <a href="http://www.stanford.edu/class/cs193p">CS193P “iPad and iPhone Application Development”</a> that is available for free via <a href="http://itunes.stanford.edu/">iTunes U</a>.</p>
+<p>Thanks to Prof. Dr. Manfred Meyer and <a href="http://ase.cpsc.ucalgary.ca/ase/Frank.Maurer.php">Prof. Dr. Frank Maurer</a> for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.</p>
+<h1 id="zusammenfassung"><a href="#TOC"><span class="header-section-number">2</span> Zusammenfassung</a></h1>
+<blockquote>
+<p>Hier fasse ich die Thesis auf Deutsch zusammen.</p>
+</blockquote>
+<h1 id="abstract"><a href="#TOC"><span class="header-section-number">3</span> Abstract</a></h1>
+<blockquote>
+<p>This is the Thesis abstract.</p>
+</blockquote>
+<h1 id="content"><a href="#TOC"><span class="header-section-number">4</span> Content</a></h1>
+<ol start="2" style="list-style-type: decimal">
+<li>Related Work</li>
+<li>Requirements
+<ol style="list-style-type: decimal">
+<li>Platforms</li>
+<li>Application Requirements</li>
+<li>API requirements</li>
+</ol></li>
+<li>Design
+<ol style="list-style-type: decimal">
+<li>Architecture</li>
+<li>Application Stack</li>
+<li>Design Decisions</li>
+</ol></li>
+<li>Implementation
+<ol style="list-style-type: decimal">
+<li>Restrictions</li>
+<li>Technology Evaluation</li>
+</ol></li>
+<li>Evaluation
+<ol style="list-style-type: decimal">
+<li>Performance</li>
+<li>API Usability</li>
+<li>User Experience</li>
+</ol></li>
+<li>Conclusion
+<ol style="list-style-type: decimal">
+<li>Future Work</li>
+</ol></li>
+</ol>
+<h1 id="list-of-figures"><a href="#TOC"><span class="header-section-number">5</span> List of Figures</a></h1>
+<h1 id="list-of-tables"><a href="#TOC"><span class="header-section-number">6</span> List of Tables</a></h1>
+<h1 id="list-of-listings"><a href="#TOC"><span class="header-section-number">7</span> List of Listings</a></h1>
+<h1 id="introduction"><a href="#TOC"><span class="header-section-number">8</span> Introduction</a></h1>
+<h2 id="motivation"><a href="#TOC"><span class="header-section-number">8.1</span> Motivation</a></h2>
+<blockquote>
+<p>Question of this sub-chapter: Why am I doing this?</p>
+</blockquote>
+<p>The number of devices used in everyday and professional life is increasing daily. Currently most of the applications for these devices focus on a single-device single-user model. The increasing ubiquity of devices calls for the possibility to create interacting applications with a multi-device multi-user model. Possible interactions reach from content-sharing to gesture- and location-based interactions. Since there are many possible applications with common requirements it makes sense to create a Framework enabling Device Interaction. For low-cost adoption, easy debugging and utilising existing knowledge, web technologies (e.g. JSON) and architecture styles (e.g. REST) should be used for the communication. This thesis will present the framework IntAirAct which enables Device Interaction using REST.</p>
+<h2 id="device-interaction"><a href="#TOC"><span class="header-section-number">8.2</span> Device Interaction</a></h2>
+<p>First it is necessary to define what this thesis understands as Device Interaction. Then it is motivated why Device Interaction is important. This is supported by giving example applications. Then we identify the technological and (society - the programming model has to be easy and accepted to achieve it) requirements to achieve Device Interaction. Then current communication architectures and their flaws in respect to achieving Device Interaction are analyzed. Then the approach of this thesis and how it wants to solve these flaws is presented.</p>
+<h3 id="what-is-device-interaction"><a href="#TOC"><span class="header-section-number">8.2.1</span> What is Device Interaction?</a></h3>
+<p>Device Interaction is defined as devices acting with each other. To act with each other the devices have to be able to communicate.</p>
+<h3 id="why-device-interaction"><a href="#TOC"><span class="header-section-number">8.2.2</span> Why Device Interaction?</a></h3>
+<p>It enables new usage scenarios. e.g. [list of Examples].</p>
+<p>What types of applications are possible with Device Interaction?</p>
+<ul>
+<li>Simple Device Interactions</li>
+<li>Multi-Surface Environments</li>
+<li>Ubiquitous Computing</li>
+</ul>
+<h3 id="what-is-required-to-achieve-device-interaction"><a href="#TOC"><span class="header-section-number">8.2.3</span> What is required to achieve Device Interaction?</a></h3>
+<ul>
+<li>Communication. In particular Ad-Hoc and P2P</li>
+</ul>
+<h3 id="what-are-current-popular-communication-styles"><a href="#TOC"><span class="header-section-number">8.2.4</span> What are current popular communication styles?</a></h3>
+<p>There are different communication architectures that are widely used: P2P and CS.</p>
+<h4 id="what-is-the-problem-of-using-cs"><a href="#TOC"><span class="header-section-number">8.2.4.1</span> What is the problem of using CS?</a></h4>
+<blockquote>
+<p>Requires an actual Server. Meaning the infrastructure has to exist.</p>
+</blockquote>
+<blockquote>
+<p>If it is supposed to work ubiquitously it requires an Internet Connection.</p>
+</blockquote>
+<h4 id="what-is-the-advantage-of-using-cs"><a href="#TOC"><span class="header-section-number">8.2.4.2</span> What is the advantage of using CS?</a></h4>
+<blockquote>
+<p>Authenticity.</p>
+</blockquote>
+<blockquote>
+<p>How do I work around that?</p>
+</blockquote>
+<blockquote>
+<p>Computation speed of the server</p>
+</blockquote>
+<h3 id="what-are-the-problems-of-these-styles"><a href="#TOC"><span class="header-section-number">8.2.5</span> What are the problems of these styles?</a></h3>
+<h3 id="why-enable"><a href="#TOC"><span class="header-section-number">8.2.6</span> Why enable?</a></h3>
+<p>There are many scenarios. These have common requirements. Therefore it makes sense to create a single framework.</p>
+<h2 id="research-questions"><a href="#TOC"><span class="header-section-number">8.3</span> Research questions</a></h2>
+<p>This thesis presents a new approach for device communication that allows interacting applications.</p>
+<ol style="list-style-type: decimal">
+<li>Is it possible to have web servers on mobile devices?</li>
+<li>Is the performance sufficient?</li>
+</ol>
+<h2 id="goals"><a href="#TOC"><span class="header-section-number">8.4</span> Goals</a></h2>
+<p>There are two main goals of this thesis. The first is to develop a framework that enables Device Interaction using web technologies. The second goal is to attempt to answer the research questions listed above to show that the approach followed while developing the framework is feasible for creating interacting applications.</p>
+<h2 id="conclusion"><a href="#TOC"><span class="header-section-number">8.5</span> Conclusion</a></h2>
+<p>In this chapter an approach for Device Interaction using web technologies is presented. Device Interaction in general was introduced and basic requirements of communication approaches were identified. The problems of existing communication approaches preventing Device Interaction have been identified. Finally, the research questions that will be investigated and the goals of this thesis were stated.</p>
+<h2 id="goals-of-the-framework"><a href="#TOC"><span class="header-section-number">8.6</span> Goals of the Framework</a></h2>
+<blockquote>
+<p>These are kind of lost right now</p>
+</blockquote>
+<p>The basis of these research goals comes from the <a href="https://developers.google.com/web-toolkit/">Google Web Toolkit</a> and many parts are copied or adapted from it’s <a href="https://developers.google.com/web-toolkit/makinggwtbetter#introduction">mission statement</a>.</p>
+<p>IntAirAct’s goal is to radically improve the user experience by enabling developers to use web technologies to build interacting applications for any modern device.</p>
+<p><strong>to radically improve</strong></p>
+<p>The unconventional premise of IntAirAct (i.e. use REST, JSON and HTTP in a local network, having HTTP servers on mobile devices) sets the tone for how we are to be open-minded about approaches that make a big impact. We are willing to invest extra consideration and work to find solutions of the “order-of-magnitude” rather than the “good enough” variety.</p>
+<p><strong>user experience</strong></p>
+<p>The experience we want to optimize is the end user’s experience. We strongly prioritize features that can make the biggest difference to end users. Obviously, we want to make developers’ lives easier, too, but never at the expense of the user experience.</p>
+<p><strong>by enabling developers</strong></p>
+<p>IntAirAct is about enabling developers to do great things, not necessarily spoon-feeding them or putting them in a straightjacket. IntAirAct strives to be easy to use without sacrificing efficiency. We generally prioritize ensuring that the basics of IntAirAct work very well rather than adding dozens of features. It’s much better to provide a solid platform so that other great libraries can be built on top of IntAirAct rather than trying to be all things to all people out of the box.</p>
+<p><strong>web technologies</strong></p>
+<p>The web is everywhere. A lot of developers start by learning web oriented languages such as HTML, CSS and PHP. We want to utilize this existing knowledge and move it into the local domain. This makes the learning curve very steep. Steep as in you learn a lot very quickly.</p>
+<p><strong>interacting applications</strong></p>
+<p>We strongly believe that device interaction will play a big role in future application development and therefore we should start creating the basic frameworks for developers to use.</p>
+<p><strong>any modern device</strong></p>
+<p>IntAirAct should be as portable as it can be so long as it doesn’t involve sacrificing user experience in any significant way.</p>
+<h1 id="related-work"><a href="#TOC"><span class="header-section-number">9</span> Related Work</a></h1>
+<blockquote>
+<p>I want to show how my research is unique. Distinguish differences of other approaches. IEEE Explore Scopus ACM DL (Scopus indexes ACM)</p>
+</blockquote>
+<p>In this section I briefly present some of the research literature related to device communication.</p>
+<blockquote>
+<p>Since I don’t have that many papers about related stuff I first explain the main problem: Then I write that there is nothing that does what I do. GameKit kind of does what I need but it’s iOS only. Thus I explain parts of what I will achieve and for that I can then go through related work.</p>
+</blockquote>
+<blockquote>
+<p>Communication in General: MOMs do some of the stuff. Mostly for server-side integration. Server-oriented and not mobile device. Thus no available implementations.</p>
+</blockquote>
+<blockquote>
+<p>An example: We need device discovery. For device discovery we can use UPNP, Bonjour and JINI. Then later in design decisions I just compare the advantages and disadvantages of the systems and explain my choice.</p>
+</blockquote>
+<blockquote>
+<p>Connection: LAN, Wi-Fi, Bluetooth</p>
+</blockquote>
+<blockquote>
+<p>Communication Protocols: SCTP, TCP/IP, HTTP, SPDY, RTSP+RTP</p>
+</blockquote>
+<blockquote>
+<p>Wire-Protocols: JSON, XML, BSON</p>
+</blockquote>
+<h1 id="rest"><a href="#TOC"><span class="header-section-number">10</span> REST</a></h1>
+<blockquote>
+<p>What is REST for me? This might actually fit under Related Work too… The idea is to use web technologies. In the web there are lots of architecture styles available for APIs. REST is the most popular one.</p>
+</blockquote>
+<p>I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].</p>
+<h1 id="range-of-applications"><a href="#TOC"><span class="header-section-number">11</span> Range of applications</a></h1>
+<blockquote>
+<p>Keep this brief and focussed on the tasks we will solve in the lab. Describe what we actually want to achieve with the API in the lab. From there talk about other application areas.</p>
+</blockquote>
+<ul>
+<li>Device interaction</li>
+<li>Multi-Surface Environments</li>
+<li>Ubiquitous Computing</li>
+</ul>
+<h2 id="device-interaction-1"><a href="#TOC"><span class="header-section-number">11.1</span> Device Interaction</a></h2>
+<blockquote>
+<p>What is Device Interaction to me?</p>
+</blockquote>
+<p>There are obviously two parts here: Device and Interaction. What a device is, is obvious. But what exactly do I mean by interaction.</p>
+<h3 id="interaction"><a href="#TOC"><span class="header-section-number">11.1.1</span> Interaction</a></h3>
+<p>A conversation or exchange between people.</p>
+<ul>
+<li>Share
+<ul>
+<li>Data</li>
+<li>Presentations</li>
+<li>Images</li>
+<li>Videos</li>
+<li>General Messages</li>
+</ul></li>
+</ul>
+<h3 id="what-is-device-interaction-1"><a href="#TOC"><span class="header-section-number">11.1.2</span> What is Device Interaction</a></h3>
+<p>Device Interaction is an exchange between devices.</p>
+<h3 id="existing-examples-for-device-interaction"><a href="#TOC"><span class="header-section-number">11.1.3</span> Existing examples for Device Interaction</a></h3>
+<ul>
+<li>AirPlay (AirTunes)</li>
+<li>AirDrop</li>
+<li>Remote App(s) for iOS</li>
+<li>Bump</li>
+<li>Joypad</li>
+<li>Remote Apps for Android</li>
+<li>DLNA</li>
+<li>Canon Wi-Fi Sharing for Photos</li>
+</ul>
+<h2 id="multi-surface-environments"><a href="#TOC"><span class="header-section-number">11.2</span> Multi-surface environments</a></h2>
+<blockquote>
+<p>Look at the Multi-Surface papers from Chris and Teddy The Avengers, Minority Report ;)</p>
+</blockquote>
+<h2 id="ubiquitous-computing"><a href="#TOC"><span class="header-section-number">11.3</span> Ubiquitous Computing</a></h2>
+<blockquote>
+<p>Take usage scenarios out of the Ubiquitous Computing field that can use this technology.</p>
+</blockquote>
+<h2 id="other-usage-scenarios"><a href="#TOC"><span class="header-section-number">11.4</span> Other Usage Scenarios</a></h2>
+<blockquote>
+<p>Can I think of more?</p>
+</blockquote>
+<h1 id="requirements"><a href="#TOC"><span class="header-section-number">12</span> Requirements</a></h1>
+<blockquote>
+<p>Take the range of applications and build up a list of requirements.</p>
+</blockquote>
+<p><span class="citation">Miller (1968)</span></p>
+<h2 id="platforms"><a href="#TOC"><span class="header-section-number">12.1</span> Platforms</a></h2>
+<blockquote>
+<p>A platform is a combination of device/OS/language. This is a list of the platforms that should be supported.</p>
+</blockquote>
+<p>One of the goals is to support all modern devices. Here is a list of the devices that are meant by “modern device”. Additionally all the Operating Systems are listed as well as the programming languages that have to be supported by the framework.</p>
+<ul>
+<li>Mobile devices
+<ul>
+<li>Tablets
+<ul>
+<li>iPad (iOS &gt;= 4.0)</li>
+<li>Android Tablets (Android &gt;= 2.3)</li>
+</ul></li>
+<li>Phones
+<ul>
+<li>iPhone (iOS &gt;= 4.0)</li>
+<li>Android Phones (Android &gt;= 2.3)</li>
+<li>Windows Phone (&gt;= 7)</li>
+<li>Blackberry</li>
+</ul></li>
+</ul></li>
+<li>Touch Tables
+<ul>
+<li>Microsoft Surface</li>
+</ul></li>
+<li>TV
+<ul>
+<li>Restriction: with a computer/media center connected</li>
+<li>Apple TV (uses OS X, but is not an open platform)</li>
+<li>Boxee</li>
+<li>XBMC</li>
+<li>Windows Media Center</li>
+</ul></li>
+<li>Sound station
+<ul>
+<li>Restriction: with a computer/media center connected</li>
+</ul></li>
+</ul>
+<h2 id="application-requirements"><a href="#TOC"><span class="header-section-number">12.2</span> Application Requirements</a></h2>
+<blockquote>
+<p>A list of the requirements introduced by the usage scenarios.</p>
+</blockquote>
+<ul>
+<li>No central server</li>
+<li>Ad-Hoc-Situations Introduced by mobile devices.</li>
+<li>Location, Touch &amp; Movement Detection =&gt; This enables touch or movement based interactions</li>
+<li>Location It should enable the tracking of location</li>
+<li>Performance This should satisfy the restrictions introduced by location. 100 messages / second 10ms / message</li>
+<li>Protocol switch If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.</li>
+<li>Discovery</li>
+<li>Platform independent
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>Linux</li>
+</ul></li>
+<li>Language independent
+<ul>
+<li>Objective C</li>
+<li>Java</li>
+<li>C#</li>
+</ul></li>
+</ul>
+<h2 id="api-requirements"><a href="#TOC"><span class="header-section-number">12.3</span> API Requirements</a></h2>
+<blockquote>
+<p>A list of the requirements to achieve the goal of “enabling developers”.</p>
+</blockquote>
+<p>Look at the messaging system parameters from EAI and include it here.</p>
+<ul>
+<li>State-of-the-art programming models
+<ul>
+<li>iOS specific
+<ul>
+<li>Blocks</li>
+</ul></li>
+</ul></li>
+<li>Low Entry-Barrier
+<ul>
+<li>Little code as possible</li>
+</ul></li>
+<li>Extensibility</li>
+<li>Security</li>
+</ul>
+<h1 id="design"><a href="#TOC"><span class="header-section-number">13</span> Design</a></h1>
+<h2 id="architecture"><a href="#TOC"><span class="header-section-number">13.1</span> Architecture</a></h2>
+<blockquote>
+<p>Describe the basic architecture of the system. This has to be device, operating system and programming language independent.</p>
+</blockquote>
+<h2 id="application-stack"><a href="#TOC"><span class="header-section-number">13.2</span> Application stack</a></h2>
+<blockquote>
+<p>Build a layered description of the framework and describe the tasks provided by each layer. This has to be device, operating system and programming language independent.</p>
+</blockquote>
+<h2 id="design-decisions"><a href="#TOC"><span class="header-section-number">13.3</span> Design Decisions</a></h2>
+<blockquote>
+<p>Take each layer of the application stack and describe the possible technologies and then describe the decision made in favor of one.</p>
+</blockquote>
+<ul>
+<li>ZeroConf
+<ul>
+<li>Enables device discovery</li>
+<li>Enables ad-hoc situations</li>
+<li>Firewall has to enable port XX</li>
+</ul></li>
+<li>TCP
+<ul>
+<li>Adresses Low Entry-Barrier</li>
+<li>This could be a performance hog, but messages using this system are expected to work with this. If no, then an optimised protocol can be negotiated. After discovering the device, etc.</li>
+</ul></li>
+<li>HTTP
+<ul>
+<li>Adresses Low Entry-Barrier</li>
+<li>Lots of existing client and server side libraries.</li>
+<li>Security -&gt; HTTPS</li>
+</ul></li>
+<li>REST
+<ul>
+<li>Adresses Low Entry-Barrier</li>
+<li>Lots of existing client and server side libraries.</li>
+</ul></li>
+<li>JSON
+<ul>
+<li>Adresses Low Entry-Barrier</li>
+<li>Lots of existing client and server side libraries.</li>
+</ul></li>
+<li>Service orientation
+<ul>
+<li>Adresses Extensibility</li>
+<li>Authentication -&gt; Service</li>
+<li>Rights/Users/etc. -&gt; Service</li>
+</ul></li>
+</ul>
+<h1 id="implementation"><a href="#TOC"><span class="header-section-number">14</span> Implementation</a></h1>
+<h2 id="restrictions"><a href="#TOC"><span class="header-section-number">14.1</span> Restrictions</a></h2>
+<blockquote>
+<p>If there are restrictions introduced by the design decisions summarize them here.</p>
+</blockquote>
+<ul>
+<li>Same (W-)LAN
+<ul>
+<li>introduced by ZeroConf</li>
+<li>Bluetooth sucks</li>
+</ul></li>
+<li>Focus on iOS
+<ul>
+<li>because it is mainly used inside lab, has highest markt percentage, etc.</li>
+</ul></li>
+<li>Proof of concept for other OSs</li>
+<li>Security is not a real issue But it should be able to be added later</li>
+<li>Not solving the problem of automated stuff. I consume services that I know (!) about.</li>
+</ul>
+<blockquote>
+<p>The automated stuff has to be a design decision as well.</p>
+</blockquote>
+<h2 id="technology-evaluation"><a href="#TOC"><span class="header-section-number">14.2</span> Technology Evaluation</a></h2>
+<blockquote>
+<p>For each task introduced by the layers of the application stack and the design decisions describe possible technologies for the different environments.</p>
+</blockquote>
+<ul>
+<li>iOS
+<ul>
+<li>CocoaHTTPServer + RoutingHTTPServer</li>
+<li>RestKit vs. Resty
+<ul>
+<li>RestKit
+<ul>
+<li><ul>
+<li>Manual RPC</li>
+</ul></li>
+<li><ul>
+<li>Object Mapping</li>
+</ul></li>
+<li><ul>
+<li>Difficult, but powerful, no good examples</li>
+</ul></li>
+<li><ul>
+<li>Bloated</li>
+</ul></li>
+<li><ul>
+<li>Bad documentation</li>
+</ul></li>
+<li><ul>
+<li>Blocks (with additional code)</li>
+</ul></li>
+</ul></li>
+<li>Resty
+<ul>
+<li><ul>
+<li>Manual RPC</li>
+</ul></li>
+<li><ul>
+<li>Manual De/Serialization</li>
+</ul></li>
+<li><ul>
+<li>Blocks</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Java
+<ul>
+<li>jmDNS</li>
+</ul></li>
+<li>Android
+<ul>
+<li>jmDNS</li>
+</ul></li>
+<li>C#
+<ul>
+<li>Apple Bonjour SDK</li>
+</ul></li>
+</ul>
+<h1 id="evaluation"><a href="#TOC"><span class="header-section-number">15</span> Evaluation</a></h1>
+<blockquote>
+<p>Check with Ethics</p>
+</blockquote>
+<h2 id="performance"><a href="#TOC"><span class="header-section-number">15.1</span> Performance</a></h2>
+<blockquote>
+<p>Write up a test scenario, implement it and run it. A simple example would be to just return fixed values. This should include one device only tests, two-device and three-device tests. Also cross-platform tests to show that it works cross-platform.</p>
+</blockquote>
+<h2 id="api-usability"><a href="#TOC"><span class="header-section-number">15.2</span> API Usability</a></h2>
+<p>Finish the API and then have people use it. Prepare an interview with them and analyse the results.</p>
+<blockquote>
+<p>Donate to Robby Hanson and ask him to use the system. How about Taras Kalapun? Or other guys that do awesome stuff!?</p>
+</blockquote>
+<p>Evaluate the usage in the Multi-Surface Environment and Facet projects.</p>
+<h2 id="user-experience"><a href="#TOC"><span class="header-section-number">15.3</span> User experience</a></h2>
+<blockquote>
+<p>If we have a focus group in the Facet project perhaps I can use them to do a user experience study. Or perhaps Chris and Teddy will do sth. similar for their thesis.</p>
+</blockquote>
+<h1 id="conclusion-1"><a href="#TOC"><span class="header-section-number">16</span> Conclusion</a></h1>
+<blockquote>
+<p>Look at the Research goals and compare them with the evaluation.</p>
+</blockquote>
+<h2 id="future-work"><a href="#TOC"><span class="header-section-number">16.1</span> Future work</a></h2>
+<blockquote>
+<p>What is going to happen with this in the future?</p>
+</blockquote>
+<h1 id="references"><a href="#TOC"><span class="header-section-number">17</span> References</a></h1>
+<p>Miller, Robert B. 1968. “Response time in man-computer conversational transactions.” <em>Proceedings of the December 9-11, 1968, fall joint</em>. <a href="http://dl.acm.org/citation.cfm?id=1476628" title="http://dl.acm.org/citation.cfm?id=1476628">http://dl.acm.org/citation.cfm?id=1476628</a>.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Inlines notes are easier to write.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</body>
+</html>
