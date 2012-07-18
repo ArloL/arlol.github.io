@@ -27,6 +27,7 @@
 <li><a href="#list-of-listings">List of Listings</a></li>
 <li><a href="#introduction">1 Introduction</a><ul>
 <li><a href="#motivation">1.1 Motivation</a></li>
+<li><a href="#thesis-overview">1.2 Thesis Overview</a></li>
 <li><a href="#device-interaction">1.2 Device Interaction</a><ul>
 <li><a href="#definition">Definition</a></li>
 <li><a href="#existing-applications">Existing applications</a><ul>
@@ -93,19 +94,18 @@
 <h1 id="list-of-listings"><a href="#TOC">List of Listings</a></h1>
 <h1 id="introduction"><a href="#TOC">1 Introduction</a></h1>
 <blockquote>
-<p>Question of this chapter: What is going on here?</p>
+<p>What is going on here?</p>
 </blockquote>
 <h2 id="motivation"><a href="#TOC">1.1 Motivation</a></h2>
 <blockquote>
-<p>Question of this chapter: Why am I doing this?</p>
+<p>Why am I doing this?</p>
 </blockquote>
-<p>The number of electronic devices used in everyday and professional life has increased in recent years.</p>
+<p>The number of electronic devices used in everyday and professional life has and will continue to increase. This rise is driven mostly by the widespread adoption of smartphones and tablets. The trend towards technological ubiquity will continue with the adoption of e.g. tabletops, public touch displays and in-car computers. This rising number of devices creates challenges and opportunities for the design of applications. One of the opportunities is the ability to create applications that interact with each other across devices. The possibilities reach from basic content-sharing like images to complex interactions that include gesture recognition and location tracking. Since many of the possible applications (see chapter <a href="#application-scenarios">Application Scenarios</a>) have common requirements it makes sense to create a single framework that enables Device Interaction [DI]. This allows developers to focus on implementing the interactions and not on details like network communication and device discovery. Despite the abstraction it should nonetheless be easy for a developer to understand the technologies - most importantly for the communication - used in such a framework. Given the ubiquity of the Internet it is highly likely that said developer has created an application that communicates using web technologies (e.g. HTTP, REST, JSON). Therefore such a framework should use web technologies for the communication. This utilises the existing knowledge in the developer community and has the same advantages that gave web technologies the ability to be used broadly. As for particular technologies the architecture style REST should be used due to popularity and applicability</p>
+<p>This thesis will implement such a framework.</p>
+<h2 id="thesis-overview"><a href="#TOC">1.2 Thesis Overview</a></h2>
 <blockquote>
-<p>What is so special about my understanding of interacting applications?</p>
+<p>Does this chapter make sense? Yes.</p>
 </blockquote>
-<p>Most of the available applications for these devices focus on a single-device single-user model. &gt; This is not true: Dropbox Shared Folders, Google Docs.</p>
-<p>But the focus is currently shifting towards a multi-device single-user model with with services like Dropbox<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup> or iCloud<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup> that both enable synchronization between devices. The next logical step are applications that follow a multi-device multi-user model.</p>
-<p>The possibilities reach from content-sharing to gesture- and location-based interactions. Since there are many possible applications with common requirements (see chapter <a href="#requirements">Requirements</a> it makes sense to create a single framework for DI. For low-cost adoption, easy debugging and utilising existing knowledge, web technologies (e.g. JSON) and architecture styles (e.g. REST) should be used for the communication. This thesis will present the framework IntAirAct which enables Device Interaction using REST.</p>
 <h2 id="device-interaction"><a href="#TOC">1.2 Device Interaction</a></h2>
 <p>First it is necessary to define what this thesis understands as Device Interaction [DI]. The definition is supported and the usefulness of DI motivated by presenting example applications. Then the requirements for achieving DI are identified. Available solutions for these requirements are then analyzed and the main issues identified. Finally the approach of this thesis to solve these issues is presented.</p>
 <h3 id="definition"><a href="#TOC">Definition</a></h3>
@@ -440,12 +440,5 @@
 </blockquote>
 <h1 id="references"><a href="#TOC">References</a></h1>
 <p>Miller, Robert B. 1968. “Response time in man-computer conversational transactions.” <em>Proceedings of the December 9-11, 1968, fall joint</em>. <a href="http://dl.acm.org/citation.cfm?id=1476628" title="http://dl.acm.org/citation.cfm?id=1476628">http://dl.acm.org/citation.cfm?id=1476628</a>.</p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p><a href="https://www.dropbox.com/">Dropbox</a> allows file synchronization.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="https://www.apple.com/icloud/">ICloud</a> allows synchronization of photos, contacts, documents and more.<a href="#fnref2">↩</a></p></li>
-</ol>
-</div>
 </body>
 </html>
