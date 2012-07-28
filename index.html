@@ -6,12 +6,14 @@
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Arlo Louis O’Keeffe" />
   <meta name="date" content="2012-08-15" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>IntAirAct - A Framework enabling Device Interaction using REST</title>
   <link rel="stylesheet" href="css/markdown.css" type="text/css" />
   <link rel="stylesheet" href="css/additions.css" type="text/css" />
 </head>
 <body>
+<input type="button" value="Reload" onclick="window.location.reload(true);" />
 <div id="header">
 <h1 class="title">IntAirAct - A Framework enabling Device Interaction using REST</h1>
 <h2 class="author">Arlo Louis O’Keeffe</h2>
@@ -27,53 +29,59 @@
 <li><a href="#list-of-tables">List of Tables</a></li>
 <li><a href="#list-of-listings">List of Listings</a></li>
 <li><a href="#introduction">1 Introduction</a><ul>
-<li><a href="#motivation">1.1 Motivation</a></li>
-<li><a href="#thesis-overview">1.2 Thesis Overview</a></li>
-<li><a href="#device-interaction">1.2 Device Interaction</a><ul>
-<li><a href="#definition">Definition</a></li>
-<li><a href="#existing-applications">Existing applications</a><ul>
-<li><a href="#remote-for-ios">Remote for iOS</a></li>
-<li><a href="#canon-instant-wi-fi-sharing-for-photos">Canon Instant Wi-Fi Sharing for Photos</a></li>
-<li><a href="#bump">Bump</a></li>
+<li><a href="#device-interaction">1.1 Device Interaction</a><ul>
+<li><a href="#definition">1.1.1 Definition</a></li>
+<li><a href="#example-applications">1.1.2 Example applications</a><ul>
+<li><a href="#remote-for-ios">1.1.2.1 Remote for iOS</a></li>
+<li><a href="#bump">1.1.2.2 Bump</a></li>
+<li><a href="#multi-surface-environment-api">1.1.2.3 Multi-Surface Environment API</a></li>
 </ul></li>
-<li><a href="#application-scenarios">Application scenarios</a></li>
-<li><a href="#requirements">Requirements</a><ul>
-<li><a href="#functional">Functional</a><ul>
-<li><a href="#communication">Communication</a></li>
 </ul></li>
-<li><a href="#non-functional">Non-functional</a></li>
-</ul></li>
-<li><a href="#existing-solutions-and-their-issues">Existing solutions and their issues</a></li>
-<li><a href="#the-approach-of-this-thesis">The approach of this thesis</a></li>
+<li><a href="#challenges-of-device-interaction">1.2 Challenges of Device Interaction</a><ul>
+<li><a href="#knowledge">1.2.1 Knowledge</a></li>
 </ul></li>
 <li><a href="#research-questions">1.3 Research questions</a></li>
 <li><a href="#goals">1.4 Goals</a></li>
 <li><a href="#conclusion">1.5 Conclusion</a></li>
 </ul></li>
-<li><a href="#related-work">Related Work</a><ul>
+<li><a href="#related-work">2 Related Work</a><ul>
 <li><a href="#rest">REST</a></li>
 </ul></li>
-<li><a href="#requirements-1">Requirements</a><ul>
-<li><a href="#platforms">Platforms</a></li>
-<li><a href="#application-requirements">Application Requirements</a></li>
-<li><a href="#api-requirements">API Requirements</a></li>
+<li><a href="#requirements">3 Requirements</a><ul>
+<li><a href="#architecture">Architecture</a><ul>
+<li><a href="#functional">Functional</a><ul>
+<li><a href="#communication">Communication</a></li>
+<li><a href="#device-discovery">Device discovery</a></li>
+<li><a href="#addressing-scheme">Addressing Scheme</a></li>
+<li><a href="#resource">Resource</a></li>
+<li><a href="#cross-platform-compatibility">Cross-platform compatibility</a></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#flexibility">Flexibility</a></li>
 </ul></li>
-<li><a href="#design">Design</a><ul>
-<li><a href="#architecture">Architecture</a></li>
+<li><a href="#non-functional">Non-functional</a><ul>
+<li><a href="#usability">Usability</a></li>
+<li><a href="#extensibility">Extensibility</a></li>
+<li><a href="#security">Security</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#framework">Framework</a></li>
+</ul></li>
+<li><a href="#design">4 Design</a><ul>
+<li><a href="#architecture-1">Architecture</a></li>
 <li><a href="#application-stack">Application stack</a></li>
-<li><a href="#design-decisions">Design Decisions</a></li>
+<li><a href="#technology-decisions">Technology Decisions</a></li>
 </ul></li>
-<li><a href="#implementation">Implementation</a><ul>
+<li><a href="#implementation">5 Implementation</a><ul>
 <li><a href="#restrictions">Restrictions</a></li>
 <li><a href="#technology-evaluation">Technology Evaluation</a></li>
 </ul></li>
-<li><a href="#evaluation">Evaluation</a><ul>
-<li><a href="#performance">Performance</a></li>
+<li><a href="#evaluation">6 Evaluation</a><ul>
+<li><a href="#performance-1">Performance</a></li>
 <li><a href="#api-usability">API Usability</a></li>
 <li><a href="#user-experience">User experience</a></li>
 </ul></li>
-<li><a href="#conclusion-1">Conclusion</a><ul>
-<li><a href="#future-work">Future work</a></li>
+<li><a href="#conclusion-1">7 Conclusion</a><ul>
+<li><a href="#future-work">7.1 Future work</a></li>
 </ul></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -87,6 +95,7 @@
 <p>Thanks to Chris Burns for reviewing my code and giving me feedback.</p>
 <p>Thanks to Paul Hegarty and <a href="http://www.stanford.edu">Leland Stanford Junior University</a> for the course <a href="http://www.stanford.edu/class/cs193p">CS193P “iPad and iPhone Application Development”</a> that is available for free via <a href="http://itunes.stanford.edu/">iTunes U</a>.</p>
 <p>Thanks to Prof. Dr. Manfred Meyer and <a href="http://ase.cpsc.ucalgary.ca/ase/Frank.Maurer.php">Prof. Dr. Frank Maurer</a> for giving me the possibility to write my thesis in the beautiful town of Calgary, Alberta, Canada.</p>
+<p>Thanks to all my friends who supported me during my helpless and un-motivated phases with distraction and advice.</p>
 <h1 id="zusammenfassung"><a href="#TOC">Zusammenfassung</a></h1>
 <h1 id="abstract"><a href="#TOC">Abstract</a></h1>
 <h1 id="content"><a href="#TOC">Content</a></h1>
@@ -94,82 +103,58 @@
 <h1 id="list-of-tables"><a href="#TOC">List of Tables</a></h1>
 <h1 id="list-of-listings"><a href="#TOC">List of Listings</a></h1>
 <h1 id="introduction"><a href="#TOC">1 Introduction</a></h1>
-<blockquote>
-<p>What is going on here?</p>
-</blockquote>
-<h2 id="motivation"><a href="#TOC">1.1 Motivation</a></h2>
-<blockquote>
-<p>Why am I doing this?</p>
-</blockquote>
-<p>The number of electronic devices used in everyday and professional life has and will continue to increase. This rise is driven mostly by the widespread adoption of smartphones and tablets. The trend towards technological ubiquity will continue with the adoption of e.g. tabletops, public touch displays and in-car computers. This rising number of devices creates challenges and opportunities for the design of applications. One of the opportunities is the ability to create applications that interact with each other across devices. The possibilities reach from basic content-sharing like images to complex interactions that include gesture recognition and location tracking. Since many of the possible applications (see chapter <a href="#application-scenarios">Application Scenarios</a>) have common requirements it makes sense to create a single framework that enables Device Interaction [DI]. This allows developers to focus on implementing the interactions and not on details like network communication and device discovery. Despite the abstraction it should nonetheless be easy for a developer to understand the technologies - most importantly for the communication - used in such a framework. Given the ubiquity of the Internet it is highly likely that said developer has created an application that communicates using web technologies (e.g. HTTP, REST, JSON). Therefore such a framework should use web technologies for the communication. This utilises the existing knowledge in the developer community and has the same advantages that gave web technologies the ability to be used broadly. As for particular technologies the architecture style REST should be used due to popularity and applicability</p>
-<p>This thesis will analyze the requirements of such a framework and then implement it.</p>
-<h2 id="thesis-overview"><a href="#TOC">1.2 Thesis Overview</a></h2>
-<blockquote>
-<p>Does this chapter make sense? Yes.</p>
-</blockquote>
-<h2 id="device-interaction"><a href="#TOC">1.2 Device Interaction</a></h2>
-<p>First it is necessary to define what this thesis understands as Device Interaction [DI]. The definition is supported and the usefulness of DI motivated by presenting example applications. Then the requirements for achieving DI are identified. Available solutions for these requirements are then analyzed and the main issues identified. Finally the approach of this thesis to solve these issues is presented.</p>
-<h3 id="definition"><a href="#TOC">Definition</a></h3>
-<p>An interaction is a conversation or an exchange between people. If <em>people</em> is exchanged with <em>device</em> the result is a broad definition of DI:</p>
+<p>The average number of electronic devices used in everyday and professional life is increasing. With this increasing number of devices the application model of a user sitting in front of one device to achieve a task is outdated. Even less so for team situations. A user should be able to make use of each device’s capabilities to increase his productivity. While data manipulation is feasible on a laptop, detailed consumption is most efficient on a tablet, the display of large data makes most sense on a TV and team collaboration works best on a touch table. To make use of these capabilities, applications need to be able to interact with each other across devices. As current available approaches are either proprietary, focused on a single task or too difficult this thesis presents a general approach that allows developers to easily create interacting applications using standardized web technologies and the REST architecture style.</p>
+<p>Even though there are many possible applications (see <a href="#application-scenarios">chapter 1.2.2</a>) research is currently not investigating the possibility of creating a general solution for interacting applications as seen in <a href="#related-work">chapter 2</a>. Developing interacting applications is difficult because of problems like creating a communication layer or ad hoc device discovery. First these problems are not related to the goal of creating interactions and they can be daunting for developers not familiar with these fields. These challenges will be investigated further in <a href="#challenges-of-device-interaction">chapter 1.2.3</a>.</p>
+<p>To reduce the necessary design and development time of interacting applications this thesis will contribute a general architecture as well as a framework implementation for Device Interaction. Both the architecture and the framework are called IntAirAct.</p>
+<p>It is crucial that the architecture uses open standards. This not only reduces the design and implementation time of the framework but ensures cross-platform compatibility.</p>
+<p>Due to the ubiquity of the Internet there are many frameworks and implementations for all major platforms available that use standardized web technologies. Especially for communication on mobile devices web technologies are widely used. This makes them an ideal candidate for the communication layer. As will be seen (see chapter <strong>chapter</strong>) the architecture style REST is also feasible for DI.</p>
+<p>To overview the structure of this thesis: First the <a href="#requirements">requirements</a> of an architecture for DI will be investigated followed by the <a href="#design">design</a> of it. Additionally the architecture will be <a href="#implementation">implemented</a> as a framework for two major platforms: iOS/OS X and C#. Finally the contributions will be <a href="#evaluation">evaluated</a>.</p>
+<p>This chapter will continue to cover the background necessary to understand the contributions of this thesis. First DI will be formally defined followed by the major challenges when trying to create interacting applications. Research questions and goals are also stated.</p>
+<h2 id="device-interaction"><a href="#TOC">1.1 Device Interaction</a></h2>
+<p>First it is necessary to define what this thesis understands as DI. The definition is supported and the usefulness of DI motivated by presenting three example applications.</p>
+<h3 id="definition"><a href="#TOC">1.1.1 Definition</a></h3>
+<p>An interaction is a conversation or an exchange between people (<strong>quote</strong>). If <em>people</em> is exchanged with <em>device</em> the result is a broad definition of DI:</p>
 <p><strong>Device Interaction is an exchange between devices.</strong></p>
+<p>The definition understands exchange as the transfer of information.</p>
+<p>The definition understands devices as all devices a human can use. Examples are mobile devices, desktop computers, tables and displays.</p>
+<p>The focus of Device Interaction lies in extending existing applications from a single-device model to a multi-device model.</p>
+<p>In order to concretize the definition in form of applications the next chapter presents three examples.</p>
+<h3 id="example-applications"><a href="#TOC">1.1.2 Example applications</a></h3>
+<p>This chapter will present two existing proprietary applications that fall under the definition of Device Interaction. As far as known and relevant implementation details will be explained. Finally the project for which IntAirAct was created will be presented.</p>
+<h4 id="remote-for-ios"><a href="#TOC">1.1.2.1 Remote for iOS</a></h4>
+<p><a href="https://www.apple.com/itunes/remote/">Remote for iOS</a> is an application that allows the remote control of a media player<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup> running on a desktop computer using a mobile device<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup>.</p>
+<div class="figure">
+<img src="images/itunes-remote.png" alt="A screenshot of Remote for iPad" /><p class="caption">A screenshot of Remote for iPad</p>
+</div>
+<p>This example demonstrates the bi-directional nature of device interaction: while the mobile device displays information from the desktop computer (e.g. the available songs) the mobile device controls the desktop computer (e.g. play this song). The protocol used<sup><a href="#fn3" class="footnoteRef" id="fnref3">3</a></sup> is proprietary but has been partly <a href="http://dacp.jsharkey.org/">reverse engineered</a>. The system uses the HTTP protocol for requests and a binary protocol for the responses.</p>
+<h4 id="bump"><a href="#TOC">1.1.2.2 Bump</a></h4>
+<p><a href="https://bu.mp/">Bump</a> is an application that allows the exchange of information between devices using a shake gesture.</p>
+<div class="figure">
+<img src="images/bump.png" alt="Bump being used to exchange contact information" /><p class="caption">Bump being used to exchange contact information</p>
+</div>
+<p>This example demonstrates the technological issues of interacting applications. Bump uses an Internet connection to transfer data between two devices that are in close vicinity. This is very inefficient as the data has to move from the devices to a server and back.</p>
+<h4 id="multi-surface-environment-api"><a href="#TOC">1.1.2.3 Multi-Surface Environment API</a></h4>
 <blockquote>
-<p>To make the broad definition concrete in terms of application scenarios examples of how this thesis understands DI are given.</p>
+<p>Describe MSE and what we want to achieve in the lab. Quote the Multi-Surface papers from Chris and Teddy</p>
 </blockquote>
+<p>This example is the use-case for which IntAirAct</p>
+<p>This example is an application scenario in which IntAirAct is supposed to be used. Therefore this chapter will merely describe the goals of the API.</p>
+<p>The goal of the API is to allow gesture based interactions between multiple devices in a room.</p>
+<h2 id="challenges-of-device-interaction"><a href="#TOC">1.2 Challenges of Device Interaction</a></h2>
 <blockquote>
-<p>Possible exchanges are: sharing of data, sending of messages, etc.</p>
+<p>what would a developer have to do now to create interacting applications? What would his biggest challenges be? How about I use a persona to achieve this?</p>
 </blockquote>
-<blockquote>
-<p>It is an enabler for new usage scenarios.</p>
-</blockquote>
-<h3 id="existing-applications"><a href="#TOC">Existing applications</a></h3>
-<p>A few existing applications that would fit this definition of DI are:</p>
-<h4 id="remote-for-ios"><a href="#TOC">Remote for iOS</a></h4>
-<h4 id="canon-instant-wi-fi-sharing-for-photos"><a href="#TOC">Canon Instant Wi-Fi Sharing for Photos</a></h4>
-<h4 id="bump"><a href="#TOC">Bump</a></h4>
-<h3 id="application-scenarios"><a href="#TOC">Application scenarios</a></h3>
-<blockquote>
-<p>Keep this brief and focussed on the tasks we will solve in the lab. Describe MSE and what we want to achieve in the lab. Only scratch other application areas. Quote the Multi-Surface papers from Chris and Teddy</p>
-</blockquote>
-<h3 id="requirements"><a href="#TOC">Requirements</a></h3>
-<h4 id="functional"><a href="#TOC">Functional</a></h4>
-<h5 id="communication"><a href="#TOC">Communication</a></h5>
-<ul>
-<li>P2P</li>
-<li>Ad-Hoc</li>
-</ul>
-<p>There are different communication architectures that are widely used: P2P and CS.</p>
-<p><strong>Problems of CS</strong></p>
-<blockquote>
-<p>Requires an actual Server. Meaning the infrastructure has to exist.</p>
-</blockquote>
-<blockquote>
-<p>If it is supposed to work ubiquitously it requires an Internet Connection.</p>
-</blockquote>
-<p><strong>Advantages of CS</strong></p>
-<blockquote>
-<p>Authenticity.</p>
-</blockquote>
-<blockquote>
-<p>How do I work around that?</p>
-</blockquote>
-<blockquote>
-<p>Computation speed of the server</p>
-</blockquote>
-<h4 id="non-functional"><a href="#TOC">Non-functional</a></h4>
-<p>Ease-of-use</p>
-<h3 id="existing-solutions-and-their-issues"><a href="#TOC">Existing solutions and their issues</a></h3>
-<h3 id="the-approach-of-this-thesis"><a href="#TOC">The approach of this thesis</a></h3>
+<h3 id="knowledge"><a href="#TOC">1.2.1 Knowledge</a></h3>
 <h2 id="research-questions"><a href="#TOC">1.3 Research questions</a></h2>
 <p>This thesis presents a new approach for device communication that allows interacting applications.</p>
-<ol style="list-style-type: decimal">
-<li>Is it possible to have web servers on mobile devices?</li>
-<li>Is the performance sufficient?</li>
-</ol>
+<p>Given the fact that the architecture is not implemented for all major platforms: 1. Is it possible to be implemented on all major platforms?</p>
+<p>Since bi-directional communication requires a web server running on all devices on of the research questions is: 1. Is it possible to have web servers on mobile devices?</p>
+<p>Since web technologies have been created for long-distance high-latency communication they include overhead that is not necessary in local-area scenarios. Thus the performance of the framework has to be evaluated: 2. Is the performance sufficient?</p>
 <h2 id="goals"><a href="#TOC">1.4 Goals</a></h2>
-<p>There are two main goals of this thesis. The first is to develop a framework that enables Device Interaction using web technologies. The second goal is to attempt to answer the research questions listed above to show that the approach followed while developing the framework is feasible for creating interacting applications.</p>
+<p>There are two main goals of this thesis. The first is to design an architecture for Device Interaction [DI]. The second is to implement the stack in form of a framework. The third goal is to attempt to answer the research questions listed above to show that the approach followed while developing the framework is feasible for creating interacting applications.</p>
 <h2 id="conclusion"><a href="#TOC">1.5 Conclusion</a></h2>
-<p>In this chapter an approach for Device Interaction using web technologies is presented. Device Interaction in general was introduced and basic requirements of communication approaches were identified. The problems of existing communication approaches preventing Device Interaction have been identified. Finally, the research questions that will be investigated and the goals of this thesis were stated.</p>
-<h1 id="related-work"><a href="#TOC">Related Work</a></h1>
+<p>In this chapter an approach for Device Interaction using web technologies is presented. Device Interaction was defined and examples were presented. Major challenges when trying Finally, the research questions that will be investigated and the goals of this thesis were stated.</p>
+<h1 id="related-work"><a href="#TOC">2 Related Work</a></h1>
 <blockquote>
 <p>I want to show how my research is unique. Distinguish differences of other approaches. IEEE Explore Scopus ACM DL (Scopus indexes ACM)</p>
 </blockquote>
@@ -192,6 +177,29 @@
 <blockquote>
 <p>Wire-Protocols: JSON, XML, BSON</p>
 </blockquote>
+<p><em>Write your own socket stuff</em></p>
+<p>Advantages</p>
+<ul>
+<li>Adapted to specific use-case, expect better performance</li>
+</ul>
+<p>Disadvantages</p>
+<ul>
+<li>A lot of decisions involved</li>
+<li>Requires network knowledge</li>
+<li>Requires implementation of network and device discovery</li>
+<li>Requires adaption</li>
+<li>often single server as infrastructure (no ad hoc)</li>
+</ul>
+<p><em>use a single webserver</em></p>
+<p>Advantages</p>
+<ul>
+<li>use of web technogies</li>
+</ul>
+<p>Disadvantages</p>
+<ul>
+<li>no ad-hoc, requires internet connection</li>
+<li>p2p inefficient</li>
+</ul>
 <h2 id="rest"><a href="#TOC">REST</a></h2>
 <blockquote>
 <p>This is kind of lost here? I think this should move under Related Work, or?</p>
@@ -200,16 +208,25 @@
 <p>What is REST for me? This might actually fit under Related Work too… The idea is to use web technologies. In the web there are lots of architecture styles available for APIs. REST is the most popular one.</p>
 </blockquote>
 <p>I understand it rather as the REST API than the architecture style described by Fielding [quote dissertation].</p>
-<h1 id="requirements-1"><a href="#TOC">Requirements</a></h1>
+<h1 id="requirements"><a href="#TOC">3 Requirements</a></h1>
 <blockquote>
-<p>Take the range of applications and build up a list of requirements.</p>
+<p>I think it makes sense to distinguish between architecture and framework. The general architecture has different requirements than the actual implementations.</p>
 </blockquote>
-<p><span class="citation">Miller (1968)</span></p>
-<h2 id="platforms"><a href="#TOC">Platforms</a></h2>
+<h2 id="architecture"><a href="#TOC">Architecture</a></h2>
+<h3 id="functional"><a href="#TOC">Functional</a></h3>
 <blockquote>
-<p>A platform is a combination of device/OS/language. This is a list of the platforms that should be supported.</p>
+<p>This is essentially the same as the requirements of a MOM. Look at them from Schulze.</p>
 </blockquote>
-<p>One of the goals is to support all modern devices. Here is a list of the devices that are meant by “modern device”. Additionally all the Operating Systems are listed as well as the programming languages that have to be supported by the framework.</p>
+<h4 id="communication"><a href="#TOC">Communication</a></h4>
+<p>The communication is a fundamental part of the architecture. It has to allow for peer-to-peer communication to allow direct interactions of the devices without a middleman. The communication has to be bi-directional to allow true exchange between the devices.</p>
+<h4 id="device-discovery"><a href="#TOC">Device discovery</a></h4>
+<p>To enable Ad-Hoc interaction scenarios it is essential that the devices can discover each other without requiring infrastructure in the sense of an internet connection or a setup server. The devices should be able to discover each other without a middleman. This reduces set-up cost and allows for use in many everyday situations like a coffeeshop.</p>
+<h4 id="addressing-scheme"><a href="#TOC">Addressing Scheme</a></h4>
+<p>It is necessary to uniquely identify devices in the network of devices to allow for direct communication.</p>
+<h4 id="resource"><a href="#TOC">Resource</a></h4>
+<p>The basis of the architecture is to be able to share resources (images, documents) between devices. The architecture should define how these resources are identified.</p>
+<h4 id="cross-platform-compatibility"><a href="#TOC">Cross-platform compatibility</a></h4>
+<p>One of the goals is to support all modern devices. Here is a list of the devices that are meant by “modern device”. Additionally all the Operating Systems are listed as well as the programming languages that have to be supported by the framework. This means that the technologies used have to be compatible with the majority of these platforms.</p>
 <ul>
 <li>Mobile devices
 <ul>
@@ -243,61 +260,36 @@
 <li>Restriction: with a computer/media center connected</li>
 </ul></li>
 </ul>
-<h2 id="application-requirements"><a href="#TOC">Application Requirements</a></h2>
+<h4 id="performance"><a href="#TOC">Performance</a></h4>
+<p>To allow natural interactions between the devices the architecture has to deliver sufficient performance to not distract the user. The 100ms boundary introduced by <span class="citation">Miller (1968)</span> should be sufficient. To allow for situations like congestion, etc. the goal of the architecture is 10ms / message.</p>
+<h4 id="flexibility"><a href="#TOC">Flexibility</a></h4>
+<p>If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.</p>
+<h3 id="non-functional"><a href="#TOC">Non-functional</a></h3>
+<h4 id="usability"><a href="#TOC">Usability</a></h4>
+<p>The architecture as well as the framework should stay out of the way of the user as much as possible. The implementations should require as little code as possible.</p>
+<h4 id="extensibility"><a href="#TOC">Extensibility</a></h4>
+<p>The architecture should allow the developer to extend functionality into the different layers of the architecture. This is resembled in the framework implementations. The developer should be able to use certain modules of the system but not be required to employ the entire system. This allows for different</p>
+<h4 id="security"><a href="#TOC">Security</a></h4>
+<p>The architecture should allow developers to create secure applications. It is not a part of the requirements to include security. But it is a requirement to</p>
+<h2 id="framework"><a href="#TOC">Framework</a></h2>
 <blockquote>
-<p>A list of the requirements introduced by the usage scenarios.</p>
+<p>Is this necessary? I think so. This should be considered as guidelines for other implementations too.</p>
 </blockquote>
-<ul>
-<li>No central server</li>
-<li>Ad-Hoc-Situations Introduced by mobile devices.</li>
-<li>Location, Touch &amp; Movement Detection =&gt; This enables touch or movement based interactions</li>
-<li>Location It should enable the tracking of location</li>
-<li>Performance This should satisfy the restrictions introduced by location. 100 messages / second 10ms / message</li>
-<li>Protocol switch If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.</li>
-<li>Discovery</li>
-<li>Platform independent
-<ul>
-<li>Windows</li>
-<li>Mac</li>
-<li>Linux</li>
-</ul></li>
-<li>Language independent
-<ul>
-<li>Objective C</li>
-<li>Java</li>
-<li>C#</li>
-</ul></li>
-</ul>
-<h2 id="api-requirements"><a href="#TOC">API Requirements</a></h2>
-<blockquote>
-<p>A list of the requirements to achieve the goal of “enabling developers”.</p>
-</blockquote>
-<p>Look at the messaging system parameters from EAI and include it here.</p>
-<ul>
-<li>State-of-the-art programming models
-<ul>
-<li>iOS specific
-<ul>
-<li>Blocks</li>
-</ul></li>
-</ul></li>
-<li>Low Entry-Barrier
-<ul>
-<li>Little code as possible</li>
-</ul></li>
-<li>Extensibility</li>
-<li>Security</li>
-</ul>
-<h1 id="design"><a href="#TOC">Design</a></h1>
-<h2 id="architecture"><a href="#TOC">Architecture</a></h2>
+<p>This chapter will describe the requirements that any implementation of the architecture should follow. It is to be considered not only as the requirements of the framework to be implemented but as a guideline for other developers.</p>
+<p>All of the requirements of the architecture also count for the framework: Usability, Extensibility and Security.</p>
+<p>Additionally ?</p>
+<h1 id="design"><a href="#TOC">4 Design</a></h1>
+<p>This chapter will describe the design of the architecture, the application stack as well as the decisions for technologies.</p>
+<h2 id="architecture-1"><a href="#TOC">Architecture</a></h2>
 <blockquote>
 <p>Describe the basic architecture of the system. This has to be device, operating system and programming language independent.</p>
 </blockquote>
+<p>DI requires</p>
 <h2 id="application-stack"><a href="#TOC">Application stack</a></h2>
 <blockquote>
 <p>Build a layered description of the framework and describe the tasks provided by each layer. This has to be device, operating system and programming language independent.</p>
 </blockquote>
-<h2 id="design-decisions"><a href="#TOC">Design Decisions</a></h2>
+<h2 id="technology-decisions"><a href="#TOC">Technology Decisions</a></h2>
 <blockquote>
 <p>Take each layer of the application stack and describe the possible technologies and then describe the decision made in favor of one.</p>
 </blockquote>
@@ -336,7 +328,7 @@
 <li>Rights/Users/etc. -&gt; Service</li>
 </ul></li>
 </ul>
-<h1 id="implementation"><a href="#TOC">Implementation</a></h1>
+<h1 id="implementation"><a href="#TOC">5 Implementation</a></h1>
 <h2 id="restrictions"><a href="#TOC">Restrictions</a></h2>
 <blockquote>
 <p>If there are restrictions introduced by the design decisions summarize them here.</p>
@@ -416,8 +408,8 @@
 <li>Apple Bonjour SDK</li>
 </ul></li>
 </ul>
-<h1 id="evaluation"><a href="#TOC">Evaluation</a></h1>
-<h2 id="performance"><a href="#TOC">Performance</a></h2>
+<h1 id="evaluation"><a href="#TOC">6 Evaluation</a></h1>
+<h2 id="performance-1"><a href="#TOC">Performance</a></h2>
 <blockquote>
 <p>Write up a test scenario, implement it and run it. A simple example would be to just return fixed values. This should include one device only tests, two-device and three-device tests. Also cross-platform tests to show that it works cross-platform.</p>
 </blockquote>
@@ -431,15 +423,23 @@
 <blockquote>
 <p>If we have a focus group in the Facet project perhaps I can use them to do a user experience study. Or perhaps Chris and Teddy will do sth. similar for their thesis.</p>
 </blockquote>
-<h1 id="conclusion-1"><a href="#TOC">Conclusion</a></h1>
+<h1 id="conclusion-1"><a href="#TOC">7 Conclusion</a></h1>
 <blockquote>
 <p>Look at the Research goals and compare them with the evaluation.</p>
 </blockquote>
-<h2 id="future-work"><a href="#TOC">Future work</a></h2>
+<h2 id="future-work"><a href="#TOC">7.1 Future work</a></h2>
 <blockquote>
 <p>What is going to happen with this in the future?</p>
 </blockquote>
 <h1 id="references"><a href="#TOC">References</a></h1>
 <p>Miller, Robert B. 1968. “Response time in man-computer conversational transactions.” <em>Proceedings of the December 9-11, 1968, fall joint</em>. <a href="http://dl.acm.org/citation.cfm?id=1476628" title="http://dl.acm.org/citation.cfm?id=1476628">http://dl.acm.org/citation.cfm?id=1476628</a>.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://www.apple.com/itunes/">ITunes</a>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Either an <a href="https://www.apple.com/iphone/">iPhone</a>, <a href="https://www.apple.com/ipodtouch/">iPod Touch</a> or <a href="https://www.apple.com/ipad/">iPad</a>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Digital_Audio_Control_Protocol">DACP</a> which is similar to <a href="https://en.wikipedia.org/wiki/Digital_Audio_Access_Protocol">DAAP</a>.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
 </body>
 </html>
