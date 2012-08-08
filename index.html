@@ -103,30 +103,36 @@
 <h1 id="list-of-tables"><a href="#TOC">List of Tables</a></h1>
 <h1 id="list-of-listings"><a href="#TOC">List of Listings</a></h1>
 <h1 id="introduction"><a href="#TOC">1 Introduction</a></h1>
-<p>The average number of electronic devices used in everyday and professional life is increasing. With this increasing number of devices the application model of a user sitting in front of one device to achieve a task is outdated. Even less so for team situations. A user should be able to make use of each device’s capabilities to increase his productivity. While data manipulation is feasible on a laptop, detailed consumption is most efficient on a tablet, the display of large data makes most sense on a TV and team collaboration works best on a touch table. To make use of these capabilities, applications need to be able to interact with each other across devices. As current available approaches are either proprietary, focused on a single task or too difficult this thesis presents a general approach that allows developers to easily create interacting applications using standardized web technologies and the REST architecture style.</p>
-<p>Even though there are many possible applications (see <a href="#application-scenarios">chapter 1.2.2</a>) research is currently not investigating the possibility of creating a general solution for interacting applications as seen in <a href="#related-work">chapter 2</a>. Developing interacting applications is difficult because of problems like creating a communication layer or ad hoc device discovery. First these problems are not related to the goal of creating interactions and they can be daunting for developers not familiar with these fields. These challenges will be investigated further in <a href="#challenges-of-device-interaction">chapter 1.2.3</a>.</p>
-<p>To reduce the necessary design and development time of interacting applications this thesis will contribute a general architecture as well as a framework implementation for Device Interaction. Both the architecture and the framework are called IntAirAct.</p>
-<p>It is crucial that the architecture uses open standards. This not only reduces the design and implementation time of the framework but ensures cross-platform compatibility.</p>
-<p>Due to the ubiquity of the Internet there are many frameworks and implementations for all major platforms available that use standardized web technologies. Especially for communication on mobile devices web technologies are widely used. This makes them an ideal candidate for the communication layer. As will be seen (see chapter <strong>chapter</strong>) the architecture style REST is also feasible for DI.</p>
-<p>To overview the structure of this thesis: First the <a href="#requirements">requirements</a> of an architecture for DI will be investigated followed by the <a href="#design">design</a> of it. Additionally the architecture will be <a href="#implementation">implemented</a> as a framework for two major platforms: iOS/OS X and C#. Finally the contributions will be <a href="#evaluation">evaluated</a>.</p>
+<p>The average number of electronic devices used in everyday and professional life is increasing. With this increasing number of heterogenous devices the application model of a user sitting in front of one device to achieve a task is outdated. Even less so for team situations. A user should be able to make use of each device’s capabilities to increase his productivity. While data manipulation is feasible on a laptop, detailed consumption is most efficient on a tablet, the display of large data makes most sense on a TV and team collaboration works best on a touch table. To make use of these capabilities, applications need to be able to interact with each other across devices. As current available approaches are either proprietary, focused on a single task or too difficult (see <a href="#challenges-of-device-interaction">chapter 1.2.3</a>) this thesis presents a general approach that allows developers to easily create interacting applications using standardized web technologies and the REST architecture style.</p>
+<p>Even though there are many possible applications (see <a href="#application-scenarios">chapter 1.2.2</a>) research is currently not investigating the possibility of creating an open general solution for interacting applications as seen in <a href="#related-work">chapter 2</a>. To reduce the necessary design and development time of interacting applications this thesis will contribute an open source framework enabling Device Interaction [DI] called IntAirAct.</p>
+<p>It is crucial that the framework uses open standards. This not only reduces the design and implementation time of the framework but also ensures cross-platform compatibility.</p>
+<p>Due to the ubiquity of the Internet there are many frameworks and implementations for all major platforms available that use standardized web technologies (e.g. HTTP or JSON). Especially for communication on mobile devices web technologies are widely used. This makes them an ideal candidate for the communication layer. As will be seen (see chapter <strong>chapter</strong>) the architecture style REST is also feasible for DI.</p>
+<p>To overview the structure of this thesis: First the <a href="#requirements">requirements</a> of the framework will be investigated followed by the <a href="#design">design</a> of it. Secondly it will be <a href="#implementation">implemented</a> for two major platforms: iOS/OS X and C#. Finally the framework will be <a href="#evaluation">evaluated</a>.</p>
 <p>This chapter will continue to cover the background necessary to understand the contributions of this thesis. First DI will be formally defined followed by the major challenges when trying to create interacting applications. Research questions and goals are also stated.</p>
 <h2 id="device-interaction"><a href="#TOC">1.1 Device Interaction</a></h2>
-<p>First it is necessary to define what this thesis understands as DI. The definition is supported and the usefulness of DI motivated by presenting three example applications.</p>
+<p>First it is necessary to define what this thesis understands as DI. The definition is then supported and the usefulness of DI motivated by presenting three example applications.</p>
 <h3 id="definition"><a href="#TOC">1.1.1 Definition</a></h3>
-<p>An interaction is a conversation or an exchange between people (<strong>quote</strong>). If <em>people</em> is exchanged with <em>device</em> the result is a broad definition of DI:</p>
-<p><strong>Device Interaction is an exchange between devices.</strong></p>
-<p>The definition understands exchange as the transfer of information.</p>
-<p>The definition understands devices as all devices a human can use. Examples are mobile devices, desktop computers, tables and displays.</p>
+<p>Interaction is defined as “a mutual or reciprocal action or influence”.<span class="citation"><sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup></span> This definition can be extended to serve the purposes of this thesis:</p>
+<p><strong>Device Interaction is a mutual or reciprocal action or influence between devices.</strong></p>
+<p>The goal is not to have the devices be synchronized but rather be able to move tasks between them seamlessly.</p>
+<p>The notion of an interaction is used to suggest the act of exchange between the devices. It stands in contrast to the current development of technology for Device Synchronization which has the goal of allowing the user to access all of his data from all of his devices. The goal of Device Interaction in this thesis is not ubiquitous data access but ubiquitous state or task transfer.</p>
+<p>between devices is that the devices are able to exchange information rather than</p>
+<p>The major characteristics of this definition are:</p>
+<ul>
+<li>Single interaction focussed on a task that a user wants to achieve</li>
+</ul>
+<p>*</p>
+<p>This definition stands in contrast to approaches of the one device approach. The devices are not synchronized. It is their ability to influence each other that is important.</p>
 <p>The focus of Device Interaction lies in extending existing applications from a single-device model to a multi-device model.</p>
 <p>In order to concretize the definition in form of applications the next chapter presents three examples.</p>
 <h3 id="example-applications"><a href="#TOC">1.1.2 Example applications</a></h3>
 <p>This chapter will present two existing proprietary applications that fall under the definition of Device Interaction. As far as known and relevant implementation details will be explained. Finally the project for which IntAirAct was created will be presented.</p>
 <h4 id="remote-for-ios"><a href="#TOC">1.1.2.1 Remote for iOS</a></h4>
-<p><a href="https://www.apple.com/itunes/remote/">Remote for iOS</a> is an application that allows the remote control of a media player<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup> running on a desktop computer using a mobile device<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup>.</p>
+<p><a href="https://www.apple.com/itunes/remote/">Remote for iOS</a> is an application that allows the remote control of a media player<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup> running on a desktop computer using a mobile device<sup><a href="#fn3" class="footnoteRef" id="fnref3">3</a></sup>.</p>
 <div class="figure">
 <img src="images/itunes-remote.png" alt="A screenshot of Remote for iPad" /><p class="caption">A screenshot of Remote for iPad</p>
 </div>
-<p>This example demonstrates the bi-directional nature of device interaction: while the mobile device displays information from the desktop computer (e.g. the available songs) the mobile device controls the desktop computer (e.g. play this song). The protocol used<sup><a href="#fn3" class="footnoteRef" id="fnref3">3</a></sup> is proprietary but has been partly <a href="http://dacp.jsharkey.org/">reverse engineered</a>. The system uses the HTTP protocol for requests and a binary protocol for the responses.</p>
+<p>This example demonstrates the bi-directional nature of device interaction: while the mobile device displays information from the desktop computer (e.g. the available songs) the mobile device controls the desktop computer (e.g. play this song). The protocol used<sup><a href="#fn4" class="footnoteRef" id="fnref4">4</a></sup> is proprietary but has been partly <a href="http://dacp.jsharkey.org/">reverse engineered</a>. The system uses the HTTP protocol for requests and a binary protocol for the responses.</p>
 <h4 id="bump"><a href="#TOC">1.1.2.2 Bump</a></h4>
 <p><a href="https://bu.mp/">Bump</a> is an application that allows the exchange of information between devices using a shake gesture.</p>
 <div class="figure">
@@ -140,6 +146,9 @@
 <p>This example is the use-case for which IntAirAct</p>
 <p>This example is an application scenario in which IntAirAct is supposed to be used. Therefore this chapter will merely describe the goals of the API.</p>
 <p>The goal of the API is to allow gesture based interactions between multiple devices in a room.</p>
+<blockquote>
+<p>Waiting for input from Chris</p>
+</blockquote>
 <h2 id="challenges-of-device-interaction"><a href="#TOC">1.2 Challenges of Device Interaction</a></h2>
 <blockquote>
 <p>what would a developer have to do now to create interacting applications? What would his biggest challenges be? How about I use a persona to achieve this?</p>
@@ -261,7 +270,7 @@
 </ul></li>
 </ul>
 <h4 id="performance"><a href="#TOC">Performance</a></h4>
-<p>To allow natural interactions between the devices the architecture has to deliver sufficient performance to not distract the user. The 100ms boundary introduced by <span class="citation">Miller (1968)</span> should be sufficient. To allow for situations like congestion, etc. the goal of the architecture is 10ms / message.</p>
+<p>To allow natural interactions between the devices the architecture has to deliver sufficient performance to not distract the user. The 100ms boundary introduced by <span class="citation">Robert B. Miller<sup><a href="#fn5" class="footnoteRef" id="fnref5">5</a></sup></span> should be sufficient. To allow for situations like congestion, etc. the goal of the architecture is 10ms / message.</p>
 <h4 id="flexibility"><a href="#TOC">Flexibility</a></h4>
 <p>If necessary the application might decide to utilise a different communications protocol like RTSP+RTP.</p>
 <h3 id="non-functional"><a href="#TOC">Non-functional</a></h3>
@@ -432,13 +441,16 @@
 <p>What is going to happen with this in the future?</p>
 </blockquote>
 <h1 id="references"><a href="#TOC">References</a></h1>
-<p>Miller, Robert B. 1968. “Response time in man-computer conversational transactions.” <em>Proceedings of the December 9-11, 1968, fall joint</em>. <a href="http://dl.acm.org/citation.cfm?id=1476628" title="http://dl.acm.org/citation.cfm?id=1476628">http://dl.acm.org/citation.cfm?id=1476628</a>.</p>
+<p>Dictionary.com. “interaction.” HarperCollins Publishers, 2012. <a href="http://dictionary.reference.com/browse/interaction" title="http://dictionary.reference.com/browse/interaction">http://dictionary.reference.com/browse/interaction</a>.</p>
+<p>Miller, Robert B. “Response time in man-computer conversational transactions.” In <em>Proceedings of the December 9-11, 1968, Fall Joint Computer Conference, Part I on - AFIPS ’68 (Fall, Part I)</em>, 267–277. New York, New York, USA: ACM Press, 1968. <a href="http://portal.acm.org/citation.cfm?doid=1476589.1476628" title="http://portal.acm.org/citation.cfm?doid=1476589.1476628">http://portal.acm.org/citation.cfm?doid=1476589.1476628</a>.</p>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://www.apple.com/itunes/">ITunes</a>.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Either an <a href="https://www.apple.com/iphone/">iPhone</a>, <a href="https://www.apple.com/ipodtouch/">iPod Touch</a> or <a href="https://www.apple.com/ipad/">iPad</a>.<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Digital_Audio_Control_Protocol">DACP</a> which is similar to <a href="https://en.wikipedia.org/wiki/Digital_Audio_Access_Protocol">DAAP</a>.<a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p>Dictionary.com, “interaction” (HarperCollins Publishers, 2012), <a href="http://dictionary.reference.com/browse/interaction" title="http://dictionary.reference.com/browse/interaction">http://dictionary.reference.com/browse/interaction</a>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://www.apple.com/itunes/">ITunes</a>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Either an <a href="https://www.apple.com/iphone/">iPhone</a>, <a href="https://www.apple.com/ipodtouch/">iPod Touch</a> or <a href="https://www.apple.com/ipad/">iPad</a>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/Digital_Audio_Control_Protocol">DACP</a> which is similar to <a href="https://en.wikipedia.org/wiki/Digital_Audio_Access_Protocol">DAAP</a>.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>“Response time in man-computer conversational transactions,” in <em>Proceedings of the December 9-11, 1968, Fall Joint Computer Conference, Part I on - AFIPS ’68 (Fall, Part I)</em> (New York, New York, USA: ACM Press, 1968), 267–277, <a href="http://portal.acm.org/citation.cfm?doid=1476589.1476628" title="http://portal.acm.org/citation.cfm?doid=1476589.1476628">http://portal.acm.org/citation.cfm?doid=1476589.1476628</a>.<a href="#fnref5">↩</a></p></li>
 </ol>
 </div>
 </body>
