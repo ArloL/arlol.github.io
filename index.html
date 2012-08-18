@@ -32,13 +32,14 @@
 <li><a href="#device-interaction">1.1 Device Interaction</a><ul>
 <li><a href="#definition">1.1.1 Definition</a></li>
 <li><a href="#example-applications">1.1.2 Example applications</a><ul>
-<li><a href="#remote-for-ios">1.1.2.1 Remote for iOS</a></li>
-<li><a href="#bump">1.1.2.2 Bump</a></li>
-<li><a href="#multi-surface-environment-api">1.1.2.3 Multi-Surface Environment API</a></li>
+<li><a href="#multi-surface-environment-api">1.1.2.1 Multi-Surface Environment API</a></li>
+<li><a href="#remote-for-ios">1.1.2.2 Remote for iOS</a></li>
+<li><a href="#bump">1.1.2.3 Bump</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#challenges-of-device-interaction">1.2 Challenges of Device Interaction</a><ul>
-<li><a href="#knowledge">1.2.1 Knowledge</a></li>
+<li><a href="#complexity">1.2.1 Complexity</a></li>
+<li><a href="#time">1.2.2 Time</a></li>
 </ul></li>
 <li><a href="#research-questions">1.3 Research questions</a></li>
 <li><a href="#goals">1.4 Goals</a></li>
@@ -78,7 +79,7 @@
 <li><a href="#evaluation">6 Evaluation</a><ul>
 <li><a href="#performance-1">Performance</a></li>
 <li><a href="#api-usability">API Usability</a></li>
-<li><a href="#user-experience">User experience</a></li>
+<li><a href="#comparison-with-pie">Comparison with PIE</a></li>
 </ul></li>
 <li><a href="#conclusion-1">7 Conclusion</a><ul>
 <li><a href="#future-work">7.1 Future work</a></li>
@@ -118,42 +119,48 @@
 <p>First of all it is necessary to understand the term device. A <em>device</em> is any electronic device. This includes - but is not restricted to - smartphones, tablets, computers and touch tables.</p>
 <p>Next it is important to understand what is happening between these devices. An <em>action</em> or <em>influence</em> is the ability of a device to access and/or change the state of another device.</p>
 <p>The notion of <em>mutual</em> or <em>reciprocal</em> means that the actions can be exchanged bi-directionally between the devices.</p>
-<p>In sum this means that all devices have the ability to access and/or change the state of all the other devices. Thus allowing applications to cross the boundaries of a single-device.</p>
+<p>In sum this means that all devices have the ability to access and/or change the state of all the other devices. Thus allowing applications to cross the boundaries of a single device.</p>
 <p>In order to concretize the definition the next chapter presents three example applications.</p>
 <h3 id="example-applications"><a href="#TOC">1.1.2 Example applications</a></h3>
-<p>This chapter will present two existing proprietary applications that fall under the definition of Device Interaction. As far as known and relevant implementation details will be explained. Finally the project for which IntAirAct was created will be presented.</p>
-<h4 id="remote-for-ios"><a href="#TOC">1.1.2.1 Remote for iOS</a></h4>
+<p>This chapter will present the goals of the project for which IntAirAct was created. This is necessary to understand the requirements of IntAirAct. Additionally two existing proprietary applications that fall under the definition of Device Interaction will be presented. As far as known and relevant implementation details will be explained in order to have a better understanding of existing requirements as well as supporting the design decision of IntAirAct.</p>
+<h4 id="multi-surface-environment-api"><a href="#TOC">1.1.2.1 Multi-Surface Environment API</a></h4>
+<p>The Multi-Surface Environments API is the application scenario for which IntAirAct was originally created. The goal is to build an API to support developers in creating interacting applications that can be controlled using natural gestures. The following is a general description of the research:</p>
+<p>Multi-Surface Environments incorporate multi-touch tabletops, large wall displays, and mobile devices, such as phones or tablets. Such environments are currently used for a variety of visualization and analysis tasks but have cumbersome user-interfaces. Users who are working with different data find it especially difficult to share data with other people in the room, which hampers collaboration. By combining spatial tracking with these systems it’s possible to support a variety of natural gestures. For example, if a user was annotating a map and wanted to share this data with the rest of a geospatial development team, he could simply point his iPad at a nearby wall-display and “flick” the data to the display. Industrial partners have shown a great deal of interest in this style of interaction, specifically as part of geological &amp; geophysical analysis done in the oil and gas sector. Building such systems is currently difficult because there is no usable API for developers to work with when building a specific application. They must complete all the ancillary networking and spatial tasks to get the desired multi-surface environment in addition to the core tasks of their application. The goal of the research is to build such an API and evaluate it.</p>
+<h4 id="remote-for-ios"><a href="#TOC">1.1.2.2 Remote for iOS</a></h4>
 <p><a href="https://www.apple.com/itunes/remote/">Remote for iOS</a> is an application that allows the remote control of a media player<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup> running on a desktop computer using a mobile device<sup><a href="#fn3" class="footnoteRef" id="fnref3">3</a></sup>.</p>
 <div class="figure">
 <img src="images/itunes-remote.png" alt="A screenshot of Remote for iPad" /><p class="caption">A screenshot of Remote for iPad</p>
 </div>
-<p>This example demonstrates the bi-directional nature of device interaction: while the mobile device displays information from the desktop computer (e.g. the available songs) the mobile device controls the desktop computer (e.g. play this song). The protocol used<sup><a href="#fn4" class="footnoteRef" id="fnref4">4</a></sup> is proprietary but has been partly <a href="http://dacp.jsharkey.org/">reverse engineered</a>. The system uses the HTTP protocol for requests and a binary protocol for the responses.</p>
-<h4 id="bump"><a href="#TOC">1.1.2.2 Bump</a></h4>
+<p>This example demonstrates the bi-directional nature of device interaction: while the mobile device displays information from the desktop computer (e.g. the available songs), the mobile device controls the desktop computer (e.g. play this song). The protocol used<sup><a href="#fn4" class="footnoteRef" id="fnref4">4</a></sup> is proprietary but has been partly <a href="http://dacp.jsharkey.org/">reverse engineered</a>. The system uses the HTTP protocol for requests and a binary protocol for the responses.</p>
+<h4 id="bump"><a href="#TOC">1.1.2.3 Bump</a></h4>
 <p><a href="https://bu.mp/">Bump</a> is an application that allows the exchange of information between devices using a shake gesture.</p>
 <div class="figure">
 <img src="images/bump.png" alt="Bump being used to exchange contact information" /><p class="caption">Bump being used to exchange contact information</p>
 </div>
 <p>This example demonstrates the technological issues of interacting applications. Bump uses an Internet connection to transfer data between two devices that are in close vicinity. This is very inefficient as the data has to move from the devices to a server and back.</p>
-<h4 id="multi-surface-environment-api"><a href="#TOC">1.1.2.3 Multi-Surface Environment API</a></h4>
-<blockquote>
-<p>Describe MSE and what we want to achieve in the lab. Quote the Multi-Surface papers from Chris and Teddy</p>
-</blockquote>
-<p>This example is the use-case for which IntAirAct</p>
-<p>This example is an application scenario in which IntAirAct is supposed to be used. Therefore this chapter will merely describe the goals of the API.</p>
-<p>The goal of the API is to allow gesture based interactions between multiple devices in a room.</p>
-<blockquote>
-<p>Waiting for input from Chris</p>
-</blockquote>
 <h2 id="challenges-of-device-interaction"><a href="#TOC">1.2 Challenges of Device Interaction</a></h2>
 <blockquote>
-<p>what would a developer have to do now to create interacting applications? What would his biggest challenges be? How about I use a persona to achieve this?</p>
+<p>It is difficult and time-consuming to create interacting applications.</p>
 </blockquote>
-<h3 id="knowledge"><a href="#TOC">1.2.1 Knowledge</a></h3>
+<p>Given that there are already existing interacting applications it is necessary to point out the challenges a developer faces when trying to create such an application in order to motivate the creation of a general open source framework.</p>
+<p>The major challenges of creating interacting applications are the knowledge and time required when creating the communication architecture.</p>
+<h3 id="complexity"><a href="#TOC">1.2.1 Complexity</a></h3>
+<p>To create a solid communication architecture for Device Interaction the following problems have to be solved:</p>
+<ul>
+<li>Network Protocol</li>
+<li>Device Discovery</li>
+<li>General Infrastructure (Central component or no central component)</li>
+<li>De/Serialization</li>
+</ul>
+<p>*</p>
+<p>These problems require extensive knowledge to be solved.</p>
+<h3 id="time"><a href="#TOC">1.2.2 Time</a></h3>
+<p>Time is a scarce resource when creating applications. Therefore any time spent on problems not directly related to the goal of the application is very expensive and should be minimized. In the scenario of creating an interacting application any time spent on simply enabling to develop and test the interactions seems not well spent. Especially given the complexity of the problems to be solved for simply enabling DI the task of implementation can be very time consuming.</p>
 <h2 id="research-questions"><a href="#TOC">1.3 Research questions</a></h2>
 <p>This thesis presents a new approach for device communication that allows interacting applications.</p>
-<p>Given the fact that the architecture is not implemented for all major platforms: 1. Is it possible to be implemented on all major platforms?</p>
-<p>Since bi-directional communication requires a web server running on all devices on of the research questions is: 1. Is it possible to have web servers on mobile devices?</p>
-<p>Since web technologies have been created for long-distance high-latency communication they include overhead that is not necessary in local-area scenarios. Thus the performance of the framework has to be evaluated: 2. Is the performance sufficient?</p>
+<p>Given the fact that the architecture is not implemented for all major platforms: 1. Is it (theoretically) possible to be implemented on all major platforms?</p>
+<p>Since bi-directional communication requires a web server running on all devices on of the research questions is: 2. Is it possible to have web servers on mobile devices?</p>
+<p>Since web technologies have been created for long-distance high-latency communication they include overhead that is not necessary in local-area scenarios. Thus the performance of the framework has to be evaluated: 3. Is the performance sufficient?</p>
 <h2 id="goals"><a href="#TOC">1.4 Goals</a></h2>
 <p>There are two main goals of this thesis. The first is to design an architecture for Device Interaction [DI]. The second is to implement the stack in form of a framework. The third goal is to attempt to answer the research questions listed above to show that the approach followed while developing the framework is feasible for creating interacting applications.</p>
 <h2 id="conclusion"><a href="#TOC">1.5 Conclusion</a></h2>
@@ -423,9 +430,9 @@
 <p>Donate to Robby Hanson and ask him to use the system. How about Taras Kalapun? Or other guys that do awesome stuff!?</p>
 </blockquote>
 <p>Evaluate the usage in the Multi-Surface Environment and Facet projects.</p>
-<h2 id="user-experience"><a href="#TOC">User experience</a></h2>
+<h2 id="comparison-with-pie"><a href="#TOC">Comparison with PIE</a></h2>
 <blockquote>
-<p>If we have a focus group in the Facet project perhaps I can use them to do a user experience study. Or perhaps Chris and Teddy will do sth. similar for their thesis.</p>
+<p>Be honest!</p>
 </blockquote>
 <h1 id="conclusion-1"><a href="#TOC">7 Conclusion</a></h1>
 <blockquote>
