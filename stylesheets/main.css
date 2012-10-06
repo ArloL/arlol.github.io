@@ -118,28 +118,28 @@ a:hover {
  * and Chrome.
  */
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
+  font-size: 2em;
 }
 h2 {
-  font-size: 1.5em;
   margin: 0.83em 0;
+  font-size: 1.5em;
 }
 h3 {
-  font-size: 1.17em;
   margin: 1em 0;
+  font-size: 1.17em;
 }
 h4 {
-  font-size: 1em;
   margin: 1.33em 0;
+  font-size: 1em;
 }
 h5 {
-  font-size: 0.83em;
   margin: 1.67em 0;
+  font-size: 0.83em;
 }
 h6 {
-  font-size: 0.75em;
   margin: 2.33em 0;
+  font-size: 0.75em;
 }
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
@@ -167,8 +167,8 @@ dfn {
  * Addresses styling not present in IE 6/7/8/9.
  */
 mark {
-  background: #ff0;
   color: #000;
+  background: #ff0;
 }
 /*
  * Addresses margins set differently in IE 6/7.
@@ -192,9 +192,9 @@ samp {
  * Improves readability of pre-formatted text in all browsers.
  */
 pre {
+  word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  word-wrap: break-word;
 }
 /*
  * Addresses CSS quotes not supported in IE 6/7.
@@ -221,9 +221,9 @@ small {
  */
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 sup {
@@ -306,9 +306,9 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
 }
 /*
  * 1. Corrects color not being inherited in IE 6/7/8/9.
@@ -316,15 +316,15 @@ fieldset {
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
 legend {
-  border: 0;
-  /* 1 */
-
   padding: 0;
+  *margin-left: -7px;
+  /* 3 */
+
   white-space: normal;
   /* 2 */
 
-  *margin-left: -7px;
-  /* 3 */
+  border: 0;
+  /* 1 */
 
 }
 /*
@@ -337,11 +337,11 @@ button,
 input,
 select,
 textarea {
-  font-size: 100%;
-  /* 1 */
-
   margin: 0;
   /* 2 */
+
+  font-size: 100%;
+  /* 1 */
 
   vertical-align: baseline;
   /* 3 */
@@ -371,14 +371,14 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
+  *overflow: visible;
+  /* 4 */
 
   cursor: pointer;
   /* 3 */
 
-  *overflow: visible;
-  /* 4 */
+  -webkit-appearance: button;
+  /* 2 */
 
 }
 /*
@@ -396,17 +396,17 @@ input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-
-  padding: 0;
-  /* 2 */
+  *width: 13px;
+  /* 3 */
 
   *height: 13px;
   /* 3 */
 
-  *width: 13px;
-  /* 3 */
+  padding: 0;
+  /* 2 */
+
+  box-sizing: border-box;
+  /* 1 */
 
 }
 /*
@@ -415,14 +415,14 @@ input[type="radio"] {
  *    (include `-moz` to future-proof).
  */
 input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
 
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* 1 */
+
 }
 /*
  * Removes inner padding and search cancel button in Safari 5 and Chrome
@@ -437,8 +437,8 @@ input[type="search"]::-webkit-search-decoration {
  */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 /*
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
@@ -472,10 +472,6 @@ table {
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-html * {
-  color-profile: sRGB;
-  rendering-intent: auto;
-}
 html,
 button,
 input,
@@ -484,11 +480,11 @@ textarea {
   color: #657b83;
 }
 body {
+  font-family: sans-serif;
   /* If standard font-size is 16px this makes it 20px. */
 
   font-size: 1.25em;
   line-height: 1.5;
-  font-family: sans-serif;
 }
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -496,14 +492,14 @@ body {
  * Customize the background color to match your design.
  */
 ::-moz-selection {
-  background: #268bd2;
   color: #fdf6e3;
   text-shadow: none;
+  background: #268bd2;
 }
 ::selection {
-  background: #268bd2;
   color: #fdf6e3;
   text-shadow: none;
+  background: #268bd2;
 }
 /*
  * A better looking default horizontal rule
@@ -511,10 +507,10 @@ body {
 hr {
   display: block;
   height: 1px;
+  padding: 0;
+  margin: 1.5em 0;
   border: 0;
   border-top: 1px solid;
-  margin: 1.5em 0;
-  padding: 0;
 }
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
@@ -526,9 +522,9 @@ img {
  * Remove default fieldset styles.
  */
 fieldset {
-  border: 0;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  border: 0;
 }
 /*
  * Allow only vertical resizing of textareas.
@@ -540,10 +536,10 @@ textarea {
    Chrome Frame prompt
    ========================================================================== */
 #chromeframe {
-  margin: 0 auto;
   padding: 0 1.5em;
-  background-color: #d33682;
+  margin: 0 auto;
   color: #fdf6e3;
+  background-color: #d33682;
 }
 #chromeframe a,
 #chromeframe a:active,
@@ -566,36 +562,36 @@ textarea {
     All the margins should also be a multiple of 24px.
 */
 h1 {
+  margin: 1em 0;
   font-size: 1.5em;
   line-height: 1;
-  margin: 1em 0;
 }
 h2 {
+  margin: 1.1250281257031427em 0;
   font-size: 1.3333em;
   line-height: 1.1250281257031427;
-  margin: 1.1250281257031427em 0;
 }
 h3 {
+  margin: 1.2857877593005314em 0;
   font-size: 1.1666em;
   line-height: 1.2857877593005314;
-  margin: 1.2857877593005314em 0;
 }
 h4 {
-  font-size: 1.1666em;
-  line-height: 1.2857877593005314;
   margin: 1.2857877593005314em 0;
+  font-size: 1.1666em;
   font-style: italic;
+  line-height: 1.2857877593005314;
 }
 h5 {
+  margin: 1.5em 0;
   font-size: 1em;
   line-height: 1.5;
-  margin: 1.5em 0;
 }
 h6 {
-  font-size: 1em;
-  line-height: 1.5;
   margin: 1.5em 0;
+  font-size: 1em;
   font-style: italic;
+  line-height: 1.5;
 }
 pre {
   margin: 0 0 0 1.5em;
@@ -606,8 +602,8 @@ p {
 }
 ol,
 ul {
-  margin: 1.5em 0;
   padding: 0 0 0 1.5em;
+  margin: 1.5em 0;
 }
 ul ul,
 ul ol,
@@ -639,13 +635,13 @@ a:visited {
 .lt-ie9 .header,
 .lt-ie9 .footer,
 .lt-ie9 .article {
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 1.5em;
+  margin-right: auto;
+  margin-left: auto;
 }
 .light {
-  background-color: #fdf6e3;
   color: #657b83;
+  background-color: #fdf6e3;
 }
 .light hr {
   border-top-color: #657b83;
@@ -664,8 +660,8 @@ a:visited {
   color: #586e75;
 }
 .dark {
-  background-color: #002b36;
   color: #839496;
+  background-color: #002b36;
 }
 .dark hr {
   border-top-color: #839496;
@@ -683,22 +679,22 @@ a:visited {
 .dark a:visited {
   color: #93a1a1;
 }
-#view_github {
-  -webkit-border-radius: 0.25em;
-  -moz-border-radius: 0.25em;
-  border-radius: 0.25em;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  background-color: #268bd2;
-  color: #fdf6e3;
+#view-github {
+  display: block;
   float: right;
   padding: 0.5em;
   margin: 1em;
-  display: block;
+  color: #fdf6e3;
   text-align: center;
+  background-color: #268bd2;
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  border-radius: 0.25em;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
-#view_github:hover {
+#view-github:hover {
   background-color: #cb4b16;
 }
 /* ==========================================================================
@@ -714,18 +710,18 @@ a:visited {
  * Image replacement
  */
 .ir {
-  background-color: transparent;
-  border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
 
   *text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
 }
 .ir:before {
-  content: "";
   display: block;
   width: 0;
   height: 100%;
+  content: "";
 }
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
@@ -738,14 +734,14 @@ a:visited {
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 .visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
   position: absolute;
   width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
 }
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
@@ -753,12 +749,12 @@ a:visited {
  */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-  clip: auto;
+  position: static;
+  width: auto;
   height: auto;
   margin: 0;
   overflow: visible;
-  position: static;
-  width: auto;
+  clip: auto;
 }
 /*
  * Hide visually and from screenreaders, but maintain layout
@@ -779,11 +775,11 @@ a:visited {
  */
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-
   display: table;
   /* 2 */
+
+  content: " ";
+  /* 1 */
 
 }
 .clearfix:after {

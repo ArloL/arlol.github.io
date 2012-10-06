@@ -38,11 +38,6 @@
    Base styles: opinionated defaults
    ========================================================================== */
    
-html * {
-    color-profile: sRGB;
-    rendering-intent: auto;
-}
-
 html,
 button,
 input,
@@ -52,10 +47,10 @@ textarea {
 }
 
 body {
+    font-family: sans-serif;
     /* If standard font-size is 16px this makes it 20px. */
     font-size: 1.25em;
     line-height: @line-height;
-    font-family: sans-serif;
 }
 
 /*
@@ -65,15 +60,15 @@ body {
  */
 
 ::-moz-selection {
-    background: @blue;
     color: @base3;
     text-shadow: none;
+    background: @blue;
 }
 
 ::selection {
-    background: @blue;
     color: @base3;
     text-shadow: none;
+    background: @blue;
 }
 
 /*
@@ -83,10 +78,10 @@ body {
 hr {
     display: block;
     height: 1px;
+    padding: 0;
+    margin: (0em + @line-height) 0;
     border: 0;
     border-top: 1px solid;
-    margin: (0em + @line-height) 0;
-    padding: 0;
 }
 
 /*
@@ -102,9 +97,9 @@ img {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 /*
@@ -120,10 +115,10 @@ textarea {
    ========================================================================== */
 
 #chromeframe {
-    margin: 0 auto;
     padding: 0 (0em + @line-height);
-    background-color: @magenta;
+    margin: 0 auto;
     color: @base3;
+    background-color: @magenta;
 }
 
 #chromeframe a,
@@ -150,41 +145,41 @@ textarea {
 */
 
 h1 {
+    margin: (0em + @line-height / @h1-font-size) 0;
     font-size: 0em + @h1-font-size;
     line-height: @line-height / @h1-font-size;
-    margin: (0em + @line-height / @h1-font-size) 0;
 }
 
 h2 {
+    margin: (0em + @line-height / @h2-font-size) 0;
     font-size: 0em + @h2-font-size;
     line-height: @line-height / @h2-font-size;
-    margin: (0em + @line-height / @h2-font-size) 0;
 }
 
 h3 {
+    margin: (0em + @line-height / @h3-font-size) 0;
     font-size: 0em + @h3-font-size;
     line-height: @line-height / @h3-font-size;
-    margin: (0em + @line-height / @h3-font-size) 0;
 }
 
 h4 {
-    font-size: 0em + @h4-font-size;
-    line-height: @line-height / @h4-font-size;
     margin: (0em + @line-height / @h4-font-size) 0;
+    font-size: 0em + @h4-font-size;
     font-style: italic;
+    line-height: @line-height / @h4-font-size;
 }
 
 h5 {
+    margin: (0em + @line-height / @h5-font-size) 0;
     font-size: 0em + @h5-font-size;
     line-height: @line-height / @h5-font-size;
-    margin: (0em + @line-height / @h5-font-size) 0;
 }
 
 h6 {
-    font-size: 0em + @h6-font-size;
-    line-height: @line-height / @h6-font-size;
     margin: (0em + @line-height / @h6-font-size) 0;
+    font-size: 0em + @h6-font-size;
     font-style: italic;
+    line-height: @line-height / @h6-font-size;
 }
 
 pre {
@@ -198,8 +193,8 @@ p {
 
 ol,
 ul {
-    margin: (0em + @line-height) 0;
     padding: 0 0 0 (0em + @line-height);
+    margin: (0em + @line-height) 0;
 }
 
 ul ul,
@@ -237,15 +232,15 @@ a, a:active, a:visited {
 .lt-ie9 .header,
 .lt-ie9 .footer,
 .lt-ie9 .article {
-    margin-left: auto;
-    margin-right: auto;
     padding: 0 (0em + @line-height);
+    margin-right: auto;
+    margin-left: auto;    
 }
 
 .rebase(@rebase03,@rebase02,@rebase01,@rebase00,@rebase0,@rebase1,@rebase2,@rebase3) 
 {
-    background-color:@rebase03;
     color:@rebase0;
+    background-color:@rebase03;
     
     hr {
         border-top-color: @rebase0;
@@ -269,18 +264,18 @@ a, a:active, a:visited {
 .light { .rebase(@base3,@base2,@base1,@base0,@base00,@base01,@base02,@base03) }
 .dark  { .rebase(@base03,@base02,@base01,@base00,@base0,@base1,@base2,@base3) }
 
-#view_github {
-    .rounded(0.25em);
-    background-color: @blue;
-    color: @base3;
+#view-github {
+    display: block;
     float: right;
     padding: 0.5em;
     margin: @line-height - 0.5em;
-    display: block;
+    color: @base3;
     text-align: center;
+    background-color: @blue;
+    .rounded(0.25em);
 }
 
-#view_github:hover {
+#view-github:hover {
     background-color: @orange;
 }
 
@@ -301,18 +296,18 @@ a, a:active, a:visited {
  */
 
 .ir {
-    background-color: transparent;
-    border: 0;
     overflow: hidden;
     /* IE 6/7 fallback */
     *text-indent: -9999px;
+    background-color: transparent;
+    border: 0;
 }
 
 .ir:before {
-    content: "";
     display: block;
     width: 0;
     height: 100%;
+    content: "";
 }
 
 /*
@@ -329,14 +324,14 @@ a, a:active, a:visited {
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
     position: absolute;
     width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
 }
 
 /*
@@ -346,12 +341,12 @@ a, a:active, a:visited {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
+    position: static;
+    width: auto;
     height: auto;
     margin: 0;
     overflow: visible;
-    position: static;
-    width: auto;
+    clip: auto;
 }
 
 /*
@@ -376,8 +371,8 @@ a, a:active, a:visited {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
     display: table; /* 2 */
+    content: " "; /* 1 */
 }
 
 .clearfix:after {
