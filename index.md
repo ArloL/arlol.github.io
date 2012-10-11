@@ -4,7 +4,6 @@ title: Home
 description: An overview of the projects that Arlo O'Keeffe is currently pursuing.
 github_link: https://github.com/ArloL
 ---
-
 # IntAirAct
 
 A Framework enabling Device Interaction using REST.
