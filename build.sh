@@ -1,8 +1,8 @@
 #!/bin/sh
-lessc stylesheets/main.less stylesheets/main.css
-rm stylesheets/min/*.css
-lessc -yui-compress stylesheets/main.less stylesheets/min/intermediate.css
-HASH=`md5 -q stylesheets/min/intermediate.css`
-mv "stylesheets/min/intermediate.css" "stylesheets/min/${HASH}.css"
+lessc css/main.less css/main.css
+rm css/min/*.css
+lessc -yui-compress css/main.less css/min/intermediate.css
+HASH=`md5 -q css/min/intermediate.css`
+mv "css/min/intermediate.css" "css/min/${HASH}.css"
 #search all html files and exchange stylesheet links
-find . -name "*.html" -exec sed -i "s/<link rel=\"stylesheet\" href=\"stylesheets\/min\/.*\.css\">/<link rel=\"stylesheet\" href=\"stylesheets\/min\/${HASH}\.css\">/g" {} \;
+find . -name "*.html" -exec sed -i "s/<link rel=\"stylesheet\" href=\"css\/min\/.*\.css\">/<link rel=\"stylesheet\" href=\"css\/min\/${HASH}\.css\">/g" {} \;
