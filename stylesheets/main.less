@@ -260,23 +260,27 @@ a, a:active, a:visited {
     a:visited {
         color: @rebase1;
     }
+    
+    a.btn {
+        color: @base3;
+        background-color: @blue;
+    }
+    
+    a.btn:hover {
+        background-color: @orange;
+    }
 }
 .light { .rebase(@base3,@base2,@base1,@base0,@base00,@base01,@base02,@base03) }
 .dark  { .rebase(@base03,@base02,@base01,@base00,@base0,@base1,@base2,@base3) }
 
-#view-github {
-    display: block;
-    float: right;
+.btn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
     padding: 0.5em;
-    margin: @line-height - 0.5em;
-    color: @base3;
+    margin: -0.5em;
     text-align: center;
-    background-color: @blue;
     .rounded(0.25em);
-}
-
-#view-github:hover {
-    background-color: @orange;
 }
 
 /* ==========================================================================
@@ -396,14 +400,13 @@ a, a:active, a:visited {
 
 /* <= 480 */
 @media only screen and (max-width: 480px) {
+    body {
+        font-size: 1em;
+    }
+
     .header, .footer, .article {
         margin-left: 1em;
         margin-right: 1em;
-    }
-    
-    #view_github {
-        float: none;
-        font-size: 0.75em;
     }
 }
 

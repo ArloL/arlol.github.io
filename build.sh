@@ -1,5 +1,6 @@
 #!/bin/sh
 lessc stylesheets/main.less stylesheets/main.css
-lessc -yui-compress stylesheets/main.less stylesheets/intermediate.css
-HASH=`md5 -q stylesheets/intermediate.css`
-mv "stylesheets/intermediate.css" "stylesheets/${HASH}.css"
+rm stylesheets/min/*.css
+lessc -yui-compress stylesheets/main.less stylesheets/min/intermediate.css
+HASH=`md5 -q stylesheets/min/intermediate.css`
+mv "stylesheets/min/intermediate.css" "stylesheets/min/${HASH}.css"
