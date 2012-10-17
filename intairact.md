@@ -68,7 +68,7 @@ the [Examples](#examples) for some implementation ideas.
 ## Image Sharing
 
 See [IntAirActImageIOS](https://github.com/ase-lab/IntAirActSampleIOS)
-and [IntAirActImageOSX](https://github.com/ase-lab/IntAirActSampleOSX").
+and [IntAirActImageOSX](https://github.com/ase-lab/IntAirActSampleOSX).
 
 # Compatibility
 
