@@ -9,7 +9,7 @@ A Framework enabling Device Interaction using REST.
 
 [Project Page](intairact.html)
 
-[GitHub Project](https://github.com/ArloL/IntAirAct)
+[GitHub Project](https://github.com/ase-lab/IntAirAct)
 
 # iebox
 

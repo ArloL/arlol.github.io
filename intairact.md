@@ -2,7 +2,7 @@
 layout: default
 title: IntAirAct
 description: A Framework enabling Device Interaction using REST.
-github_link: https://github.com/ArloL/IntAirAct
+github_link: https://github.com/ase-lab/IntAirAct
 ---
 # What is IntAirAct?
 
@@ -17,10 +17,7 @@ know and love: HTTP, REST and JSON.
 
 # How do I start using it?
 
-Download and unarchive the Framework for
-[iOS](https://github.com/downloads/ArloL/IntAirAct/IntAirActIOS-2012-05-14-13-46-03.tar.gz)
-or
-[OS&nbsp;X](https://github.com/downloads/ArloL/IntAirAct/IntAirActOSX-2012-05-14-13-47-21.tar.gz).
+[Download](https://github.com/ase-lab/IntAirAct/downloads) and unarchive the Framework.
 
 Place all of the Frameworks inside your project folder. We recommend a
 sub-folder called Frameworks.
@@ -70,8 +67,8 @@ the [Examples](#examples) for some implementation ideas.
 
 ## Image Sharing
 
-See [IntAirActImageIOS](https://github.com/ArloL/IntAirActImageIOS)
-and [IntAirActImageOSX](https://github.com/ArloL/IntAirActImageOSX").
+See [IntAirActImageIOS](https://github.com/ase-lab/IntAirActSampleIOS)
+and [IntAirActImageOSX](https://github.com/ase-lab/IntAirActSampleOSX").
 
 # Compatibility
 
@@ -88,16 +85,13 @@ fresh builds.
 
 If you are using git for your project, add it as a submodule:
 
-    git submodule add https://github.com/ArloL/IntAirAct.git Frameworks/IntAirAct
+    git submodule add https://github.com/ase-lab/IntAirAct.git Frameworks/IntAirAct
+    cd Frameworks/IntAirAct
+    git submodule update --init --recursive
 
 If you are not using git for your project:
 
-    git clone --recursive https://github.com/ArloL/IntAirAct.git Frameworks/IntAirAct
-
-Then you should get all the submodules:
-
-    cd Frameworks/IntAirAct
-    git submodule update --init --recursive
+    git clone --recursive https://github.com/ase-lab/IntAirAct.git Frameworks/IntAirAct
 
 Drag the IntAirAct project into your project to add it as a nested project.
 
