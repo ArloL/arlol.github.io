@@ -1,6 +1,6 @@
 #!/bin/sh
 rm css/*.css
-lessc -yui-compress _less/main.less css/intermediate.css
+lessc --yui-compress "_less/main.less" > "css/intermediate.css"
 HASH=`md5 -q css/intermediate.css`
 mv "css/intermediate.css" "css/${HASH}.css"
 #search all html files and exchange stylesheet links to the new minified version
