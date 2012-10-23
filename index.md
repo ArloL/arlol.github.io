@@ -18,3 +18,9 @@ Install VirtualBox VMs for IE6-IE9 in one step.
 [Project Page](iebox.html)
 
 [GitHub Project](https://github.com/ArloL/iebox)
+
+# iLab Web Workshop
+
+A workshop on visualizations in the browser by [Marian Dörk](http://mariandoerk.de/).
+
+[Project Page](ilabwebworkshop)
