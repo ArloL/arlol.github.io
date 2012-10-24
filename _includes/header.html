@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/172ddb51f0af24d714ad5e1ab76c11b5.css">
 </head>
 
-<body class="light">
+<body class="{% if page.body_class %}{{ page.body_class }} {% endif %}light">
 
 <!--[if lt IE 7]>
     <p id="chromeframe" class="content">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
