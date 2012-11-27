@@ -17,33 +17,40 @@ know and love: HTTP, REST and JSON.
 
 # How do I start using it?
 
-[Download](https://github.com/ase-lab/IntAirAct/downloads) and unarchive the Framework.
+Choose your environment: [C#](#c-sharp), [iOS](#ios) or [OS&nbsp;X](#osx).
+
+## C Sharp
+
+The easiest way to get started in C# is using [NuGet](https://nuget.org/). When NuGet is installed: Right click on your project and choose *Manage NuGet Packages…*. Search for the *IntAirAct* package and install it. This will also automatically install all dependencies.
+
+## iOS
+
+[Download](https://github.com/ase-lab/IntAirAct/downloads) the latest iOS version and unarchive the Frameworks.
 
 Place all of the Frameworks inside your project folder. We recommend a
 sub-folder called Frameworks.
 
 Drag the Frameworks into your project.
 
-Now it depends on whether you are coding for [iOS](#ios) or [OS&nbsp;X](#osx).
-
-## iOS
-
 Make sure that all the Frameworks are linked with your binary.
 
 Add `-ObjC` to the *Other Linker Flags* Build Setting and link the following Frameworks:
 
 *   CFNetwork
-*	CoreData
-*	CoreGraphics
-*	MobileCoreServices
-*	QuartzCore
+*	libxml2.dylib
 *	Security
-*	SystemConfiguration
 
 Now you can head to the [Documentation](#documentation) to get started or to
 the [Examples](#examples) for some implementation ideas.
 
 ## OS&nbsp;X
+
+[Download](https://github.com/ase-lab/IntAirAct/downloads) the latest iOS version and unarchive the Frameworks.
+
+Place all of the Frameworks inside your project folder. We recommend a
+sub-folder called Frameworks.
+
+Drag the Frameworks into your project.
 
 Link the Binary with the following Frameworks:
 
