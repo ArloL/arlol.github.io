@@ -27,9 +27,9 @@ IE9.
 
 * [VirtualBox](http://virtualbox.org)
 * [curl](http://curl.haxx.se/)
-	* Ubuntu: `sudo apt-get install curl`
+  * Ubuntu: `sudo apt-get install curl`
 * [unrar](http://home.gna.org/unrar/) (*Linux only!*)
-	* Ubuntu: `sudo apt-get install unrar`
+  * Ubuntu: `sudo apt-get install unrar`
 
 ## Installation
 
