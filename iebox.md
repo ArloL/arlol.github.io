@@ -61,7 +61,7 @@ These are the standard names also showing the operating system:
 *   IE8: *Windows 7 IE8*
 *   IE9: *Windows 7 IE9*
 
-There are also [advanced options](#advanced_options).
+There are also [advanced options](#advanced-options).
 
 ### IE6 VM Network Drivers
 
@@ -70,7 +70,7 @@ When installing the IE6 VM, you **have** to install the network drivers upon
 
 If you don't install the drivers on first boot, an activation
 loop will prevent subsequent logins forever. If this happens, restoring to
-the `clean` snapshot (see [clean snapshot](#clean_snapshot)) will reset the activation
+the `clean` snapshot (see [clean snapshot](#clean-snapshot)) will reset the activation
 lock.
 
 ### Activation of IE7, IE8 and IE9 VMs
@@ -83,7 +83,7 @@ back to it's initial state:
     slmgr –rearm
 
 I can not confirm the second behavior. In doubt revert the VM to the `clean` snapshot
-(see [clean snapshot](#clean_snapshot)).
+(see [clean snapshot](#clean-snapshot)).
 
 ### Clean Snapshot
 
@@ -95,7 +95,7 @@ to the `clean` snapshot.
 ### Resuming Downloads
 
 If one of the comically large files fails to download, the `curl`
-command used will automatically attempt to resume where it left off. 
+command used will automatically attempt to resume where it left off.
 Thanks, [rcmachado](https://github.com/rcmachado).
 
 ### Recovering from a Failed Installation
@@ -108,13 +108,13 @@ If that does not help, try and see if VirtualBox already is listing the VM. If y
 delete it and double check to delete all files from VirtualBox's default machine folder.
 
 If nothing else, you can delete `~/.iebox` and rerun the install without
-worrying about existing VMs (see [a note on directories](#a_note_on_directories)).
+worrying about existing VMs (see [a note on directories](#a-note-on-directories)).
 
 ## Notes
 
 ### A Note on Disk Space
 
-The images are massive and can take hours or tens of minutes to 
+The images are massive and can take hours or tens of minutes to
 download, depending on the speed of your internet connection.
 The Windows XP VM is by far the smallest with 400&nbsp;MB.
 Since Windows XP supports IE6, IE7 and IE8, I recommend using the IE6
@@ -123,14 +123,14 @@ for this:
 
     ./iebox.sh -v 6 -n "Windows XP IE8"
 
-Also see [the best combination in terms of disk space](#the_best_combination_in_terms_of_disk_space).
+Also see [the best combination in terms of disk space](#the-best-combination-in-terms-of-disk-space).
 
 ### A Note on Directories
 
 All the temporary downloads are placed in `~/.iebox`.
 All the VMs are installed in the default folder of VirtualBox.
 This means that the `~/.iebox` directory contains *no* necessary files.
-    
+
 ## Combinations
 
 These are combinations to set up VMs for all versions of IE.
@@ -142,7 +142,7 @@ IE7 and IE8 have to be installed manually, but the VM includes the necessary
 installers.
 
     #!/bin/sh
-    
+
     ./iebox.sh -v 6
     ./iebox.sh -v 6 -n "Windows XP IE7"
     ./iebox.sh -v 6 -n "Windows XP IE8"
@@ -151,7 +151,7 @@ installers.
 ### The Standard Machines
 
     #!/bin/sh
-    
+
     ./iebox.sh -v 6
     ./iebox.sh -v 7
     ./iebox.sh -v 8
