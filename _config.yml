@@ -1,3 +1,3 @@
 title:  "Arlo O'Keeffe"
 description: "Stuff done by Arlo O'Keeffe"
-exclude: [compress.sh, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
+exclude: [Gemfile, Gemfile.lock, Rakefile, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
