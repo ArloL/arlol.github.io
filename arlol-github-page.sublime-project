@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/Users/ArloLOK/Developer/arlol.github.com",
+			"path": ".",
 			"file_exclude_patterns": ["*.css"]
 		}
 	]
