@@ -17,7 +17,7 @@ know and love: HTTP, REST and JSON.
 
 # How do I start using it?
 
-Choose your environment: [C#](#c_sharp), [iOS](#ios) or [OS&nbsp;X](#osx).
+Choose your environment: [C#](#c_sharp), [iOS](#ios) or [OS&nbsp;X](#osnbspx).
 
 ## C Sharp
 
@@ -103,7 +103,7 @@ If you are not using git for your project:
 Drag the IntAirAct project into your project to add it as a nested project.
 
 Now it depends on whether your are coding for
-[iOS](#ios__nested) or [OS&nbsp;X](#osx__nested).
+[iOS](#ios---nested) or [OS&nbsp;X](#osnbspx---nested).
 
 ## iOS - Nested
 
@@ -117,7 +117,7 @@ Link the following Static Libraries:
 *	libIntAirAct.a
 *	libRestKit.a
 *	libRestKit+Blocks.a
-*	libRoutingHTTPServer.a		
+*	libRoutingHTTPServer.a
 
 Add `-ObjC` to the *Other Linker Flags* Build Setting and link the following Frameworks:
 
