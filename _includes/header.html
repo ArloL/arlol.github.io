@@ -11,7 +11,9 @@
     {% else %}
     <title>{{ page.title }} | {{ site.title }}</title>
     {% endif %}
+    {% if page.description %}
     <meta name="description" content="{{page.description}}">
+    {% endif %}
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/c3ba3f4cb8293f28ab6bd1f32db2bd96.css">
 </head>
@@ -24,8 +26,12 @@
 
 <div class="dark">
     <div class="header content clearfix">
-        {% if page.github_link %}<p class="fr"><a class="btn" href="{{ page.github_link }}">View on GitHub</a></p>{% endif %}
+        {% if page.github_link %}
+        <p class="fr"><a class="btn" href="{{ page.github_link }}">View on GitHub</a></p>
+        {% endif %}
         <h1>{{ page.title }}</h1>
+        {% if page.description %}
         <p class="content">{{ page.description }}</p>
+        {% endif %}
     </div>
 </div>
