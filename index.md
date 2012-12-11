@@ -1,26 +1,40 @@
 ---
 layout: default
-title: Home
-description: An overview of the projects that Arlo O'Keeffe is currently pursuing.
+title: Arlo O'Keeffe | Software Engineer
+no_title_expansion: true
+description:
 ---
-# IntAirAct
+# Hello,
 
-A Framework enabling Device Interaction using REST.
+my name is Arlo Louis O‘Keeffe and I want to support your team with my skills.
 
-[Project Page](intairact.html)
+# Who am I?
 
-[GitHub Project](https://github.com/ase-lab/IntAirAct)
+I am a 24 year old half German, half Irish, that studied Business Informatics,
+just finished his Masters in Distributed Systems and is currently looking for a
+challenging job opportunitty. My interests lie in design, good music, creating
+useful software and minimalism.
 
-# iebox
+# Why me?
 
-Install VirtualBox VMs for IE6-IE9 in one step.
+I have an eye for problems and love to find ideas for solving them. This I do
+using existing best practices in combination with creativity and a healthy
+attention to detail.
 
-[Project Page](iebox.html)
+# My experiences
 
-[GitHub Project](https://github.com/ArloL/iebox)
+My experiences include software development using a multitude of technologies,
+making design decisions, performing usability tests as well as the management
+of a team with five developers.
 
-# iLab Web Workshop
+# Final words
 
-A workshop on visualizations in the browser by [Marian Dörk](http://mariandoerk.de/).
+Thank you for your time and attention. I would be happy to talk to you in person.
 
-[Project Page](ilabwebworkshop)
+Kind Regards
+
+Arlo O'Keeffe
+
+# Contact
+
+<mailtoarlo@gmail.com>
