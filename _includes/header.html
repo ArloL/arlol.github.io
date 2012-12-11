@@ -6,7 +6,11 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% if page.no_title_expansion %}
+    <title>{{ page.title }}</title>
+    {% else %}
     <title>{{ page.title }} | {{ site.title }}</title>
+    {% endif %}
     <meta name="description" content="{{page.description}}">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/c3ba3f4cb8293f28ab6bd1f32db2bd96.css">
