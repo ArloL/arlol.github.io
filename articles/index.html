@@ -17,7 +17,7 @@ title: Articles
       {% if paginator.previous_page == 1 %}
         <a href="/articles/">Newer Articles</a>
       {% else %}
-        <a href="/articles/{{ paginator.previous_page_path }}">Newer Articles</a>
+        <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
       {% endif %}
     </p>
   {% else %}
@@ -48,7 +48,7 @@ title: Articles
 
   {% if paginator.next_page %}
     <p>
-      <a href="/articles/{{ paginator.next_page_path }}">Older Articles</a>
+      <a href="{{ paginator.next_page_path }}/">Older Articles</a>
     </p>
   {% else %}
     <p>Older Articles</p>
