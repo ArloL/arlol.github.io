@@ -4,3 +4,5 @@ exclude: [Gemfile, Gemfile.lock, Rakefile, gravatar-favicon.sh, arlol-github-pag
 markdown: kramdown
 paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
+paginate_path: "/articles/page:num"
+language: en
