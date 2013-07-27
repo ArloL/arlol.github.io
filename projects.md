@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Projects
+subtitle: An overview of the projects that I worked on.
 description: An overview of the projects that I worked on.
 ---
 # IntAirAct

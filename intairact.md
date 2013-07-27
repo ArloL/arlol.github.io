@@ -1,6 +1,7 @@
 ---
 layout: default
 title: IntAirAct
+subtitle: A Framework enabling Device Interaction using REST.
 description: A Framework enabling Device Interaction using REST.
 github_link: https://github.com/ase-lab/IntAirAct
 ---

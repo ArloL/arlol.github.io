@@ -2,9 +2,9 @@
 layout: default
 title: Arlo O'Keeffe
 no_title_expansion: true
-description: 
+description: Arlo O'Keeffe's github page where he seldomly posts interesting stuff.
 ---
 # Hello,
 
-my name is Arlo Louis O'Keeffe. I am a Software Engineer. This is
+my name is Arlo O'Keeffe. I am a Software Engineer. This is
 where I seldomly post stuff that I think others might find interesting.
