@@ -32,7 +32,7 @@ body {
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
+ * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
@@ -55,10 +55,10 @@ body {
 hr {
     display: block;
     height: 1px;
-    padding: 0;
-    margin: (0em + @line-height) 0;
     border: 0;
     border-top: 1px solid;
+    margin: (0em + @line-height) 0;
+    padding: 0;
 }
 
 /*
@@ -74,9 +74,9 @@ img {
  */
 
 fieldset {
-    padding: 0;
-    margin: 0;
     border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -91,11 +91,11 @@ textarea {
    Chrome Frame prompt
    ========================================================================== */
 
-#chromeframe {
-    padding: 0 (0em + @line-height);
+.chromeframe {
     margin: 0 auto;
+    background: @magenta;
     color: @base3;
-    background-color: @magenta;
+    padding: 0 (0em + @line-height);   
 }
 
 #chromeframe a,
@@ -104,212 +104,31 @@ textarea {
     color: @base2;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/*
-    All the font-size, margin and line-height values are chosen to achieve a good
-    rhythm of the text. Rhythm of the text means that the vertical space is divided
-    into lines of the same height. This counts for lines of text as well as space
-    between text (e.g. the top and bottom margin of a header).
-
-    Example:
-    If the main text is set at 16px with a line-height of 1.5, each line occupies
-    24px of vertical space. This is the rhythm. If a h1-tag is set at 24px it only
-    needs a line-height of 1 to occupy the 24px.
-    All the margins should also be a multiple of 24px.
-*/
-
-h1 {
-    margin: (0em + @line-height / @h1-font-size) 0;
-    font-size: 0em + @h1-font-size;
-    line-height: @line-height / @h1-font-size;
-}
-
-h2 {
-    margin: (0em + @line-height / @h2-font-size) 0;
-    font-size: 0em + @h2-font-size;
-    line-height: @line-height / @h2-font-size;
-}
-
-h3 {
-    margin: (0em + @line-height / @h3-font-size) 0;
-    font-size: 0em + @h3-font-size;
-    line-height: @line-height / @h3-font-size;
-}
-
-h4 {
-    margin: (0em + @line-height / @h4-font-size) 0;
-    font-size: 0em + @h4-font-size;
-    font-style: italic;
-    line-height: @line-height / @h4-font-size;
-}
-
-h5 {
-    margin: (0em + @line-height / @h5-font-size) 0;
-    font-size: 0em + @h5-font-size;
-    line-height: @line-height / @h5-font-size;
-}
-
-h6 {
-    margin: (0em + @line-height / @h6-font-size) 0;
-    font-size: 0em + @h6-font-size;
-    font-style: italic;
-    line-height: @line-height / @h6-font-size;
-}
-
-p {
-    margin: (0em + @line-height) 0;
-}
-
-ol,
-ul {
-    padding: 0 0 0 (0em + @line-height);
-    margin: (0em + @line-height) 0;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-	margin: 0;
-}
-
-a, a:active, a:visited {
-    color: @base01;
-}
-
-.nav {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            display: inline-block;
-            *display: inline;
-            *zoom: 1;
-
-            a {
-                padding-bottom: 1.5em;
-                margin-right: 1.5em;
-            }
-        }
-    }
-}
-
-.content {
-    max-width: 33em;
-    min-width: 15em;
-
-    word-wrap: break-word;
-}
-
-.lt-ie7 .content {
-    width: 33em;
-}
-
-.header,
-.footer,
-.article {
-    margin: 0 22% 0 11%;
-}
-
-.article {
-    margin-bottom: 22%;
-}
-
-.lt-ie9 .header,
-.lt-ie9 .footer,
-.lt-ie9 .article {
-    padding: 0 (0em + @line-height);
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.rebase(@rebase03,@rebase02,@rebase01,@rebase00,@rebase0,@rebase1,@rebase2,@rebase3)
-{
-    color: @rebase0;
-    background-color: @rebase03;
-
-    hr {
-        border-top-color: @rebase0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color:@rebase1;
-    }
-
-    a,
-    a:active,
-    a:visited {
-        color: @rebase1;
-    }
-
-    a.btn {
-        color: @base3;
-        background-color: @blue;
-    }
-
-    a.btn:hover {
-        background-color: @orange;
-    }
-
-    .content {
-        background-color: @rebase03;
-    }
-}
-.light { .rebase(@base3,@base2,@base1,@base0,@base00,@base01,@base02,@base03) }
-.dark  { .rebase(@base03,@base02,@base01,@base00,@base0,@base1,@base2,@base3) }
-
-.btn {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    text-align: center;
-    line-height: 2.5;
-    padding: 0 1em;
-    margin: -0.75em 1em 0 1em;
-    .rounded(0.25em);
-}
-
 @import "custom.less";
+@import "page-specific.less";
+@import "helper.less";
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-.fr {
-    float: right;
-}
-
-.fl {
-    float: left;
-}
 
 /*
  * Image replacement
  */
 
 .ir {
+    background-color: transparent;
+    border: 0;
     overflow: hidden;
     /* IE 6/7 fallback */
     *text-indent: -9999px;
-    background-color: transparent;
-    border: 0;
 }
 
 .ir:before {
+    content: "";
     display: block;
     width: 0;
-    height: 100%;
-    content: "";
+    height: 150%;
 }
 
 /*
@@ -326,14 +145,14 @@ a, a:active, a:visited {
  */
 
 .visuallyhidden {
-    position: absolute;
-    width: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
     height: 1px;
-    padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0 0 0 0);
-    border: 0;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 /*
@@ -343,12 +162,12 @@ a, a:active, a:visited {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    position: static;
-    width: auto;
+    clip: auto;
     height: auto;
     margin: 0;
     overflow: visible;
-    clip: auto;
+    position: static;
+    width: auto;
 }
 
 /*
@@ -373,8 +192,8 @@ a, a:active, a:visited {
 
 .clearfix:before,
 .clearfix:after {
-    display: table; /* 2 */
     content: " "; /* 1 */
+    display: table; /* 2 */
 }
 
 .clearfix:after {
@@ -391,9 +210,7 @@ a, a:active, a:visited {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries for Responsive Design.
    ========================================================================== */
 
 /* <= 480 */

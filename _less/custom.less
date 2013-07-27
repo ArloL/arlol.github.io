@@ -1,29 +1,176 @@
-/* styling will go here */
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 
-.boxes {
-	.article {
+/*
+    All the font-size, margin and line-height values are chosen to achieve a good
+    rhythm of the text. Rhythm of the text means that the vertical space is divided
+    into lines of the same height. This counts for lines of text as well as space
+    between text (e.g. the top and bottom margin of a header).
 
-		height: 33em;
+    Example:
+    If the main text is set at 16px with a line-height of 1.5, each line occupies
+    24px of vertical space. This is the rhythm. If a h1-tag is set at 24px it only
+    needs a line-height of 1 to occupy the 24px.
+    All the margins should also be a multiple of 24px.
+*/
 
-		div {
-			position: absolute;
-			background-color: @base00;
-			width: 5em;
-			height: 5em;
-			.rounded(2.5em);
-
-			&:hover {
-				background-color: @magenta;
-			}
-
-			.transition(~"left, top", ~"0.1s, 0.2s", ease-out);
-		}
-
-	}
+h1 {
+    margin: (0em + @line-height / @h1-font-size) 0;
+    font-size: 0em + @h1-font-size;
+    line-height: @line-height / @h1-font-size;
 }
 
-.clock {
-	#clock {
-		height: 33em;
-	}
+h2 {
+    margin: (0em + @line-height / @h2-font-size) 0;
+    font-size: 0em + @h2-font-size;
+    line-height: @line-height / @h2-font-size;
+}
+
+h3 {
+    margin: (0em + @line-height / @h3-font-size) 0;
+    font-size: 0em + @h3-font-size;
+    line-height: @line-height / @h3-font-size;
+}
+
+h4 {
+    margin: (0em + @line-height / @h4-font-size) 0;
+    font-size: 0em + @h4-font-size;
+    font-style: italic;
+    line-height: @line-height / @h4-font-size;
+}
+
+h5 {
+    margin: (0em + @line-height / @h5-font-size) 0;
+    font-size: 0em + @h5-font-size;
+    line-height: @line-height / @h5-font-size;
+}
+
+h6 {
+    margin: (0em + @line-height / @h6-font-size) 0;
+    font-size: 0em + @h6-font-size;
+    font-style: italic;
+    line-height: @line-height / @h6-font-size;
+}
+
+p {
+    margin: (0em + @line-height) 0;
+}
+
+ol,
+ul {
+    padding: 0 0 0 (0em + @line-height);
+    margin: (0em + @line-height) 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin: 0;
+}
+
+a, a:active, a:visited {
+    color: @base01;
+}
+
+.nav {
+    margin-top: (0em + @line-height);
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            margin-right: 1.5em;
+
+            a {
+                padding: 0.75em 0.25em;
+            }
+        }
+    }
+}
+
+.content {
+    max-width: 33em;
+    min-width: 15em;
+
+    word-wrap: break-word;
+}
+
+.lt-ie7 .content {
+    width: 33em;
+}
+
+.header,
+.footer,
+.article {
+    margin: 0 22% 0 11%;
+}
+
+.article {
+    margin-bottom: 22%;
+}
+
+.lt-ie9 .header,
+.lt-ie9 .footer,
+.lt-ie9 .article {
+    padding: 0 (0em + @line-height);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.rebase(@rebase03,@rebase02,@rebase01,@rebase00,@rebase0,@rebase1,@rebase2,@rebase3)
+{
+    color: @rebase0;
+    background-color: @rebase03;
+
+    hr {
+        border-top-color: @rebase0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color:@rebase1;
+    }
+
+    a,
+    a:active,
+    a:visited {
+        color: @rebase1;
+    }
+
+    a.btn {
+        color: @base3;
+        background-color: @blue;
+    }
+
+    a.btn:hover {
+        background-color: @orange;
+    }
+
+    .content {
+        background-color: @rebase03;
+    }
+}
+.light { .rebase(@base3,@base2,@base1,@base0,@base00,@base01,@base02,@base03) }
+.dark  { .rebase(@base03,@base02,@base01,@base00,@base0,@base1,@base2,@base3) }
+
+.btn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    text-align: center;
+    line-height: 2.5;
+    padding: 0 1em;
+    margin: -0.75em 1em 0 1em;
+    .rounded(0.25em);
 }

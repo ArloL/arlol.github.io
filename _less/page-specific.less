@@ -1,0 +1,29 @@
+/* page specific styling */
+
+.boxes {
+    .article {
+
+        height: 33em;
+
+        div {
+            position: absolute;
+            background-color: @base00;
+            width: 5em;
+            height: 5em;
+            .rounded(2.5em);
+
+            &:hover {
+                background-color: @magenta;
+            }
+
+            .transition(~"left, top", ~"0.1s, 0.2s", ease-out);
+        }
+
+    }
+}
+
+.clock {
+    #clock {
+        height: 33em;
+    }
+}
