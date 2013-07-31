@@ -35,10 +35,8 @@ task :server do
     Rake::Task['dev_less'].execute
   }
   dw.start
-  puts "Press ENTER to exit."
-  server = Process.spawn('jekyll server --watch')
-  STDIN.gets
-  Process.kill(9, server)
+  Jekyll::Commands::Build.process(Jekyll.configuration({:serving => true, :watch => true}))
+  Jekyll::Commands::Serve.process(Jekyll.configuration({}))
 end
 
 def replace_stylesheet_links(new_name)
