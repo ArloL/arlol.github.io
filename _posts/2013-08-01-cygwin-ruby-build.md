@@ -1,5 +1,9 @@
 ---
-published: false
+published: true
+layout: default
+title: Automatically Test ClassLoader Memory Leaks
+subtitle: How to test for memory leaks in Tomcat 7.
+description: How to test for memory leaks in Tomcat 7.
 ---
 
 ## Cygwin dependencies for using ruby-build
