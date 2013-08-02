@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: default
 title: How to remove errors when running rbenv under cygwin
 subtitle: "When you install custom ruby versions using a tool like ruby-build you might run into some *remap* problems."
@@ -41,4 +41,3 @@ Since these solutions lacked a single script that could be executed using `ash` 
     ExitCode=$?
     
     cleanup
-  
