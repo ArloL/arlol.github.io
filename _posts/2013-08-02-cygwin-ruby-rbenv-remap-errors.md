@@ -14,7 +14,11 @@ The error messages looked like this:
 
 I found this [mailing list entry](http://www.cygwin.com/ml/cygwin/2012-02/msg00701.html) that included a [rubyrebase script](http://www.cygwin.com/ml/cygwin/2012-02/txt00030.txt) and a [post describing a solution for rvm](http://gsjhywel.swan.ac.uk/?p=12) which was similiar to [this](http://ficial.wordpress.com/2011/07/06/cygwin-and-rails-unable-to-remap-to-same-address-as-parent-died-waiting-for-dll-loading-errno-11/).
 
-Since these solutions lacked a single script that could be executed using `ash` I have created my own. You **have** to run the script using `ash -c '/path/to/rubyrebase'`. Make sure you have closed all cygwin processes.
+Since these solutions lacked a single script that could be executed using `ash` I have created my own. You **have** to run the script using
+
+	ash -c '/path/to/rubyrebase'
+
+Make sure you have closed all cygwin processes.
 
 	#!/bin/ash
 
