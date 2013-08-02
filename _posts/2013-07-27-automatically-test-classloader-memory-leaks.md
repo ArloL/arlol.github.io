@@ -3,7 +3,9 @@ layout: default
 title: Automatically Test ClassLoader Memory Leaks
 subtitle: How to test for memory leaks in Tomcat 7.
 description: How to test for memory leaks in Tomcat 7.
+published: true
 ---
+
 Have you ever wondered whether your web application is leaking your classloader? Normally you would manually test using VisualVM or jProfiler which can be tedious and you may forget to test before releasing. Therefore I present a small jUnit test that you can run in your Continuous Integration tool to test for a leaking classloader.
 
     import static com.jayway.awaitility.Awaitility.*;
@@ -126,4 +128,3 @@ Have you ever wondered whether your web application is leaking your classloader?
         }
 
     }
-
