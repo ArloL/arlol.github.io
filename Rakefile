@@ -4,7 +4,7 @@ require 'directory_watcher'
 require 'jekyll'
 require 'less'
 
-task :default => [:server]
+task :default => [:serve]
 
 desc 'Hash css file, rename it and replace all stylesheet links'
 task :prod_less => :less do
@@ -29,7 +29,7 @@ task :less do
 end
 
 desc 'Serve jekyll site and automatically compile less files'
-task :server do
+task :serve do
   dw = DirectoryWatcher.new '_less', :glob => '*.less', :interval => 1
   dw.add_observer {
     Rake::Task['dev_less'].execute
