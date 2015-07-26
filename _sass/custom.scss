@@ -90,8 +90,11 @@ ul.nav {
         margin-right: 1.5em;
 
         a {
-            padding: 0.75em 0.25em;
+            padding: 0.75em 0.5em;
         }
+    }
+    li:first-child a {
+        padding-left: 0;
     }
 }
 
