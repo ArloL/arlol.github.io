@@ -5,58 +5,54 @@ subtitle: A rather small collection of articles by Arlo O'Keeffe.
 description: A rather small collection of articles by Arlo O'Keeffe.
 ---
 {% for post in paginator.posts %}
-  <p class="date"><em>{{ post.date | date: '%Y-%m-%d' }}</em></p>
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  <div>
-    {{ post.excerpt }}
-    <p>
-      <a href="{{ post.url }}">Read More</a>
-    </p>
-  </div>
-  <hr>
+    <p class="date"><em>{{ post.date | date: '%Y-%m-%d' }}</em></p>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <div>
+        {{ post.excerpt }}
+        <p>
+            <a href="{{ post.url }}">Read More</a>
+        </p>
+    </div>
+    <hr>
 {% endfor %}
 
 <div>
-  {% if paginator.previous_page %}
-    <p>
-      {% if paginator.previous_page == 1 %}
-        <a href="/articles/">Newer Articles</a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
-      {% endif %}
-    </p>
-  {% else %}
-    <p>Newer Articles</p>
-  {% endif %}
+    {% if paginator.previous_page %}
+        <p>
+            {% if paginator.previous_page == 1 %}
+                <a href="/articles/">Newer Articles</a>
+            {% else %}
+                <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
+            {% endif %}
+        </p>
+    {% else %}
+        <p>Newer Articles</p>
+    {% endif %}
 
-  <div class="nav">
-  <ul>
-    <li>
-      {% if paginator.page == 1 %}
-        1
-      {% else %}
-        <a href="/articles/">1</a>
-      {% endif %}
-    </li>
-
-    {% for count in (2..paginator.total_pages) %}
-      <li>
-        {% if count == paginator.page %}
-          {{ count }}
+    <ul class="nav">
+        {% if paginator.page == 1 %}
+            <li>1</li>
         {% else %}
-          <a href="/articles/page{{ count }}/">{{ count }}</a>
+            <li><a href="/articles/">1</a></li>
         {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
 
-  {% if paginator.next_page %}
-    <p>
-      <a href="{{ paginator.next_page_path }}/">Older Articles</a>
-    </p>
-  {% else %}
-    <p>Older Articles</p>
-  {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+            <li>
+                {% if count == paginator.page %}
+                    {{ count }}
+                {% else %}
+                    <a href="/articles/page{{ count }}/">{{ count }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if paginator.next_page %}
+        <p>
+            <a href="{{ paginator.next_page_path }}/">Older Articles</a>
+        </p>
+    {% else %}
+        <p>Older Articles</p>
+    {% endif %}
 
 </div>
