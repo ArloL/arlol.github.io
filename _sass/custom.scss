@@ -81,23 +81,16 @@ pre {
     border: 1px solid;
 }
 
-.nav {
-    margin-top: (0em + $line-height);
+ul.nav {
+    padding-left: 0;
+    list-style: none;
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    li {
+        display: inline-block;
+        margin-right: 1.5em;
 
-        li {
-            display: inline-block;
-            *display: inline;
-            *zoom: 1;
-            margin-right: 1.5em;
-
-            a {
-                padding: 0.75em 0.25em;
-            }
+        a {
+            padding: 0.75em 0.25em;
         }
     }
 }
@@ -109,10 +102,6 @@ pre {
     word-wrap: break-word;
 }
 
-.lt-ie7 .content {
-    width: 33em;
-}
-
 .header,
 .footer,
 .article {
@@ -121,14 +110,6 @@ pre {
 
 .article {
     margin-bottom: 22%;
-}
-
-.lt-ie9 .header,
-.lt-ie9 .footer,
-.lt-ie9 .article {
-    padding: 0 (0em + $line-height);
-    margin-right: auto;
-    margin-left: auto;
 }
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
