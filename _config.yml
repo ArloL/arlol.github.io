@@ -1,6 +1,6 @@
 title:  "Arlo O'Keeffe"
 description: "Stuff done by Arlo O'Keeffe"
-exclude: [Gemfile, Gemfile.lock, Rakefile, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
+exclude: [Gemfile, Gemfile.lock, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
 markdown: kramdown
 paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
