@@ -5,16 +5,10 @@
 <!--[if IE 8]>         <html class="lt-ie9" lang="{{language}}"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="{{language}}"> <!--<![endif]-->
 <head>
-    {% if page.no_title_expansion %}
-    <title>{{ page.title }}</title>
-    {% else %}
-    <title>{{ page.title }} | {{ site.title }}</title>
-    {% endif %}
-    {% if page.description %}
-    <meta name="description" content="{{page.description}}">
-    {% endif %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if page.no_title_expansion %}<title>{{ page.title }}</title>{% else %}<title>{{ page.title }} | {{ site.title }}</title>{% endif %}
+    {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/styles.css">
 </head>
