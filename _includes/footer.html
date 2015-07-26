@@ -6,12 +6,12 @@
 </div>
 
 {% if page.javascript %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
-<script src="../js/plugins.js"></script>
-{% for file in page.javascript_files %}
-<script src="../js/{{ file }}"></script>
-{% endfor %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+    <script src="../js/plugins.js"></script>
+    {% for file in page.javascript_files %}
+        <script src="../js/{{ file }}"></script>
+    {% endfor %}
 {% endif %}
 
 </body>

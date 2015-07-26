@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-{% if page.language %}{% assign language = page.language %}{% else %}{% assign language = site.language %}{% endif %}
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7" lang="{{language}}"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8" lang="{{language}}"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9" lang="{{language}}"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="{{language}}"> <!--<![endif]-->
+{% if page.language %}
+    {% assign language = page.language %}
+{% else %}
+    {% assign language = site.language %}
+{% endif %}
+<html lang="{{language}}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    {% if page.no_title_expansion %}<title>{{ page.title }}</title>{% else %}<title>{{ page.title }} | {{ site.title }}</title>{% endif %}
-    {% if page.description %}<meta name="description" content="{{page.description}}">{% endif %}
+    {% if page.no_title_expansion %}
+        <title>{{ page.title }}</title>
+    {% else %}
+        <title>{{ page.title }} | {{ site.title }}</title>
+    {% endif %}
+    {% if page.description %}
+        <meta name="description" content="{{page.description}}">
+    {% endif %}
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -17,11 +24,11 @@
     <div class="header content clearfix">
         {% include nav.html %}
         {% if page.github_link %}
-        <p class="fr"><a href="{{ page.github_link }}">View on GitHub</a></p>
+            <p class="fr"><a href="{{ page.github_link }}">View on GitHub</a></p>
         {% endif %}
         <h1>{{ page.title }}</h1>
         {% if page.subtitle %}
-        <p class="content">{{ page.subtitle }}</p>
+            <p class="content">{{ page.subtitle }}</p>
         {% endif %}
     </div>
 </div>
