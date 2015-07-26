@@ -1,7 +1,7 @@
-@import "elements.less";
-@import "custom-elements.less";
-@import "normalize.less";
-@import "config.less";
+@import "elements";
+@import "custom-elements";
+@import "normalize";
+@import "config";
 
 /*
  * HTML5 Boilerplate
@@ -20,14 +20,14 @@ button,
 input,
 select,
 textarea {
-    color: @base00;
+    color: $base00;
 }
 
 body {
     font-family: sans-serif;
     /* If standard font-size is 16px this makes it 20px. */
     font-size: 1.25em;
-    line-height: @line-height;
+    line-height: $line-height;
 }
 
 /*
@@ -37,15 +37,15 @@ body {
  */
 
 ::-moz-selection {
-    color: @base3;
+    color: $base3;
     text-shadow: none;
-    background: @blue;
+    background: $blue;
 }
 
 ::selection {
-    color: @base3;
+    color: $base3;
     text-shadow: none;
-    background: @blue;
+    background: $blue;
 }
 
 /*
@@ -57,7 +57,7 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid;
-    margin: (0em + @line-height) 0;
+    margin: (0em + $line-height) 0;
     padding: 0;
 }
 
@@ -87,26 +87,9 @@ textarea {
     resize: vertical;
 }
 
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
-
-.chromeframe {
-    margin: 0 auto;
-    background: @magenta;
-    color: @base3;
-    padding: 0 (0em + @line-height);   
-}
-
-#chromeframe a,
-#chromeframe a:active,
-#chromeframe a:visited {
-    color: @base2;
-}
-
-@import "custom.less";
-@import "page-specific.less";
-@import "helper.less";
+@import "custom";
+@import "page-specific";
+@import "helper";
 
 /* ==========================================================================
    Helper classes

@@ -16,51 +16,51 @@
 */
 
 h1 {
-    margin: (0em + @line-height / @h1-font-size) 0;
-    font-size: 0em + @h1-font-size;
-    line-height: @line-height / @h1-font-size;
+    margin: (0em + $line-height / $h1-font-size) 0;
+    font-size: 0em + $h1-font-size;
+    line-height: $line-height / $h1-font-size;
 }
 
 h2 {
-    margin: (0em + @line-height / @h2-font-size) 0;
-    font-size: 0em + @h2-font-size;
-    line-height: @line-height / @h2-font-size;
+    margin: (0em + $line-height / $h2-font-size) 0;
+    font-size: 0em + $h2-font-size;
+    line-height: $line-height / $h2-font-size;
 }
 
 h3 {
-    margin: (0em + @line-height / @h3-font-size) 0;
-    font-size: 0em + @h3-font-size;
-    line-height: @line-height / @h3-font-size;
+    margin: (0em + $line-height / $h3-font-size) 0;
+    font-size: 0em + $h3-font-size;
+    line-height: $line-height / $h3-font-size;
 }
 
 h4 {
-    margin: (0em + @line-height / @h4-font-size) 0;
-    font-size: 0em + @h4-font-size;
+    margin: (0em + $line-height / $h4-font-size) 0;
+    font-size: 0em + $h4-font-size;
     font-style: italic;
-    line-height: @line-height / @h4-font-size;
+    line-height: $line-height / $h4-font-size;
 }
 
 h5 {
-    margin: (0em + @line-height / @h5-font-size) 0;
-    font-size: 0em + @h5-font-size;
-    line-height: @line-height / @h5-font-size;
+    margin: (0em + $line-height / $h5-font-size) 0;
+    font-size: 0em + $h5-font-size;
+    line-height: $line-height / $h5-font-size;
 }
 
 h6 {
-    margin: (0em + @line-height / @h6-font-size) 0;
-    font-size: 0em + @h6-font-size;
+    margin: (0em + $line-height / $h6-font-size) 0;
+    font-size: 0em + $h6-font-size;
     font-style: italic;
-    line-height: @line-height / @h6-font-size;
+    line-height: $line-height / $h6-font-size;
 }
 
 p {
-    margin: (0em + @line-height) 0;
+    margin: (0em + $line-height) 0;
 }
 
 ol,
 ul {
-    padding: 0 0 0 (0em + @line-height);
-    margin: (0em + @line-height) 0;
+    padding: 0 0 0 (0em + $line-height);
+    margin: (0em + $line-height) 0;
 }
 
 ul ul,
@@ -71,7 +71,7 @@ ol ul {
 }
 
 a, a:active, a:visited {
-    color: @base01;
+    color: $base01;
 }
 
 pre {
@@ -82,7 +82,7 @@ pre {
 }
 
 .nav {
-    margin-top: (0em + @line-height);
+    margin-top: (0em + $line-height);
 
     ul {
         list-style: none;
@@ -126,18 +126,18 @@ pre {
 .lt-ie9 .header,
 .lt-ie9 .footer,
 .lt-ie9 .article {
-    padding: 0 (0em + @line-height);
+    padding: 0 (0em + $line-height);
     margin-right: auto;
     margin-left: auto;
 }
 
-.rebase(@rebase03,@rebase02,@rebase01,@rebase00,@rebase0,@rebase1,@rebase2,@rebase3)
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
 {
-    color: @rebase0;
-    background-color: @rebase03;
+    color: $rebase0;
+    background-color: $rebase03;
 
     hr {
-        border-top-color: @rebase0;
+        border-top-color: $rebase0;
     }
 
     h1,
@@ -146,21 +146,21 @@ pre {
     h4,
     h5,
     h6 {
-        color:@rebase1;
+        color:$rebase1;
     }
 
     a,
     a:active,
     a:visited {
-        color: @rebase1;
+        color: $rebase1;
     }
 
     .content {
-        background-color: @rebase03;
+        background-color: $rebase03;
     }
 }
-.light { .rebase(@base3,@base2,@base1,@base0,@base00,@base01,@base02,@base03) }
-.dark  { .rebase(@base03,@base02,@base01,@base00,@base0,@base1,@base2,@base3) }
+.light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03) }
+.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3) }
 
 .date {
     float: right;
