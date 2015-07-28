@@ -88,14 +88,19 @@ ul.nav {
     li {
         display: inline-block;
         margin-right: 1.5em;
-
-        a {
-            padding: 0.75em 0.5em;
-        }
     }
-    li:first-child a {
+}
+
+ul.pager li {
+
+    a, &.active {
+        padding: 0.75em 0.5em;
+    }
+
+    &:first-child a, &:first-child.active {
         padding-left: 0;
     }
+
 }
 
 .content {
