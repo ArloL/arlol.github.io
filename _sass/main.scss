@@ -172,65 +172,7 @@ textarea {
    Media Queries for Responsive Design.
    ========================================================================== */
 
-/* <= 480 */
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: 1em;
-    }
-
-    .header, .footer, .article {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-}
-
-/* >= 481 */
-@media only screen and (min-width: 481px) {
-}
-
-/* >= 481 && <= 768 */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    .header, .footer, .article {
-        margin-left: 2em;
-        margin-right: 2em;
-    }
-}
-
-/* <= 768 */
-@media only screen and (max-width: 768px) {
-}
-
-/* >= 769 */
-@media only screen and (min-width: 769px) {
-}
-
-/* >= 769 && <= 980 */
-@media only screen and (min-width: 769px) and (max-width: 980px) {
-}
-
-/* <= 980 */
-@media only screen and (max-width: 980px) {
-}
-
-/* >= 981 */
-@media only screen and (min-width: 981px) {
-}
-
-/* >= 981 && <= 1199 */
-@media only screen and (min-width: 981px) and (max-width: 1199px) {
-}
-
-/* >= 1200 */
-@media only screen and (min-width: 1200px) {
-}
-
-/* >= 1400 */
-@media only screen and (min-width: 1400px) {
-    body {
-        /* Increase font-size for really large displays.*/
-        font-size: 1.5em;
-    }
-}
+@import "responsive";
 
 /* ==========================================================================
    Print styles.
