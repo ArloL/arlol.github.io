@@ -16,43 +16,46 @@ description: A collection of articles by Arlo O'Keeffe.
     <hr>
 {% endfor %}
 
-<div class="nav">
-    {% if paginator.previous_page %}
-        <p>
-            {% if paginator.previous_page == 1 %}
-                <a href="/articles/">Newer Articles</a>
-            {% else %}
-                <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
-            {% endif %}
-        </p>
-    {% else %}
-        <p>Newer Articles</p>
-    {% endif %}
+{% if paginator.total_pages > 1 %}
 
-    <ul class="nav">
-        {% if paginator.page == 1 %}
-            <li>1</li>
+    <div class="nav">
+
+        {% if paginator.previous_page %}
+            <p>
+                {% if paginator.previous_page == 1 %}
+                    <a href="/articles/">Newer Articles</a>
+                {% else %}
+                    <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
+                {% endif %}
+            </p>
         {% else %}
-            <li><a href="/articles/">1</a></li>
+            <p>Newer Articles</p>
         {% endif %}
 
-        {% for count in (2..paginator.total_pages) %}
-            <li>
+        <ul class="nav pager">
+            {% if paginator.page == 1 %}
+                <li class="active">1</li>
+            {% else %}
+                <li><a href="/articles/">1</a></li>
+            {% endif %}
+
+            {% for count in (2..paginator.total_pages) %}
                 {% if count == paginator.page %}
-                    {{ count }}
+                    <li class="active">{{ count }}</li>
                 {% else %}
-                    <a href="/articles/page{{ count }}/">{{ count }}</a>
+                    <li><a href="/articles/page{{ count }}/">{{ count }}</a></li>
                 {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
 
-    {% if paginator.next_page %}
-        <p>
-            <a href="{{ paginator.next_page_path }}/">Older Articles</a>
-        </p>
-    {% else %}
-        <p>Older Articles</p>
-    {% endif %}
+        {% if paginator.next_page %}
+            <p>
+                <a href="{{ paginator.next_page_path }}/">Older Articles</a>
+            </p>
+        {% else %}
+            <p>Older Articles</p>
+        {% endif %}
 
-</div>
+    </div>
+
+{% endif %}
