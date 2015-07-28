@@ -5,7 +5,7 @@ subtitle: A rather small collection of articles by Arlo O'Keeffe.
 description: A rather small collection of articles by Arlo O'Keeffe.
 ---
 {% for post in paginator.posts %}
-    <p class="date"><em>{{ post.date | date: '%Y-%m-%d' }}</em></p>
+    <em class="fr">{{ post.date | date: '%Y-%m-%d' }}</em>
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <div>
         {{ post.excerpt }}
