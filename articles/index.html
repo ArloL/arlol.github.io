@@ -23,13 +23,13 @@ description: A collection of articles by Arlo O'Keeffe.
         {% if paginator.previous_page %}
             <p>
                 {% if paginator.previous_page == 1 %}
-                    <a href="/articles/">Newer Articles</a>
+                    <a href="/articles/">&#8592; Newer Articles</a>
                 {% else %}
-                    <a href="{{ paginator.previous_page_path }}/">Newer Articles</a>
+                    <a href="{{ paginator.previous_page_path }}/">&#8592; Newer Articles</a>
                 {% endif %}
             </p>
         {% else %}
-            <p>Newer Articles</p>
+            <p>&#8592; Newer Articles</p>
         {% endif %}
 
         <ul class="nav pager">
@@ -50,10 +50,10 @@ description: A collection of articles by Arlo O'Keeffe.
 
         {% if paginator.next_page %}
             <p>
-                <a href="{{ paginator.next_page_path }}/">Older Articles</a>
+                <a href="{{ paginator.next_page_path }}/">Older Articles &#8594;</a>
             </p>
         {% else %}
-            <p>Older Articles</p>
+            <p>Older Articles &#8594;</p>
         {% endif %}
 
     </div>
