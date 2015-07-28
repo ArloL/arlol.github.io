@@ -25,7 +25,7 @@ description: A collection of articles by Arlo O'Keeffe.
                 {% if paginator.previous_page == 1 %}
                     <a href="/articles/">&laquo; Previous Page</a>
                 {% else %}
-                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}/">&laquo; Previous Page</a>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Previous Page</a>
                 {% endif %}
             </p>
         {% else %}
@@ -50,7 +50,7 @@ description: A collection of articles by Arlo O'Keeffe.
 
         {% if paginator.next_page %}
             <p>
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}/">Next Page &raquo;</a>
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next Page &raquo;</a>
             </p>
         {% else %}
             <p>Next Page &raquo;</p>
