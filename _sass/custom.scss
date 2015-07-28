@@ -115,13 +115,7 @@ ul.nav {
     margin-bottom: 22%;
 }
 
-.github_link {
-    float: right;
-    margin-top: 0;
-}
-
-@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
-{
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) {
     color: $rebase0;
     background-color: $rebase03;
 
@@ -148,10 +142,15 @@ ul.nav {
         background-color: $rebase03;
     }
 }
-.light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03) }
-.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3) }
 
-.date {
-    float: right;
-    margin: 0;
+@mixin light {
+    @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
+}
+
+@mixin dark  {
+    @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+}
+
+body {
+    @include light
 }
