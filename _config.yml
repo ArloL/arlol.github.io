@@ -4,7 +4,7 @@ exclude: [Gemfile, Gemfile.lock, gravatar-favicon.sh, arlol-github-page.sublime-
 markdown: kramdown
 paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
-paginate_path: "/articles/page:num"
+paginate_path: "/articles/page:num/"
 language: en
 compress_html:
   clippings: all
