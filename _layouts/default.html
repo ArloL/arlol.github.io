@@ -1,16 +1,16 @@
 ---
 layout: compress
 ---
-<!DOCTYPE html>
+<!doctype html>
 {% if page.language %}
     {% assign language = page.language %}
 {% else %}
     {% assign language = site.language %}
 {% endif %}
-<html lang="{{language}}">
+<html lang="{{ language }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     {% if page.no_title_expansion %}
         <title>{{ page.title }}</title>
     {% else %}
