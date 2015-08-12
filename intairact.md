@@ -37,7 +37,7 @@ Make sure that all the Frameworks are linked with your binary.
 
 Add `-ObjC` to the *Other Linker Flags* Build Setting and link the following Frameworks:
 
-*   CFNetwork
+* CFNetwork
 *	libxml2.dylib
 *	Security
 
