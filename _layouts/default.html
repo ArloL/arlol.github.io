@@ -20,7 +20,12 @@ layout: compress
         <meta name="description" content="{{page.description}}">
     {% endif %}
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="{{ '/styles.css' | prepend: site.baseurl | replace: '//', '/' }}">
+    <style type="text/css">
+    {% capture include_to_scssify %}
+      {% include styles.scss %}
+    {% endcapture %}
+    {{ include_to_scssify | scssify }}
+    </style>
 </head>
 <body>
     <div class="header content">
