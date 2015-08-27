@@ -135,6 +135,11 @@ ul.pager li {
     .content {
         background-color: $rebase03;
     }
+
+    pre {
+        color: $rebase00;
+        background-color: $rebase3;
+    }
 }
 
 @mixin light {
