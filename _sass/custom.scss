@@ -98,13 +98,6 @@ ul.pager li {
 
 }
 
-.content {
-    max-width: 33em;
-    min-width: 15em;
-
-    word-wrap: break-word;
-}
-
 .header, header,
 .footer, footer,
 .article, article {
@@ -113,6 +106,11 @@ ul.pager li {
 
 .article, article  {
     margin-bottom: 22%;
+
+    max-width: 33em;
+    min-width: 15em;
+
+    word-wrap: break-word;
 }
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) {
