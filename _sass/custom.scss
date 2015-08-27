@@ -105,15 +105,16 @@ ul.pager li {
 .footer, footer,
 .article, article {
     margin: 0 22% 0 11%;
+
+    h1, h2, h3, h4, h5, h6, p {
+        max-width: 33em;
+        min-width: 15em;
+    }
+
 }
 
 .article, article  {
     margin-bottom: 22%;
-
-    max-width: 33em;
-    min-width: 15em;
-
-    word-wrap: break-word;
 }
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) {
