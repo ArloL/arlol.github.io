@@ -22,26 +22,6 @@ html {
 }
 
 /*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: $blue;
-    color: $base3;
-    text-shadow: none;
-}
-
-::selection {
-    background: $blue;
-    color: $base3;
-    text-shadow: none;
-}
-
-/*
  * A better looking default horizontal rule
  */
 
