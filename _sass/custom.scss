@@ -76,6 +76,10 @@ pre {
     word-wrap: normal;
 }
 
+mark {
+    background-color: $blue;
+}
+
 ul.nav, nav ul {
     padding-left: 0;
     list-style: none;
