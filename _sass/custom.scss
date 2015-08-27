@@ -125,6 +125,14 @@ ul.pager li {
         border-top-color: $rebase0;
     }
 
+    ::-moz-selection {
+        color: $rebase03;
+    }
+
+    ::selection {
+        color: $rebase03;
+    }
+
     h1,
     h2,
     h3,
@@ -140,13 +148,12 @@ ul.pager li {
         color: $rebase1;
     }
 
-    .content {
-        background-color: $rebase03;
+    mark {
+        color: $rebase03;
     }
 
     pre {
-        color: $rebase00;
-        background-color: $rebase3;
+        border-color: $rebase0;
     }
 }
 
