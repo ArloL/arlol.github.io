@@ -4,7 +4,9 @@
         font-size: 1em;
     }
 
-    .header, .footer, .article {
+    .header, header,
+    .footer, footer,
+    .article, article {
         margin-left: 1em;
         margin-right: 1em;
     }
@@ -16,7 +18,9 @@
 
 /* >= 481 && <= 768 */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .header, .footer, .article {
+    .header, header,
+    .footer, footer,
+    .article, article {
         margin-left: 2em;
         margin-right: 2em;
     }

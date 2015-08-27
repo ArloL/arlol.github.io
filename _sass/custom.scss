@@ -80,7 +80,7 @@ pre {
     word-wrap: normal;
 }
 
-ul.nav {
+ul.nav, nav ul {
     padding-left: 0;
     list-style: none;
 
@@ -105,13 +105,13 @@ ul.pager li {
     word-wrap: break-word;
 }
 
-.header,
-.footer,
-.article {
+.header, header,
+.footer, footer,
+.article, article {
     margin: 0 22% 0 11%;
 }
 
-.article {
+.article, article  {
     margin-bottom: 22%;
 }
 
