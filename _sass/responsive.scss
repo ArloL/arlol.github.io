@@ -6,11 +6,6 @@
 @media only screen and (min-width: 481px) {
     body {
         font-size: 1.25em;
-    }
-
-    .header, header,
-    .footer, footer,
-    .article, article {
         margin: 0 2em 0 2em;
     }
 
@@ -30,9 +25,7 @@
 
 /* >= 769 */
 @media only screen and (min-width: 769px) {
-    .header, header,
-    .footer, footer,
-    .article, article {
+    body {
         margin: 0 22% 0 11%;
     }
 
