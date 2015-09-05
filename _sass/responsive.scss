@@ -1,29 +1,27 @@
 /* <= 480 */
 @media only screen and (max-width: 480px) {
-    body {
-        font-size: 1em;
-    }
-
-    .header, header,
-    .footer, footer,
-    .article, article {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
 }
 
 /* >= 481 */
 @media only screen and (min-width: 481px) {
+    body {
+        font-size: 1.25em;
+    }
+
+    .header, header,
+    .footer, footer,
+    .article, article {
+        margin: 0 2em 0 2em;
+    }
+
+    .github_link, .post_date {
+        float: right;
+        margin: 0 0 (0em + $line-height) 1em;
+    }
 }
 
 /* >= 481 && <= 768 */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .header, header,
-    .footer, footer,
-    .article, article {
-        margin-left: 2em;
-        margin-right: 2em;
-    }
 }
 
 /* <= 768 */
@@ -32,6 +30,15 @@
 
 /* >= 769 */
 @media only screen and (min-width: 769px) {
+    .header, header,
+    .footer, footer,
+    .article, article {
+        margin: 0 22% 0 11%;
+    }
+
+    .article, article  {
+        margin-bottom: 22%;
+    }
 }
 
 /* >= 769 && <= 980 */
@@ -56,8 +63,4 @@
 
 /* >= 1400 */
 @media only screen and (min-width: 1400px) {
-    body {
-        /* Increase font-size for really large displays.*/
-        font-size: 1.5em;
-    }
 }
