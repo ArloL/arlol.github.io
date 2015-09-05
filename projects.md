@@ -4,9 +4,9 @@ title: Projects
 subtitle: An overview of the projects that I worked on.
 description: An overview of the projects that I worked on.
 ---
-# IntAirAct
+<p class="project_date"><em><time datetime="2012">2012</time></em></p>
 
-*2012*
+# IntAirAct
 
 A Framework enabling Device Interaction using REST.
 
@@ -14,9 +14,9 @@ A Framework enabling Device Interaction using REST.
 
 [GitHub Project](https://github.com/ase-lab/IntAirAct)
 
-# iebox
+<p class="project_date"><em><time datetime="2012-09">September 2012</time></em></p>
 
-*September 2012*
+# iebox
 
 Install VirtualBox VMs for IE6/7/8/9 in one step.
 
