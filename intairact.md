@@ -18,7 +18,7 @@ know and love: HTTP, REST and JSON.
 
 # How do I start using it?
 
-Choose your environment: [C#](#c_sharp), [iOS](#ios) or [OS&nbsp;X](#osnbspx).
+Choose your environment: [C#](#c-sharp), [iOS](#ios) or [OS&nbsp;X](#osnbspx).
 
 ## C Sharp
 
