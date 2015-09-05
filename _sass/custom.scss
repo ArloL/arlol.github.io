@@ -105,14 +105,14 @@ body {
     font-size: 1em;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    max-width: 33em;
+}
+
 .header, header,
 .footer, footer,
 .article, article {
     margin: 0 1em 0 1em;
-
-    h1, h2, h3, h4, h5, h6, p {
-        max-width: 33em;
-    }
 }
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) {
