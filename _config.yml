@@ -12,3 +12,5 @@ compress_html:
   endings:   all
 sass:
   style: compressed
+gems:
+  - jekyll-feed
