@@ -8,4 +8,4 @@ Hello,
 
 my name is Arlo O'Keeffe. I am a Software Engineer.
 
-This is where I seldomly post stuff that I think others might find interesting.
+This is where I rarely post stuff that I think others might find interesting.
