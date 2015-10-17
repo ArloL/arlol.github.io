@@ -6,13 +6,5 @@
 			"folder_exclude_patterns" : ["_site"],
 			"file_exclude_patterns": ["*.css"]
 		}
-	],
-	"build_systems":
-    [
-	    {
-	    	"name": "Rake",
-			"cmd": ["bash", "-l", "-c", "rake"],
-			"working_dir": "${project_path}"
-		}
-    ]
+	]
 }
