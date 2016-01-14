@@ -11,14 +11,7 @@ layout: compress
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% if page.no_title_expansion %}
-        <title>{{ page.title }}</title>
-    {% else %}
-        <title>{{ page.title }} | {{ site.title }}</title>
-    {% endif %}
-    {% if page.description %}
-        <meta name="description" content="{{page.description}}">
-    {% endif %}
+    {% seo %}
     <meta name="viewport" content="width=device-width">
     {% feed_meta %}
     <style type="text/css">
