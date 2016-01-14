@@ -1,4 +1,6 @@
 title:  "Arlo O'Keeffe"
+name: "Arlo O'Keeffe"
+author: "Arlo O'Keeffe"
 description: "Stuff done by Arlo O'Keeffe"
 exclude: [Gemfile, Gemfile.lock, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
 markdown: kramdown
