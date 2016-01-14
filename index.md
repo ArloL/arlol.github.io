@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Arlo O'Keeffe
-no_title_expansion: true
 description: Arlo O'Keeffe's GitHub page where he seldomly posts interesting stuff.
 author: Arlo O'Keeffe
 ---
