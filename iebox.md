@@ -2,6 +2,7 @@
 layout: default
 title: iebox
 description: Install VirtualBox VMs for IE6-IE9 in one step.
+author: Arlo O'Keeffe
 github_link: https://github.com/ArloL/iebox
 ---
 # What is iebox?

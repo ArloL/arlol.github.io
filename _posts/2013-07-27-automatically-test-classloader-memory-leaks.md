@@ -3,6 +3,7 @@ layout: default
 title: Automatically Test ClassLoader Memory Leaks
 subtitle: How to test for memory leaks in Tomcat 7.
 description: How to test for memory leaks in Tomcat 7.
+author: Arlo O'Keeffe
 published: true
 ---
 
