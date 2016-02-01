@@ -3,7 +3,6 @@ name: "Arlo O'Keeffe"
 author: "Arlo O'Keeffe"
 description: "Stuff done by Arlo O'Keeffe"
 exclude: [Gemfile, Gemfile.lock, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
-markdown: kramdown
 paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
 paginate_path: "/articles/page:num/"
