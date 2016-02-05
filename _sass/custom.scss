@@ -71,9 +71,8 @@ ol ul {
 }
 
 pre {
-    white-space: pre;
-    overflow: auto;
-    word-wrap: normal;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     border: 1px solid;
     border-radius: 2px;
     padding: 1em;
