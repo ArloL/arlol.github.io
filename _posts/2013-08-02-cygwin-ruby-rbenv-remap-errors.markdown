@@ -1,6 +1,5 @@
 ---
 title: How to remove space occupied errors in ruby under cygwin
-subtitle: "When you install custom ruby versions using a tool like ruby-build you might run into address space occupied problems."
 description: "When you install custom ruby versions using a tool like ruby-build you might run into address space occupied problems."
 ---
 

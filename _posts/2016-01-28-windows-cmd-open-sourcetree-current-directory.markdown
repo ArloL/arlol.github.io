@@ -1,6 +1,5 @@
 ---
 title: Open SourceTree in current Windows CMD directory
-subtitle: "A batch file that opens SourceTree in the current directory from the command line."
 description: "A batch file that opens SourceTree in the current directory from the command line."
 ---
 

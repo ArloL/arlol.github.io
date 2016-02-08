@@ -1,6 +1,5 @@
 ---
 title: Progress Toward an Engineering Discipline of Software by Mary Shaw
-subtitle: "Mary Shaw talks about the history of engineering and how it applies to software."
 description: "Mary Shaw talks about the history of engineering and how it applies to software."
 published: false
 ---

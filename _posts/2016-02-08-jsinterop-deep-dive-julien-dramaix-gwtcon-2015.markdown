@@ -1,6 +1,5 @@
 ---
 title: JsInterop Deep Dive by Julien Dramaix
-subtitle: "An introduction to the new GWT API for interaction with native JavaScript."
 description: "An introduction to the new GWT API for interaction with native JavaScript."
 ---
 

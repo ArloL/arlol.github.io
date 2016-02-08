@@ -1,6 +1,5 @@
 ---
 title: Not Just Code Monkeys by Martin Fowler
-subtitle: "Martin Fowler talks about the responsibilities of programmers."
 description: "Martin Fowler talks about the responsibilities of programmers."
 ---
 

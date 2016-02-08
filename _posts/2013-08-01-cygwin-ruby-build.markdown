@@ -1,6 +1,5 @@
 ---
 title: "Cygwin dependencies for using ruby-build"
-subtitle: "Which dependencies to install for cygwin when using ruby-build."
 description: "Which dependencies to install for cygwin when using ruby-build."
 ---
 

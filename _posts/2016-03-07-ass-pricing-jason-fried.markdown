@@ -1,6 +1,5 @@
 ---
 title: Basecamp’s Jason Fried on the art of ass-pricing
-subtitle: ""
 description: ""
 published: false
 ---

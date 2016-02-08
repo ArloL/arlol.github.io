@@ -1,6 +1,5 @@
 ---
 title: Agile is Dead by Pragmatic Dave Thomas
-subtitle: "Dave Thomas talks about his problems with Agile as an industry."
 description: "Dave Thomas talks about his problems with Agile as an industry."
 ---
 
