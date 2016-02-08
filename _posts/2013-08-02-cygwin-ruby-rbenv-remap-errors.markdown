@@ -1,10 +1,7 @@
 ---
-layout: default
 title: How to remove space occupied errors in ruby under cygwin
 subtitle: "When you install custom ruby versions using a tool like ruby-build you might run into address space occupied problems."
 description: "When you install custom ruby versions using a tool like ruby-build you might run into address space occupied problems."
-author: Arlo O'Keeffe
-published: true
 ---
 
 After successfully installing ruby 2.0.0-p247 in [cygwin](http://cygwin.com/) with [ruby-build](https://github.com/sstephenson/ruby-build) as a [rbenv](https://github.com/sstephenson/rbenv) plugin. I was getting weird `child_info_fork::abort:` errors that caused my call to `gem install bundler` to fail.

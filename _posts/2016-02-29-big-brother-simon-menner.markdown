@@ -1,9 +1,7 @@
 ---
-layout: default
 title: What does Big Brother see, while he is watching? by Simon Menner
 subtitle: ""
 description: ""
-author: Arlo O'Keeffe
 published: false
 ---
 

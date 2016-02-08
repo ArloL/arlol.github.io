@@ -1,9 +1,7 @@
 ---
-layout: default
 title: IntAirAct
 subtitle: A Framework enabling Device Interaction using REST.
 description: A Framework enabling Device Interaction using REST.
-author: Arlo O'Keeffe
 github_link: https://github.com/ase-lab/IntAirAct
 ---
 # What is IntAirAct?

@@ -1,9 +1,7 @@
 ---
-layout: default
 title: Basecamp’s Jason Fried on the art of ass-pricing
 subtitle: ""
 description: ""
-author: Arlo O'Keeffe
 published: false
 ---
 

@@ -1,9 +1,7 @@
 ---
-layout: default
 title: How to make Wikipedia easier to read
 subtitle: "Wikipedia is not very readable. Here is how to make it easier."
 description: "Wikipedia is not very readable. Here is how to make it easier."
-author: Arlo O'Keeffe
 published: false
 ---
 

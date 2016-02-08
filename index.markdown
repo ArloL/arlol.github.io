@@ -1,7 +1,5 @@
 ---
-layout: default
 description: Arlo O'Keeffe's GitHub page where he seldomly posts interesting stuff.
-author: Arlo O'Keeffe
 ---
 Hello,
 

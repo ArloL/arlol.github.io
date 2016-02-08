@@ -1,10 +1,7 @@
 ---
-layout: default
 title: Open SourceTree in current Windows CMD directory
 subtitle: "A batch file that opens SourceTree in the current directory from the command line."
 description: "A batch file that opens SourceTree in the current directory from the command line."
-author: Arlo O'Keeffe
-published: true
 ---
 
 On Mac you can install the [SourceTree](https://www.sourcetreeapp.com/) Command Line Tools and call `stree .` to open SourceTree from the Terminal. On Windows there is no such option. Thus I wrote my own stree.cmd and put it in my [dotfiles](https://github.com/ArloL/dotfiles):
