@@ -3,7 +3,7 @@ title: IntAirAct
 description: A Framework enabling Device Interaction using REST.
 github_link: https://github.com/ase-lab/IntAirAct
 ---
-# What is IntAirAct?
+## What is IntAirAct?
 
 Imagine you could look at the images of all the devices around and then flick at your
 TV to show it on the big screen.
@@ -14,15 +14,15 @@ It finds all the devices on the network, allows you to share content between the
 and tell other devices to show that content. And all of that using stuff we all
 know and love: HTTP, REST and JSON.
 
-# How do I start using it?
+## How do I start using it?
 
 Choose your environment: [C#](#c-sharp), [iOS](#ios) or [OS&nbsp;X](#osnbspx).
 
-## C Sharp
+### C Sharp
 
 The easiest way to get started in C# is using [NuGet](https://nuget.org/). When NuGet is installed: Right click on your project and choose *Manage NuGet Packages…*. Search for the *IntAirAct* package and install it. This will also automatically install all dependencies.
 
-## iOS
+### iOS
 
 [Download](https://github.com/ase-lab/IntAirAct/downloads) the latest iOS version and unarchive the Frameworks.
 
@@ -42,7 +42,7 @@ Add `-ObjC` to the *Other Linker Flags* Build Setting and link the following Fra
 Now you can head to the [Documentation](#documentation) to get started or to
 the [Examples](#examples) for some implementation ideas.
 
-## OS&nbsp;X
+### OS&nbsp;X
 
 [Download](https://github.com/ase-lab/IntAirAct/downloads) the latest iOS version and unarchive the Frameworks.
 
@@ -69,22 +69,23 @@ Add a Copy Files build phase copying the following files to Frameworks:
 Now you can head to the [Documentation](#documentation) to get started or to
 the [Examples](#examples) for some implementation ideas.
 
-# Examples
+## Examples
 
-## Image Sharing
+### Image Sharing
 
 See [IntAirActImageIOS](https://github.com/ase-lab/IntAirActSampleIOS)
 and [IntAirActImageOSX](https://github.com/ase-lab/IntAirActSampleOSX).
 
-# Compatibility
+## Compatibility
 
 IntAirAct is compatible with iOS >= 4.0 and OS&nbsp;X >= 10.6.
 
-# Documentation
+## Documentation
 
 Look at the [Code Documentation](#docs).
 
-# Use as a Nested Project
+## Use as a Nested Project
+
 A nested project enables the change of Framework code during development.
 This could make debugging easier. But it also increases the build time for
 fresh builds.
@@ -104,7 +105,7 @@ Drag the IntAirAct project into your project to add it as a nested project.
 Now it depends on whether your are coding for
 [iOS](#ios---nested) or [OS&nbsp;X](#osnbspx---nested).
 
-## iOS - Nested
+### iOS - Nested
 
 Add `IntAirActStaticIOS` as a Target Dependency of your main target.
 
@@ -131,7 +132,7 @@ Add `-ObjC` to the *Other Linker Flags* Build Setting and link the following Fra
 Now you can head to the [Documentation](#documentation) to get started or to
 the [Examples](#examples) for some implementation ideas.
 
-## OS&nbsp;X - Nested
+### OS&nbsp;X - Nested
 
 Add `IntAirActOSX` as a Target Dependency of your main target.
 
@@ -153,7 +154,7 @@ Add a Copy Files build phase copying the following files to Frameworks:
 Now you can head to the [Documentation](#documentation) to get started or to
 the [Examples](#examples) for some implementation ideas.
 
-### Build the Framework distribution
+#### Build the Framework distribution
 
 To build IntAirAct as a Framework you use these rake tasks. Please note that
 Ruby 1.9 is *required*.
@@ -164,7 +165,7 @@ For iOS and OS&nbsp;X use `bundle exec rake build`, otherwise use
 The Frameworks for iOS are in `build/Release-iphoneos` and for OS&nbsp;X
 in `build/Release`.
 
-#### Discussion
+##### Discussion
 
 The advantage is that you only build it once. A nested project always
 builds everything for a fresh build (e.g. after a clean).
