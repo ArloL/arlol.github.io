@@ -19,3 +19,8 @@ gems:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
