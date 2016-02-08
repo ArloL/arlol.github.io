@@ -1,6 +1,5 @@
 ---
 title: Projects
-subtitle: An overview of the projects that I worked on.
 description: An overview of the projects that I worked on.
 ---
 <p class="project_date"><em><time datetime="2012">2012</time></em></p>
