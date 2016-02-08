@@ -11,7 +11,7 @@ iebox is an improved installer of the [IE Application Compatibility
 VMs](https://www.microsoft.com/en-ca/download/details.aspx?id=11575) for Linux
 and OS&nbsp;X using [VirtualBox](http://virtualbox.org/).
 
-It is a fork of [ievms](http://xdissent.github.com/ievms/).
+It is a fork of [ievms](https://xdissent.github.io/ievms/).
 
 ## Motivation
 
@@ -36,7 +36,7 @@ IE9.
 
 1.  Download `iebox.sh`
 
-        curl -C - -O https://raw.github.com/ArloL/iebox/master/iebox.sh
+        curl -C - -O https://raw.githubusercontent.com/ArloL/iebox/master/iebox.sh
 
 2.  Make it executable
 
