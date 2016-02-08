@@ -1,8 +1,9 @@
 ---
-description: Arlo O'Keeffe's GitHub page where he seldomly posts interesting stuff.
+subtitle: Yay, you found my page.
+description: Stuff that Arlo thinks is interesting
 ---
-Hello,
+## Hello,
 
 my name is Arlo O'Keeffe. I am a Software Engineer.
 
-This is where I rarely post stuff that I think others might find interesting.
+This is where I post stuff that I think others might find interesting.
