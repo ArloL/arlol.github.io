@@ -1,7 +1,6 @@
 ---
 title: How to make Wikipedia easier to read
 description: "Wikipedia is not very readable. Here is how to make it easier."
-published: false
 ---
 
 In my opinion Wikipedia is not very readable. The lines are too long and the font size is too small. But you can change that by adding custom CSS. In order to do that you have to create an account first. Then visit [User:*Example*/vector.css](https://wikipedia.org/wiki/Special:MyPage/vector.css). Create the page and enter the following css

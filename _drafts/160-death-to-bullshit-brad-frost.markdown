@@ -1,7 +1,6 @@
 ---
 title: Death to Bullshit by Brad Frost
 description: ""
-published: false
 ---
 
 http://deathtobullshit.com/

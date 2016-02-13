@@ -1,7 +1,6 @@
 ---
 title: What does Big Brother see, while he is watching? by Simon Menner
 description: ""
-published: false
 ---
 
 http://blog.simonmenner.com/?p=18
