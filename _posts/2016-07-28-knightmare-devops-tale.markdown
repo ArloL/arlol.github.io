@@ -1,5 +1,5 @@
 ---
-title: Knightmare: A DevOps Cautionary Tale by Doug Seven
+title: "Knightmare: A DevOps Cautionary Tale by Doug Seven"
 description: A story why your deployments should be automated as much as reasonable.
 ---
 
