@@ -1,4 +1,6 @@
 ---
+title: Arlo O'Keeffe
+description: Stuff that I think is interesting
 headtitledisabled: true
 ---
 ## Hello,
