@@ -2,7 +2,7 @@ title:  "Arlo O'Keeffe"
 name: "Arlo O'Keeffe"
 author: "Arlo O'Keeffe"
 url: https://arlol.github.io
-description: "Stuff that Arlo thinks is interesting"
+description: "Stuff that I think is interesting"
 exclude: [Gemfile, Gemfile.lock, gravatar-favicon.sh, arlol-github-page.sublime-project, arlol-github-page.sublime-workspace]
 paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
