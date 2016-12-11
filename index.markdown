@@ -1,9 +1,9 @@
 ---
-title: Arlo O'Keeffe
+title: Articles & Projects
 description: Stuff that I think is interesting
 headtitledisabled: true
 ---
-## Hello,
+# Hello,
 
 my name is Arlo O'Keeffe. I am a Software Engineer.
 
