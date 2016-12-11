@@ -1,6 +1,4 @@
 ---
-subtitle: Yay, you found my page.
-description: Stuff that Arlo thinks is interesting
 headtitledisabled: true
 ---
 ## Hello,
