@@ -14,7 +14,7 @@ compress_html:
   endings:   all
 sass:
   style: compressed
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
