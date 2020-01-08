@@ -303,6 +303,6 @@ toc: true
 ## Open Source Aktivitäten
 
 * Zeitweise Hauptverantwortlicher von m2e-code-quality:
-  https://github.com/m2e-code-quality/m2e-code-quality
+  <https://github.com/m2e-code-quality/m2e-code-quality>
 * Aktiver Issue-Schreiber und gelegentlicher PR-Ersteller:
-  https://github.com/pulls?q=author%3AArloL
+  <https://github.com/pulls?q=author%3AArloL>
