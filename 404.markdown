@@ -1,6 +1,7 @@
 ---
 title: Page Not Found
 permalink: /404.html
+headtitledisabled: true
 sitemap: false
 ---
 The requested page could not be found.
