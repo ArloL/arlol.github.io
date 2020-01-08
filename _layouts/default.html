@@ -50,10 +50,13 @@ layout: compress
             {% elsif site.description %}
                 <p>{{ site.description }}</p>
             {% endif %}
+            {% if page.toc %}
+                {% include toc.html html=content h_min=2 h_max=2 %}
+            {% endif %}
         {% endunless %}
     </div>
     <div class="article">
-    {{ content }}
+    {% include anchor_headings.html html=content beforeHeading=true anchorClass='anchor' anchorBody='🔗' h_min=2 %}
     </div>
     <div class="footer">
         <p>Contact me at <a href="mailto:mailtoarlo@gmail.com">mailtoarlo@gmail.com</a></p>
