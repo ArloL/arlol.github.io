@@ -15,159 +15,185 @@ toc: true
 * grob eingesetzt
 * Vertiefung geplant
 
-## Datenbanken
-
-### SQL
-
-#### PostgreSQL
-
-* aktuell nicht im Einsatz
-* bei Evosec eingeführt als Ersatz für Firebird
-* verantwortlich für Betrieb
-* via Hibernate als ORM verwendet
-
-#### MS SQL
-
-* aktuell nicht im Einsatz
-* bei Evosec via Hibernate als ORM verwendet
-
-#### MySQL
-
-* aktuell im Einsatz
-* via Hibernate als ORM im Einsatz
-
-#### Firebird
-
-* bei Evosec via Hibernate als ORM verwendet
-
-### NoSQL
-
-#### MongoDB
-
-* aktuell im Einsatz
-* grundlegende Kenntnisse
-
-## Suche
-
-#### ElasticSearch
-
-* aktuell im Einsatz
-* technische Vorarbeit für Feature mit percolate Queries gemacht
-
-## Schemamanagement
-
-#### Liquibase
-
-* bei Evosec eingeführt
-* mehrere PRs gesendet
-* 4 Jahre Erfahrung
-
-#### Flyway
-
-* in Android Projekt für SQLite Datenbank verwendet
-
-## IDEs
-
-#### Eclipse
-
-* 6 Jahre Vollzeit
-* Open Source Plugin weiterentwickelt
-
-#### IntelliJ
-
-* seit 2019-03 Vollzeit
-
-#### Visual Studio Code
-
-* seit Veröffentlichung präferierter Editor
-
 ## Programmier- & Auszeichnungssprachen
 
-#### Java
+### Java
 
 * über 12 Jahren Erfahrung
 
-#### JavaScript
+### JavaScript
 
 * grundlegende Kenntnisse
 * Vertiefung seit 2019-03 via u.A. You Don’t Know JS
 
-#### HTML & CSS
+### HTML & CSS
 
 * über 12 Jahre Erfahrung
 
-#### PHP
+### PHP
 
 * 3 Jahre Erfahrung im Nebenberuf während des Bachelor-Studiums
 * eigenes Versandkosten-Plugin für xtCommerce entwickelt
 * lange nicht mehr verwendet
 
-#### C#
+### C#
 
 * 1 Jahr Erfahrung im Rahmen der Masterarbeit
 * lange nicht mehr verwendet
 
-#### Objective-C
+### Objective-C
 
 * 1 Jahr Erfahrung im Rahmen der Masterarbeit
 * lange nicht mehr verwendet
 
 ## Frameworks
 
-#### Spring / Spring Boot
+### Spring / Spring Boot
 
 * 7 Jahre Erfahrung
 * PRs gesendet
 * auch mit z.B. Spring Data, Spring AMQP, Spring Security gearbeitet
 
-#### Hibernate
+### Hibernate
 
 * 7 Jahre Erfahrung
 
-#### AngularJS
+### AngularJS
 
 * grundlegende Kenntnisse
 
-#### Angular
+### Angular
 
 * grundlegende Kenntnisse
 
-#### GWT
+### GWT
 
 * 6 Jahre Erfahrung
 
+## Automatisiertes Testen
+
+### jUnit
+
+* 7 Jahre Erfahrung
+
+### Mockito
+
+* 7 Jahre Erfahrung
+
+### AssertJ
+
+* 7 Jahre Erfahrung
+
+###  Selenium / cucumber
+
+* 2 Jahre Erfahrung, bei der Evosec eingeführt
+
 ## Build Tools / Automatisierung
 
-#### Maven
+### Maven
 
 * 7 Jahre Erfahrung
 * eigene Plugins entwickelt: <https://github.com/evosec/export-dependencies-maven-plugin/>
 
-#### Bash/Shell
+### Bash/Shell
 
 * 7 Jahre Erfahrung
 
-#### Batch/cmd/PowerShell
+### Batch
 
 * 7 Jahre Erfahrung
 
-## Automatisiertes Testen
-
-#### jUnit
+### PowerShell
 
 * 7 Jahre Erfahrung
 
-#### Mockito
+## IDEs
 
-* 7 Jahre Erfahrung
+### Eclipse
 
-#### AssertJ
+* 6 Jahre Vollzeit
+* Open Source Plugin weiterentwickelt
 
-* 7 Jahre Erfahrung
+### IntelliJ
 
-####  Selenium / cucumber
+* seit 2019-03 Vollzeit
 
-* 2 Jahre Erfahrung, bei der Evosec eingeführt
+### Visual Studio Code
+
+* seit Veröffentlichung präferierter Editor
+
+## Relationale Datenbanken
+
+### PostgreSQL
+
+* aktuell nicht im Einsatz
+* bei Evosec eingeführt als Ersatz für Firebird
+* verantwortlich für Betrieb
+* via Hibernate als ORM verwendet
+
+### MS SQL
+
+* aktuell nicht im Einsatz
+* bei Evosec via Hibernate als ORM verwendet
+
+### MySQL
+
+* aktuell im Einsatz
+* via Hibernate als ORM im Einsatz
+
+### Firebird
+
+* bei Evosec via Hibernate als ORM verwendet
+
+## Nichtrelationale Datenbanken / NoSQL
+
+### MongoDB
+
+* aktuell im Einsatz
+* grundlegende Kenntnisse
+
+## Schemamanagement
+
+### Liquibase
+
+* bei Evosec eingeführt
+* mehrere PRs gesendet
+* 4 Jahre Erfahrung
+
+### Flyway
+
+* in Android Projekt für SQLite Datenbank verwendet
+
+## Suchserver
+
+### ElasticSearch
+
+* aktuell im Einsatz
+* technische Vorarbeit für Feature mit percolate Queries gemacht
+
+## Messaging-Systeme / Streaming Plattformen
+
+* RabbitMQ: 4 Jahre Erfahrung, bei der Evosec eingeführt
+* Apache Kafka: 3 Monate analysiert, ob für Einsatz bei Evosec geeignet
+
+## Webserver / Application Server
+
+### Apache httpd
+
+* 6 Jahre Erfahrung
+* hauptsächlich Reverse Proxy zu Tomcat
+* verantwortlich für Betrieb bei Evosec
+* Konfiguration via Ansible
+
+### Apache Tomcat
+
+* 6 Jahre Erfahrung
+* verantwortlich für Betrieb bei Evosec
+* Konfiguration via Ansible
+* statt Spring Boot verwendet, um Arbeitsspeicher effizienter zu nutzen
+* eigenes Deployment Tooling geschrieben
+* eigene Tests entwickelt, um sicheres Redeployment zu gewährleisten:
+  <https://github.com/evosec/tomcat-classloader-leak-test>
 
 ## Continuous Integration
 
@@ -181,8 +207,17 @@ toc: true
 
 ## Versionverwaltung
 
-* Git: mehrfach eingeführt, 7 Jahre Erfahrung, bereits zwei Mal einen Vortrag zu gehalten: https://github.com/ArloL/git-presentation-2018-10
-* Subversion: 5 Jahre Erfahrung, aber lange nicht mehr verwendet
+### Git
+
+* mehrfach eingeführt
+* 7 Jahre Erfahrung
+* bereits zwei Mal einen Vortrag zu gehalten:
+  <https://github.com/ArloL/git-presentation-2018-10>
+
+### Subversion
+
+* 5 Jahre Erfahrung
+* lange nicht mehr verwendet
 
 ## Betriebssysteme & Plattformen
 
@@ -191,21 +226,6 @@ toc: true
 * MacOS: 15 Jahre Erfahrung als Entwicklungsplattform & private Nutzung
 * Android: 2 Jahre Erfahrung, bei der Evosec eine App entwickelt
 * iOS: 1 Jahr Erfahrung, für Masterarbeit Framework entwickelt, private Nutzung
-
-## Server
-
-#### Apache httpd
-
-6 Jahre Erfahrung, hauptsächlich Reverse Proxy zu Tomcat, verantwortlich für Betrieb bei Evosec, Konfiguration via Ansible
-
-#### Apache Tomcat
-
-6 Jahre Erfahrung, verantwortlich für Betrieb bei Evosec, Konfiguration via Ansible, statt Spring Boot verwendet, um Arbeitsspeicher effizienter zu nutzen, eigenes Deployment Tooling geschrieben, eigene Tests entwickelt, um sicheres Redeployment zu gewährleisten: https://github.com/evosec/tomcat-classloader-leak-test
-
-## Messaging-Systeme / Streaming Plattformen
-
-* RabbitMQ: 4 Jahre Erfahrung, bei der Evosec eingeführt
-* Apache Kafka: 3 Monate analysiert, ob für Einsatz bei Evosec geeignet
 
 ## Provisionierung
 
