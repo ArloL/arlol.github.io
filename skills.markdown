@@ -39,11 +39,13 @@ toc: true
 ### C#
 
 * 1 Jahr Erfahrung im Rahmen der Masterarbeit
+* eigenes Framework entwickelt: [IntAirAct](intairact.html)
 * lange nicht mehr verwendet
 
 ### Objective-C
 
 * 1 Jahr Erfahrung im Rahmen der Masterarbeit
+* eigenes Framework entwickelt: [IntAirAct](intairact.html)
 * lange nicht mehr verwendet
 
 ## Frameworks
@@ -58,11 +60,11 @@ toc: true
 
 * 7 Jahre Erfahrung
 
-### AngularJS
+### Angular
 
 * grundlegende Kenntnisse
 
-### Angular
+### AngularJS
 
 * grundlegende Kenntnisse
 
@@ -169,12 +171,20 @@ toc: true
 ### ElasticSearch
 
 * aktuell im Einsatz
-* technische Vorarbeit für Feature mit percolate Queries gemacht
+* technische Vorarbeit für Feature mit [Percolate Queries]
+  (https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html)
+  gemacht
 
 ## Messaging-Systeme / Streaming Plattformen
 
-* RabbitMQ: 4 Jahre Erfahrung, bei der Evosec eingeführt
-* Apache Kafka: 3 Monate analysiert, ob für Einsatz bei Evosec geeignet
+### RabbitMQ
+
+* 4 Jahre Erfahrung
+* bei der Evosec eingeführt
+
+### Apache Kafka
+
+* 3 Monate analysiert, ob für Einsatz bei Evosec geeignet
 
 ## Webserver / Application Server
 
@@ -197,13 +207,30 @@ toc: true
 
 ## Continuous Integration
 
-* Jenkins: mehrfach eingeführt, bei der Evosec die Jenkins Job DSL eingeführt
-* Travis CI nur für GitHub Projekte verwendet
+### Jenkins
+
+* mehrfach eingeführt
+* bei der Evosec eingeführt
+* später zentrale Pflege von Jobs via Jenkins Job DSL eingeführt
+
+### Travis CI
+
+* nur für kleinere GitHub Projekte verwendet
+
+### GitHub Actions
+
+* nur für kleinere GitHub Projekte verwendet
 
 ## Continuous Quality
 
-* SonarQube: bei der Evosec eingeführt, veranwortlich für den Betrieb und die Administration
-* Canary Builds: bei der Evosec für alle 100 Projekte eingeführt
+### SonarQube
+
+* bei der Evosec eingeführt
+* veranwortlich für den Betrieb und die Administration
+
+### Canary Builds
+
+* bei der Evosec für über 100 Projekte eingeführt
 
 ## Versionverwaltung
 
@@ -221,24 +248,57 @@ toc: true
 
 ## Betriebssysteme & Plattformen
 
-* Windows: 7 Jahre Erfahrung als Entwicklungsplattform
-* Linux: 7 Jahre Erfahrung als Betriebsplattform
-* MacOS: 15 Jahre Erfahrung als Entwicklungsplattform & private Nutzung
-* Android: 2 Jahre Erfahrung, bei der Evosec eine App entwickelt
-* iOS: 1 Jahr Erfahrung, für Masterarbeit Framework entwickelt, private Nutzung
+### Windows
+
+* 7 Jahre Erfahrung als Entwicklungsplattform
+
+### Linux
+
+* 7 Jahre Erfahrung als Betriebsplattform
+
+### MacOS
+
+* 15 Jahre Erfahrung als Entwicklungsplattform & private Nutzung
+
+### Android
+
+* 2 Jahre Erfahrung
+* bei der Evosec eine App entwickelt
+
+### iOS
+
+* siehe [Objective-C](#objective-c)
+* private Nutzung seit 5 Jahren
 
 ## Provisionierung
 
-* Ansible: 2 Jahre Erfahrung, bei der Evosec eingeführt
+### Ansible
+
+* 2 Jahre Erfahrung
+* bei der Evosec eingeführt
+* komplett eigene Playbooks geschrieben
 
 ## Monitoring
 
-* Sentry: 2 Jahre Erfahrung, bei der Evosec eingeführt
+### Sentry
+
+* 2 Jahre Erfahrung
+* bei der Evosec eingeführt
 
 ## Projektmanagement und Ticketverwaltung
 
-* Trello: privat mehrjährige Erfahrung, bei der Evosec eingeführt
-* JIRA & Confluence: aktuell im Einsatz
+### Trello
+
+* privat mehrjährige Erfahrung
+* bei der Evosec eingeführt
+
+### JIRA
+
+* aktuell im Einsatz
+
+### Confluence
+
+* aktuell im Einsatz
 
 ## Open Source Aktivitäten
 
