@@ -1,19 +1,15 @@
 ---
 title: Skills
 description: Some of the skills I have used in past projects.
-headtitledisabled: true
+toc: true
 ---
-# Skills
+## Agile Methoden
 
-These are some of the skills I have used in the past.
-
-## Agile methods
-
-#### Scrum
+### Scrum
 
 aktuell im Einsatz, Professional Scrum Master I zertifiziert
 
-#### Kanban
+### Kanban
 
 grob eingesetzt, Vertiefung geplant
 
