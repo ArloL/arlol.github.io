@@ -53,6 +53,23 @@ h6 {
     line-height: $line-height / $h6-font-size;
 }
 
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+    visibility: visible;
+}
+
+.anchor {
+    visibility: hidden;
+    float: left;
+    padding-right: 0.25em;
+    margin-left: -1.25em;
+    text-decoration: none;
+}
+
 p {
     margin: (0em + $line-height) 0;
 }
