@@ -81,7 +81,7 @@ toc: true
 
 * seit Veröffentlichung präferierter Editor
 
-## Programmiersprachen
+## Programmier- & Auszeichnungssprachen
 
 #### Java
 
