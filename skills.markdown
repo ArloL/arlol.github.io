@@ -1,6 +1,7 @@
 ---
 title: Skills
 description: Some of the skills I have used in past projects.
+headtitledisabled: true
 ---
 # Skills
 
