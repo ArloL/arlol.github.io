@@ -171,8 +171,8 @@ toc: true
 ### ElasticSearch
 
 * aktuell im Einsatz
-* technische Vorarbeit für Feature mit [Percolate Queries]
-  (https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html)
+* technische Vorarbeit für Feature mit [Percolate Queries](
+  https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html)
   gemacht
 
 ## Messaging-Systeme / Streaming Plattformen
