@@ -15,6 +15,11 @@
     All the margins should also be a multiple of 24px.
 */
 
+html {
+    font-family: sans-serif;
+    line-height: $line-height;
+}
+
 h1 {
     margin: (0em + $line-height / $h1-font-size) 0;
     font-size: 0em + $h1-font-size;
