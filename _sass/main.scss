@@ -1,8 +1,9 @@
 @import "normalize";
 @import "config";
 
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -14,28 +15,28 @@
    ========================================================================== */
 
 html {
-    font-size: 1em;
-    line-height: $line-height;
+  font-size: 1em;
+  line-height: $line-height;
 }
 
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
  *
- * These selection rule sets have to be separate.
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
  * Customize the background color to match your design.
  */
 
 ::-moz-selection {
-    background: $blue;
-    color: auto;
-    text-shadow: none;
+  background: $blue;
+  text-shadow: none;
 }
 
 ::selection {
-    background: $blue;
-    color: auto;
-    text-shadow: none;
+  background: $blue;
+  text-shadow: none;
 }
 
 /*
@@ -43,12 +44,12 @@ html {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: (0em + $line-height) 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: (0em + $line-height) 0;
+  padding: 0;
 }
 
 /*
@@ -63,7 +64,7 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 /*
@@ -71,9 +72,9 @@ video {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -81,7 +82,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 /* ==========================================================================
@@ -106,91 +107,63 @@ textarea {
     @page {
         margin: 11% 22% 22% 11%;
     }
-
     @page :left {
         margin: 11% 11% 22% 22%;
     }
-
     *,
     *:before,
-    *:after,
-    *:first-letter,
-    *:first-line {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
+    *:after {
+      background: transparent !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
     }
-
     a,
     a:visited {
-        text-decoration: none;
+      text-decoration: underline;
     }
-
     a[href]:after {
-        content: " (" attr(href) ")";
+      content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
-        content: " (" attr(title) ")";
+      content: " (" attr(title) ")";
     }
-
     /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
+       * Don't show links that are fragment identifiers,
+       * or use the `javascript:` pseudo protocol
+       */
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
-        content: "";
+      content: "";
     }
-
+    pre {
+      white-space: pre-wrap !important;
+    }
     pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+      border: 1px solid #999;
+      page-break-inside: avoid;
     }
-
     /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
+       * Printing Tables:
+       * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+       */
     thead {
-        display: table-header-group;
+      display: table-header-group;
     }
-
     tr,
     img {
-        page-break-inside: avoid;
+      page-break-inside: avoid;
     }
-
-    img {
-        max-width: 100% !important;
-    }
-
     p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
+      orphans: 3;
+      widows: 3;
     }
-
-    h1,
     h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        page-break-after: avoid;
+    h3 {
+      page-break-after: avoid;
     }
-
-    body {
-        font-size: 12pt;
-    }
-
-    .nav, nav {
-        display: none;
-    }
-}
+  }
