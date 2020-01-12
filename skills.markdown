@@ -3,6 +3,9 @@ title: Skills
 description: Some of the skills I have used in past projects.
 toc: true
 ---
+Meinen Lebenslauf findet man auf [LinkedIn](
+https://www.linkedin.com/in/arlo-okeeffe/).
+
 ## Agile Methoden
 
 ### Scrum
@@ -20,13 +23,21 @@ toc: true
 ### Java
 
 * über 12 Jahren Erfahrung
+* siehe [Spring](#spring--spring-boot)
+* Erfahrung mit Libraries wie z.B. Thymeleaf
+* Projekte bis 100kLOC verwaltet
 
 ### JavaScript
 
 * grundlegende Kenntnisse
 * Vertiefung seit 2019-03 via u.A. You Don’t Know JS
+* siehe [Angular](#angular)
 
-### HTML & CSS
+### HTML
+
+* über 12 Jahre Erfahrung
+
+### CSS
 
 * über 12 Jahre Erfahrung
 
@@ -77,44 +88,56 @@ toc: true
 ### jUnit
 
 * 7 Jahre Erfahrung
+* eigenen Open Source Test geschrieben: https://github.com/evosec/tomcat-classloader-leak-test
 
 ### Mockito
 
 * 7 Jahre Erfahrung
+* in Kombination mit [jUnit](#junit) verwendet
+* ich bin nicht der größte Fan von Mocking, aber es lässt sich nicht immer
+  vermeiden
 
 ### AssertJ
 
 * 7 Jahre Erfahrung
+* in Kombination mit [jUnit](#junit) verwendet
 
 ###  Selenium / cucumber
 
-* 2 Jahre Erfahrung, bei der Evosec eingeführt
+* 2 Jahre Erfahrung
+* bei der Evosec eingeführt
+* hauptsächlich für kleine automatisierte Acceptance Tests
 
 ## Build Tools / Automatisierung
 
 ### Maven
 
 * 7 Jahre Erfahrung
-* eigene Plugins entwickelt: <https://github.com/evosec/export-dependencies-maven-plugin/>
+* Release Automatisierung mit git flow
+* eigenes Open Source Plugin entwickelt: <https://github.com/evosec/export-dependencies-maven-plugin/>
 
 ### Bash/Shell
 
 * 7 Jahre Erfahrung
+* hauptsächlich für Automatisierung von Builds und mit [Ansible](#ansible)
 
 ### Batch
 
 * 7 Jahre Erfahrung
+* hauptsächlich für Automatisierung von Builds
 
 ### PowerShell
 
 * 7 Jahre Erfahrung
+* hauptsächlich für Automatisierung von Builds
 
-## IDEs
+## Entwicklungsumgebungen
 
 ### Eclipse
 
 * 6 Jahre Vollzeit
-* Open Source Plugin weiterentwickelt
+* Open Source Plugin weiterentwickelt: [m2e-code-quality](
+  https://github.com/m2e-code-quality/m2e-code-quality)
 
 ### IntelliJ
 
@@ -129,23 +152,24 @@ toc: true
 ### PostgreSQL
 
 * aktuell nicht im Einsatz
-* bei Evosec eingeführt als Ersatz für Firebird
+* bei Evosec eingeführt als Ersatz für Firebird; auch für Betrieb verantwortlich
 * verantwortlich für Betrieb
-* via Hibernate als ORM verwendet
+* via [Hibernate](#hibernate) als ORM verwendet
 
 ### MS SQL
 
 * aktuell nicht im Einsatz
-* bei Evosec via Hibernate als ORM verwendet
+* bei Evosec via [Hibernate](#hibernate) als ORM verwendet
 
-### MySQL
+### MySQL / MariaDB
 
 * aktuell im Einsatz
-* via Hibernate als ORM im Einsatz
+* via [Hibernate](#hibernate) als ORM im Einsatz
 
 ### Firebird
 
-* bei Evosec via Hibernate als ORM verwendet
+* bei Evosec verwendet und für Betrieb veranwortlich
+* via [Hibernate](#hibernate) als ORM verwendet
 
 ## Nichtrelationale Datenbanken / NoSQL
 
