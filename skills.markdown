@@ -1,6 +1,6 @@
 ---
 title: Skills
-description: Some of the skills I have used in past projects.
+description: Einige der Fähigkeiten, die ich vergangenen Projekten eingesetzt habe.
 toc: true
 ---
 Meinen Lebenslauf findet man auf [LinkedIn](
@@ -10,22 +10,25 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Scrum
 
-* aktuell im Einsatz
+* ca. ein Jahr als Entwickler in einem Scrum Team gearbeitet
 * Professional Scrum Master I zertifiziert
 
 ### Kanban
 
 * grob eingesetzt
-* Vertiefung geplant
+* Vertiefung geplant mit Kanban in Action
 
 ## Programmier- & Auszeichnungssprachen
 
 ### Java
 
 * über 12 Jahren Erfahrung
-* siehe [Spring](#spring--spring-boot)
-* Erfahrung mit Libraries wie z.B. Thymeleaf
-* Projekte bis 100kLOC verwaltet
+* Erfahrung mit Libraries wie z.B. [Spring](#spring--spring-boot),
+  [Hibernate](#hibernate), Thymeleaf, guava oder jsoup
+* Continuous Deployment Pipelines mit [Maven](#maven) und
+  [Gradle](#gradle) aufgebaut
+* Libraries entwickelt für den internen Einsatz (z.B. )
+* Projekte mit bis zu 100kLOC übernommen und alleine weiterentwickelt
 
 ### JavaScript
 
@@ -49,15 +52,13 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### C#
 
-* 1 Jahr Erfahrung im Rahmen der Masterarbeit
+* 1 Jahr Erfahrung im Rahmen der Masterarbeit (2012)
 * eigenes Framework entwickelt: [IntAirAct](intairact.html)
-* lange nicht mehr verwendet
 
 ### Objective-C
 
-* 1 Jahr Erfahrung im Rahmen der Masterarbeit
+* 1 Jahr Erfahrung im Rahmen der Masterarbeit (2012)
 * eigenes Framework entwickelt: [IntAirAct](intairact.html)
-* lange nicht mehr verwendet
 
 ## Frameworks
 
