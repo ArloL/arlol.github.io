@@ -10,7 +10,7 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Scrum
 
-* ca. ein Jahr als Entwickler in einem Scrum Team gearbeitet
+* ca. ein Jahr als Entwickler in einem Scrum Team gearbeitet (2019)
 * Professional Scrum Master I zertifiziert
 
 ### Kanban
@@ -43,6 +43,7 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 ### CSS
 
 * über 12 Jahre Erfahrung
+* gerne mit LESS oder SCSS
 
 ### PHP
 
@@ -75,10 +76,14 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 ### Angular
 
 * grundlegende Kenntnisse
+* Udemy Kurs belegt und kleinere Beispiele durchgearbeitet
 
 ### AngularJS
 
 * grundlegende Kenntnisse
+* ca. 1 Jahr Erfahrung (2019) eine existierende AngularJS
+  Anwendung weiterzuentwickeln
+  * zum Beispiel Bugs fixen mit der ckeditor Integration
 
 ### GWT
 
@@ -95,8 +100,8 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 * 7 Jahre Erfahrung
 * in Kombination mit [jUnit](#junit) verwendet
-* ich bin nicht der größte Fan von Mocking, aber es lässt sich nicht immer
-  vermeiden
+* ich bin nicht der größte Fan von Mocking, aber es lässt sich
+  nicht immer vermeiden
 
 ### AssertJ
 
@@ -113,9 +118,15 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Maven
 
-* 7 Jahre Erfahrung
+* 7 Jahre Erfahrung als [Java](#java) Build Tool
 * Release Automatisierung mit git flow
 * eigenes Open Source Plugin entwickelt: <https://github.com/evosec/export-dependencies-maven-plugin/>
+
+### Gradle
+
+* grundlegende Erfahrung
+* Open Source Projekte zum kompilieren bringen
+* Beispielprojekte von Spring Boot Getting Started durchgearbeitet
 
 ### Bash/Shell
 
@@ -136,13 +147,13 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Eclipse
 
-* 6 Jahre Vollzeit
+* ca. 6 Jahre Erfahrung (2013-2019)
 * Open Source Plugin weiterentwickelt: [m2e-code-quality](
   https://github.com/m2e-code-quality/m2e-code-quality)
 
 ### IntelliJ
 
-* seit 2019-03 Vollzeit
+* ca. 1 Jahr Erfahrung (2019)
 
 ### Visual Studio Code
 
@@ -176,7 +187,7 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### MongoDB
 
-* aktuell im Einsatz
+* ca. 1 Jahr Erfahrung (2019)
 * grundlegende Kenntnisse
 
 ## Schemamanagement
@@ -195,7 +206,7 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### ElasticSearch
 
-* aktuell im Einsatz
+* ca. 1 Jahr Erfahrung (2019)
 * technische Vorarbeit für Feature mit [Percolate Queries](
   https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-percolate-query.html)
   gemacht
@@ -240,11 +251,11 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Travis CI
 
-* nur für kleinere GitHub Projekte verwendet
+* für kleinere GitHub Projekte verwendet
 
 ### GitHub Actions
 
-* nur für kleinere GitHub Projekte verwendet
+* für kleinere GitHub Projekte verwendet
 
 ## Continuous Quality
 
@@ -319,11 +330,11 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### JIRA
 
-* aktuell im Einsatz
+* ca. 1 Jahr Erfahrung (2019)
 
 ### Confluence
 
-* aktuell im Einsatz
+* ca. 1 Jahr Erfahrung (2019)
 
 ## Open Source Aktivitäten
 
