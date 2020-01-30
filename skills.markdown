@@ -6,6 +6,20 @@ toc: true
 Meinen Lebenslauf findet man auf [LinkedIn](
 https://www.linkedin.com/in/arlo-okeeffe/).
 
+## Was kann ich?
+
+Ich kann den Technologie-Stack hoch- und runterlaufen, um entweder die größten
+Probleme oder die mit dem größten Hebel zu lösen. Neben anderen Dingen hat mich
+das dazu gebracht eigenes Deployment Tooling zu schreiben, automatisierte
+Provisionierung einzuführen, Libraries zu schreiben, Continuous Quality Systeme
+einzuführen, Releases zu standardisieren und automatisieren, Monitoring Systeme
+einzuführen und Tests für allgemeine Probleme zu entwickeln.
+
+Ich möchte betonen, dass ich kein "eine Sprache sie zu knechten" Entwickler bin
+und - hoffentlich - das beste Werkzeug für jede Aufgabe verwende.
+Nichtsdestotrotz: mein Programmier-"Hammer" ist definitiv Java in Kombination
+mit Spring Boot.
+
 ## Agile Methoden
 
 ### Scrum
@@ -22,7 +36,7 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Java
 
-* über 12 Jahren Erfahrung
+* über 12 Jahre Erfahrung
 * Erfahrung mit Libraries wie z.B. [Spring](#spring--spring-boot),
   [Hibernate](#hibernate), Thymeleaf, guava oder jsoup
 * Continuous Deployment Pipelines mit [Maven](#maven) und
@@ -163,23 +177,24 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### PostgreSQL
 
-* aktuell nicht im Einsatz
+* ca. 4 Jahre Erfahrung (2015-2019)
 * bei Evosec eingeführt als Ersatz für Firebird; auch für Betrieb verantwortlich
 * verantwortlich für Betrieb
 * via [Hibernate](#hibernate) als ORM verwendet
 
 ### MS SQL
 
-* aktuell nicht im Einsatz
+* ca. 4 Jahre Erfahrung (2015-2019)
 * bei Evosec via [Hibernate](#hibernate) als ORM verwendet
 
 ### MySQL / MariaDB
 
-* aktuell im Einsatz
+* ca. 1 Jahr Erfahrung (2019)
 * via [Hibernate](#hibernate) als ORM im Einsatz
 
 ### Firebird
 
+* ca. 6 Jahre Erfahrung (2013-2019)
 * bei Evosec verwendet und für Betrieb veranwortlich
 * via [Hibernate](#hibernate) als ORM verwendet
 
@@ -233,13 +248,14 @@ https://www.linkedin.com/in/arlo-okeeffe/).
 
 ### Apache Tomcat
 
-* 6 Jahre Erfahrung
+* ca. 7 Jahre Erfahrung (2013-2019)
+* Continuous Deployment mittels Parrallel Deployment umgesetzt
 * verantwortlich für Betrieb bei Evosec
-* Konfiguration via Ansible
-* statt Spring Boot verwendet, um Arbeitsspeicher effizienter zu nutzen
-* eigenes Deployment Tooling geschrieben
-* eigene Tests entwickelt, um sicheres Redeployment zu gewährleisten:
-  <https://github.com/evosec/tomcat-classloader-leak-test>
+  * Konfiguration via Ansible
+  * statt Spring Boot verwendet, um Arbeitsspeicher effizienter zu nutzen
+  * eigenes Deployment Tooling geschrieben
+  * eigene Tests entwickelt, um sicheres Redeployment zu gewährleisten:
+    <https://github.com/evosec/tomcat-classloader-leak-test>
 
 ## Continuous Integration
 
