@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem "github-pages", "216"
+gem "github-pages", "217"
 gem 'webrick', "1.7"
