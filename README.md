@@ -1,12 +1,11 @@
-# ${PROJECT}
+# arlol.github.io
 
-Short description
+This is the source of my GitHub page.
 
 # Quickstart
 
-`./call-some-command --with-some-options`
-
-# Install
-
-`./install`
-
+```
+gem install bundler
+bundle install
+bundle exec jekyll serve
+```
