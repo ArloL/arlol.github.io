@@ -342,13 +342,14 @@
         ];
 
         let html = "";
-        html += "<h1>Erfüllt</h1>";
+        html += "<h1>Gefühle</h1>";
+        html += "<h2>Erfüllt</h2>";
         html += "<div id='needsmet'>";
         feelingsNeedsMet.forEach(feeling => {
             html += `<p><label><input type="checkbox" value="${feeling}"> ${feeling}</label></p>`
         });
         html += "</div>";
-        html += "<h1>Nicht erfüllt</h1>";
+        html += "<h2>Nicht erfüllt</h2>";
         html += "<div id='needsnotmet'>";
         feelingsNeedsNotMet.forEach(feeling => {
             html += `<p><label><input type="checkbox" value="${feeling}"> ${feeling}</label></p>`
