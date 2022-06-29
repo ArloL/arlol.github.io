@@ -11,6 +11,7 @@
     <p>Erst die <a href="gefuehle.html">Gefühle</a>. Dann die <a href="beduerfnisse.html">Bedürfnisse</a>.</p>
     <p>Durchscrollen. Anklicken. Zusammenfassung gibt's am Ende.</p>
     <div id="root"></div>
+    <p>Weiter zu den <a href="beduerfnisse.html">Bedürfnissen</a>.</p>
     <script>
         const feelingsNeedsMet = [
             "locker",
@@ -360,7 +361,9 @@
         const root = document.querySelector('#root');
         root.innerHTML = html;
         const summaryNeedsMet = document.createElement("p");
+        summaryNeedsMet.innerText = "Erfüllt: ...";
         const summaryNeedsNotMet = document.createElement("p");
+        summaryNeedsNotMet.innerText = "Nicht erfüllt: ...";
         root.appendChild(summaryNeedsMet);
         root.appendChild(summaryNeedsNotMet);
         document.querySelectorAll("#needsmet input").forEach(checkbox => {
