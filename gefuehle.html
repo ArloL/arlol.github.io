@@ -15,6 +15,24 @@
     <p>Weiter zu den <a href="beduerfnisse.html">Bedürfnissen</a>.</p>
   </div>
   <script>
+    function shuffle(array) {
+      let currentIndex = array.length,  randomIndex;
+
+      // While there remain elements to shuffle.
+      while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+
+      return array;
+    }
+
     const feelingsNeedsMet = [
       "locker",
       "hellwach",
@@ -347,18 +365,15 @@
 
     let html = "";
     html += "<h1>Gefühle</h1>";
-    html += "<h2>Erfüllt</h2>";
-    html += "<div id='needsmet'>";
+    let feelings = [];
     feelingsNeedsMet.forEach(feeling => {
-      html += `<p><label><input type="checkbox" value="${feeling}"> ${feeling}</label></p>`
+      feelings.push(`<p><label><input type="checkbox" data-type="met" value="${feeling}"> ${feeling}</label></p>`);
     });
-    html += "</div>";
-    html += "<h2>Nicht erfüllt</h2>";
-    html += "<div id='needsnotmet'>";
     feelingsNeedsNotMet.forEach(feeling => {
-      html += `<p><label><input type="checkbox" value="${feeling}"> ${feeling}</label></p>`
+      feelings.push(`<p><label><input type="checkbox" data-type="not" value="${feeling}"> ${feeling}</label></p>`);
     });
-    html += "</div>";
+    shuffle(feelings);
+    html += feelings.slice(0, 100).join('');
     html += "<h1>Zusammenfassung</h1>";
     const root = document.querySelector('#root');
     root.innerHTML = html;
@@ -368,14 +383,16 @@
     summaryNeedsNotMet.innerText = "Nicht erfüllt: ...";
     root.appendChild(summaryNeedsMet);
     root.appendChild(summaryNeedsNotMet);
-    document.querySelectorAll("#needsmet input").forEach(checkbox => {
+    document.querySelectorAll("input[data-type=met]").forEach(checkbox => {
+      console.log(checkbox.value);
       checkbox.addEventListener('change', (event) => {
-        summaryNeedsMet.innerText = "Erfüllt: " + [...document.querySelectorAll("#needsmet input:checked")].map(checked => checked.value).join(', ');
+        summaryNeedsMet.innerText = "Erfüllt: " + [...document.querySelectorAll("input[data-type=met]:checked")].map(checked => checked.value).join(', ');
       });
     });
-    document.querySelectorAll("#needsnotmet input").forEach(checkbox => {
+    document.querySelectorAll("input[data-type=not]").forEach(checkbox => {
+      console.log(checkbox.value);
       checkbox.addEventListener('change', (event) => {
-        summaryNeedsNotMet.innerText = "Nicht erfüllt: " + [...document.querySelectorAll("#needsnotmet input:checked")].map(checked => checked.value).join(', ');
+        summaryNeedsNotMet.innerText = "Nicht erfüllt: " + [...document.querySelectorAll("input[data-type=not]:checked")].map(checked => checked.value).join(', ');
       });
     });
   </script>
