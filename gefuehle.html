@@ -15,6 +15,8 @@
     <p>Weiter zu den <a href="beduerfnisse.html">Bedürfnissen</a>.</p>
   </div>
   <script>
+    (function () {
+
     function shuffle(array) {
       let currentIndex = array.length,  randomIndex;
 
@@ -47,7 +49,6 @@
       "selig",
       "wohlwollend",
       "wohl(ig)",
-      "sich freuen",
       "zuneigend",
       "ausgeglichen",
       "gespannt",
@@ -88,7 +89,6 @@
       "bezaubert",
       "offen(-herzig)",
       "spritzig",
-      "Lust haben",
       "tatkräftig",
       "vergnügt",
       "wohlgemut",
@@ -147,7 +147,6 @@
       "erstaunt",
       "leicht",
       "still",
-      "Lebenslust",
       "erleichtert",
       "entzückt",
       "unbekümmert",
@@ -353,7 +352,6 @@
       "frustriert",
       "gestresst",
       "zwiespältig",
-      "die Nase voll",
       "deprimiert",
       "energielos",
       "ungeduldig",
@@ -395,6 +393,8 @@
         summaryNeedsNotMet.innerText = "Nicht erfüllt: " + [...document.querySelectorAll("input[data-type=not]:checked")].map(checked => checked.value).join(', ');
       });
     });
+
+    })();
   </script>
 </body>
 
