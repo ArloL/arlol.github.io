@@ -213,7 +213,7 @@
     shuffle(needs);
 
     let html = "<h1>Bedürfnisse</h1>";
-    needs.forEach(need => {
+    needs.slice(0, 100).forEach(need => {
       html += `<p><label><input type="checkbox" value="${need}"> ${need}</label></p>`
     })
     html += "<h1>Zusammenfassung</h1>";
