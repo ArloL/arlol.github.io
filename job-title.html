@@ -1,0 +1,126 @@
+<!doctype html>
+
+<head>
+  <title>Find your next job title</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="article">
+    <h1>Find your next job title</h1>
+    <div id="root"></div>
+  </div>
+  <script>
+    (function () {
+
+const first = [
+    "AESTHETIC",
+    "BOLD",
+    "PLAYFUL",
+    "NEW",
+    "DIGITAL",
+    "CONSCIOUS",
+    "GENERAL",
+    "FUTURE",
+    "NEXT",
+    "SPECIAL",
+    "HYBRID",
+    "ONLINE",
+    "VIRTUAL",
+    "NEXT LEVEL",
+    "INTERDISCIPLINARY",
+    "REMOTE",
+    "REGENERATIVE",
+    "SENIOR",
+    "SPIRITUAL",
+    "INTERGALACTIC",
+    "VUCA",
+    "SUSTAINABLE",
+    "YOGA",
+    "ZEN",
+    "RAPID",
+    "360°"
+];
+
+const second=[
+    "WORKPLACE",
+    "OFFICE",
+    "PEOPLE",
+    "RELATIONSHIP",
+    "INNOVATION",
+    "COLLABORATION",
+    "LEADERSHIP",
+    "MANAGEMENT",
+    "TALENT",
+    "CULTURE",
+    "DIGITALIZATION",
+    "TREND",
+    "VISION",
+    "BRAND",
+    "STRATEGY",
+    "SUSTAINABILITY",
+    "GROWTH",
+    "AUTOMATION",
+    "CHANGE",
+    "TRANSFORMATION",
+    "INTRAPRENEURSHIP",
+    "COMMUNICATION",
+    "WORK",
+    "SCALING",
+    "MEDITATION",
+    "CONTENT"
+];
+
+const third = [
+    "ENGINEER",
+    "EVANGELIST",
+    "DESIGNER",
+    "INCUBATOR",
+    "SCOUT",
+    "ARCHITECT",
+    "FACILITATOR",
+    "PRESIDENT",
+    "AGENT",
+    "ENABLER",
+    "OFFICER",
+    "AMBASSADOR",
+    "CHIEF",
+    "MAKER",
+    "SCIENTIST",
+    "EXPLORER",
+    "GURU",
+    "EVISIONER",
+    "MANAGER",
+    "TRAINER",
+    "ADVOCATE",
+    "RESEARCHER",
+    "EXPERT",
+    "DEVELOPER",
+    "LEADER",
+    "INTERN"
+];
+
+function randomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+const root = document.querySelector('#root');
+
+const summary = document.createElement("p");
+summary.innerText = "Your job title is: ...";
+
+const generate = document.createElement("button");
+generate.innerText = "Generate";
+generate.addEventListener("click", () => {
+    summary.innerText = `Your job title is: ${randomElement(first)} ${randomElement(second)} ${randomElement(third)}`;
+});
+
+root.appendChild(summary);
+root.appendChild(generate);
+
+})();
+  </script>
+</body>
+
+</html>
