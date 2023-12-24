@@ -5,6 +5,7 @@ pagination:
   enabled: true
   per_page: 10
   title: ':title'
+  sort_reverse: true
 ---
 {% for post in paginator.posts %}
     <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
