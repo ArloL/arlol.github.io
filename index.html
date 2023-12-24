@@ -7,10 +7,7 @@ headtitledisabled: true
     <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <div>
-        {{ post.excerpt }}
-        <p>
-            <a href="{{ post.url }}">Read More</a>
-        </p>
+        {{ post.content }}
     </div>
     <hr>
 {% endfor %}
