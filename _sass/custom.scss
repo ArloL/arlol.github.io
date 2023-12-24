@@ -188,6 +188,8 @@ h1, h2, h3, h4, h5, h6, p {
     @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
 }
 
-body {
-    @include light
+@media (prefers-color-scheme: dark) {
+    body {
+        @include dark
+    }
 }
