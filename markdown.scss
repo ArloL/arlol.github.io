@@ -1,5 +1,6 @@
 ---
 ---
+@use "sass:math";
 
 @import "config";
 
@@ -10,41 +11,41 @@ html {
 }
 
 h1 {
-    margin: (0em + $line-height / $h1-font-size) 0;
+    margin: (0em + math.div($line-height, $h1-font-size)) 0;
     font-size: 0em + $h1-font-size;
-    line-height: $line-height / $h1-font-size;
+    line-height: math.div($line-height, $h1-font-size);
 }
 
 h2 {
-    margin: (0em + $line-height / $h2-font-size) 0;
+    margin: (0em + math.div($line-height, $h2-font-size)) 0;
     font-size: 0em + $h2-font-size;
-    line-height: $line-height / $h2-font-size;
+    line-height: math.div($line-height, $h2-font-size);
 }
 
 h3 {
-    margin: (0em + $line-height / $h3-font-size) 0;
+    margin: (0em + math.div($line-height, $h3-font-size)) 0;
     font-size: 0em + $h3-font-size;
-    line-height: $line-height / $h3-font-size;
+    line-height: math.div($line-height, $h3-font-size);
 }
 
 h4 {
-    margin: (0em + $line-height / $h4-font-size) 0;
+    margin: (0em + math.div($line-height, $h4-font-size)) 0;
     font-size: 0em + $h4-font-size;
     font-style: italic;
-    line-height: $line-height / $h4-font-size;
+    line-height: math.div($line-height, $h4-font-size);
 }
 
 h5 {
-    margin: (0em + $line-height / $h5-font-size) 0;
+    margin: (0em + math.div($line-height, $h5-font-size)) 0;
     font-size: 0em + $h5-font-size;
-    line-height: $line-height / $h5-font-size;
+    line-height: math.div($line-height, $h5-font-size);
 }
 
 h6 {
-    margin: (0em + $line-height / $h6-font-size) 0;
+    margin: (0em + math.div($line-height, $h6-font-size)) 0;
     font-size: 0em + $h6-font-size;
     font-style: italic;
-    line-height: $line-height / $h6-font-size;
+    line-height: math.div($line-height, $h6-font-size);
 }
 
 p {
