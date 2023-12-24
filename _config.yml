@@ -1,23 +1,19 @@
-title:  "Arlo O'Keeffe"
+title: "Arlo O'Keeffe"
 name: "Arlo O'Keeffe"
 author: "Arlo O'Keeffe"
 url: https://arlol.github.io
 description: "Stuff that I think is interesting"
-paginate: 10
 permalink: /articles/:year-:month-:day-:title.html
 paginate_path: "/articles/page:num/"
 language: en
+pagination:
+  enabled: true
 compress_html:
   clippings: all
   comments:  ["<!-- ", " -->"]
   endings:   all
 sass:
   style: compressed
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap
 defaults:
   - scope:
       path: ""

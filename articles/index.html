@@ -1,6 +1,10 @@
 ---
 title: Articles
-description: A collection of articles by Arlo O'Keeffe.
+description: These are all the posts I've written.
+pagination:
+  enabled: true
+  per_page: 10
+  title: ':title'
 ---
 {% for post in paginator.posts %}
     <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
@@ -21,13 +25,13 @@ description: A collection of articles by Arlo O'Keeffe.
         {% if paginator.previous_page %}
             <p>
                 {% if paginator.previous_page == 1 %}
-                    <a href="/articles/">&laquo; Previous Page</a>
+                    <a href="/articles/">&laquo; Newer posts</a>
                 {% else %}
-                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Previous Page</a>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Newer posts</a>
                 {% endif %}
             </p>
         {% else %}
-            <p>&laquo; Previous Page</p>
+            &laquo; Newer posts
         {% endif %}
 
         <ul class="nav pager">
@@ -48,10 +52,10 @@ description: A collection of articles by Arlo O'Keeffe.
 
         {% if paginator.next_page %}
             <p>
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next Page &raquo;</a>
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older posts &raquo;</a>
             </p>
         {% else %}
-            <p>Next Page &raquo;</p>
+            <p>Older posts &raquo;</p>
         {% endif %}
 
     </div>
