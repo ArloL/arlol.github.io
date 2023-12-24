@@ -1,0 +1,39 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: [$default-branch]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.1.1
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1.162.0
+      with:
+        bundler-cache: true
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v4.0.0
+    - name: Build with Jekyll
+      run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3.0.0
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4.0.0
