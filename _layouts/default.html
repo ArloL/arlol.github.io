@@ -40,6 +40,12 @@ layout: compress
         {% if page.github_link %}
             <p class="github_link"><a href="{{ page.github_link }}">View on GitHub</a></p>
         {% endif %}
+        {% if page.collection == "posts" %}
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}
+                <p>{{ page.description }}</p>
+            {% endif %}
+        {% endif %}
         {% if page.toc %}
             {% include toc.html html=content h_min=2 h_max=3 %}
         {% endif %}
