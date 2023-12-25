@@ -1,6 +1,7 @@
 ---
 title: Skills
 description: Einige der Fähigkeiten, die ich vergangenen Projekten eingesetzt habe.
+language: de
 toc: true
 ---
 Meinen Lebenslauf findet man auf [LinkedIn](
