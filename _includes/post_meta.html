@@ -1,0 +1,7 @@
+<div class="meta">
+    <a href="{{ include.post.url }}">Share</a> ·
+    {% if include.post.via %}
+    via <a href="{{ include.post.via.link }}">{{ include.post.via.text }}</a> ·
+    {% endif %}
+    <time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%Y-%m-%d' }}</time>
+</div>

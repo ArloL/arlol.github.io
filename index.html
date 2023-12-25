@@ -7,13 +7,7 @@ description: Stuff that I think is interesting
         <div class="post">
             {{ post.content }}
         </div>
-        <div class="meta">
-            <a href="{{ post.url }}">Share</a> ·
-            {% if post.via %}
-            via <a href="{{ post.via.link }}">{{ post.via.text }}</a> ·
-            {% endif %}
-            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
-        </div>
+        {% include post_meta.html post=post %}
     {% else %}
         <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>

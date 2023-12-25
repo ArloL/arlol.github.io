@@ -52,6 +52,9 @@ layout: compress
     </div>
     <div class="article">
     {% include anchor_headings.html html=content beforeHeading=true anchorClass='anchor' h_min=2 %}
+    {% if page.collection == "posts" %}
+        {% include post_meta.html post=page %}
+    {% endif %}
     </div>
     <div class="footer">
         <p>Copyright © 2012-2023 Arlo O'Keeffe</p>
