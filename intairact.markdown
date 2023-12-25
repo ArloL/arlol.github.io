@@ -3,6 +3,10 @@ title: IntAirAct
 description: A Framework enabling Device Interaction using REST.
 github_link: https://github.com/ase-lab/IntAirAct
 ---
+# IntAirAct
+
+A Framework enabling Device Interaction using REST.
+
 ## What is IntAirAct?
 
 Imagine you could look at the images of all the devices around and then flick at your

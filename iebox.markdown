@@ -3,6 +3,10 @@ title: iebox
 description: Install VirtualBox VMs for IE6-IE9 in one step.
 github_link: https://github.com/ArloL/iebox
 ---
+# iebox
+
+Install VirtualBox VMs for IE6-IE9 in one step.
+
 ## What is iebox?
 
 iebox is an improved installer of the [IE Application Compatibility

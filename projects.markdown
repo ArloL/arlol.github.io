@@ -2,6 +2,10 @@
 title: Projects
 description: An overview of the projects that I worked on.
 ---
+# Projects
+
+An overview of the projects that I worked on.
+
 <p class="project_date"><em><time datetime="2012">2012</time></em></p>
 
 ## IntAirAct

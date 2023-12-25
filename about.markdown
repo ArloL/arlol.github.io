@@ -1,7 +1,6 @@
 ---
 title: About
 description: Stuff that I think is interesting
-headtitledisabled: true
 ---
 # Hello,
 

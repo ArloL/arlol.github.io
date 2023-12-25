@@ -39,7 +39,7 @@ layout: compress
         {% if page.github_link %}
             <p class="github_link"><a href="{{ page.github_link }}">View on GitHub</a></p>
         {% endif %}
-        {% unless page.headtitledisabled %}
+        {% if page.head_title_enabled %}
             {% if page.title %}
                 <h1>{{ page.title }}</h1>
             {% elsif site.title %}
@@ -55,7 +55,7 @@ layout: compress
             {% if page.toc %}
                 {% include toc.html html=content h_min=2 h_max=3 %}
             {% endif %}
-        {% endunless %}
+        {% endif %}
     </div>
     <div class="article">
     {% include anchor_headings.html html=content beforeHeading=true anchorClass='anchor' h_min=2 %}
