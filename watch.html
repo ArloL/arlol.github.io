@@ -1,32 +1,23 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-  <meta charset="utf-8">
-  <title>YouTube video player</title>
-</head>
-<body>
-  <iframe
-    width="560"
-    height="315"
-    style="position: absolute;; border: none"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-  <script>
-    (function () {
-      var query = {};
-      location.search
-          .substr(1)
-          .split('&')
-          .forEach(item => {
-              var keyValue = item.split('=');
-              query[keyValue[0]] = keyValue[1];
-          });
-      var iframe = document.querySelector('iframe');
-      iframe.setAttribute('src', `https://www.youtube.com/embed/${query.v}?start=${query.t.slice(0, -1)}`);
-    })();
-  </script>
-</body>
-</html>
+---
+title: Video player
+---
+<iframe
+  style="border: none; height: 75vh; width: 100%"
+  frameborder="0"
+  allow="encrypted-media; picture-in-picture"
+  allowfullscreen>
+</iframe>
+<script>
+  (function () {
+    var src = new URL('https://www.youtube.com/embed/');
+    var loc = new URL(window.location.href);
+    var iframe = document.querySelector('iframe');
+    if (loc.searchParams.has('v')) {
+      src.pathname += loc.searchParams.get('v');
+    }
+    if (loc.searchParams.has('t')) {
+      src.searchParams.append("start", loc.searchParams.get('t').slice(0, -1))
+    }
+    iframe.setAttribute('src', src.toString());
+  })();
+</script>
