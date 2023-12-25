@@ -1,233 +1,224 @@
-<!doctype html>
+---
+title: Bedürfnisse
+language: de
+---
+<h1>Bedürfnisse rausfinden</h1>
+<p>Erst die <a href="gefuehle.html">Gefühle</a>. Dann die <a href="beduerfnisse.html">Bedürfnisse</a>.</p>
+<p>Durchscrollen. Anklicken. Zusammenfassung gibt's am Ende.</p>
+<div id="root"></div>
+<p>Zurück zu den <a href="gefuehle.html">Gefühlen</a>.</p>
 
-<head>
-  <title>Bedürfnisse</title>
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="styles.css">
-</head>
+<script>
+  (function() {
 
-<body>
-  <div class="article">
-    <h1>Gefühle & Bedürfnisse rausfinden</h1>
-    <p>Erst die <a href="gefuehle.html">Gefühle</a>. Dann die <a href="beduerfnisse.html">Bedürfnisse</a>.</p>
-    <p>Durchscrollen. Anklicken. Zusammenfassung gibt's am Ende.</p>
-    <div id="root"></div>
-    <p>Zurück zu den <a href="gefuehle.html">Gefühlen</a>.</p>
-  </div>
-  <script>
-    (function() {
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
 
-    function shuffle(array) {
-      let currentIndex = array.length,  randomIndex;
+    /* While there remain elements to shuffle. */
+    while (currentIndex != 0) {
 
-      // While there remain elements to shuffle.
-      while (currentIndex != 0) {
+      /* Pick a remaining element. */
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
 
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]];
-      }
-
-      return array;
+      /* And swap it with the current element. */
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
     }
 
-    const needs = [
-      "Ausgeglichenheit",
-      "Nähe",
-      "Individualität",
-      "Fitness",
-      "Dienen",
-      "Selbstentfaltung",
-      "Spiritualität",
-      "Information",
-      "Zugehörigkeit",
-      "Respekt",
-      "Gleichwertigkeit",
-      "Tiefe",
-      "Ehrfurcht",
-      "Spaß",
-      "Kommunikation",
-      "Heilung",
-      "Humor",
-      "Inspiration",
-      "Erfahrung",
-      "Pflege",
-      "Gesellschaft",
-      "Toleranz",
-      "Transparenz",
-      "Entwicklung",
-      "Würde",
-      "Dankbarkeit",
-      "Achtsamkeit",
-      "Sicherheit",
-      "Zuneigung",
-      "Zeit für Integration",
-      "Geben",
-      "Freundschaft",
-      "Annahme",
-      "Mitgefühl",
-      "Selbstwertschätzung",
-      "Struktur(en)",
-      "Können",
-      "Wahrgenommen werden",
-      "Zuhören",
-      "Aktualisierung",
-      "Gleichgewicht",
-      "Sinn",
-      "Ganzheit",
-      "Ausgewogenheit",
-      "Gerechtigkeit",
-      "Mitteilung",
-      "Geborgenheit",
-      "Ausdruck",
-      "Orientierung",
-      "Kontakt",
-      "Authentizität",
-      "Selbstrespekt",
-      "Effektivität",
-      "Wechselbeziehung",
-      "Komfort",
-      "Berechenbarkeit",
-      "Entfaltung",
-      "Hoffnung",
-      "Austausch",
-      "Diskretion",
-      "Sexualität",
-      "Nahrung",
-      "Erholung",
-      "Wissen um den Weg",
-      "Kongruenz",
-      "Stimulation",
-      "Verbindung",
-      "Berührung",
-      "Sättigung",
-      "Schaffen",
-      "Trauer (Verlust)",
-      "Hilfe",
-      "Rituale einsetzen",
-      "Lernen",
-      "Klarheit",
-      "Zuspruch",
-      "eigenen Platz finden",
-      "Loslassen",
-      "Bewegung",
-      "Würdigung",
-      "Spiel",
-      "Vertrauen",
-      "Empathie",
-      "Beständigkeit",
-      "Unterkunft",
-      "Verantwortung",
-      "Wertschätzung",
-      "Rhythmus",
-      "Vitalität",
-      "Schönheit",
-      "Alleinsein",
-      "Vertraulichkeit",
-      "Kreativität",
-      "Entdecken",
-      "Feiern",
-      "Beitragen",
-      "Verständigung",
-      "Einsicht",
-      "Autonomie",
-      "Durchführen",
-      "Empfangen",
-      "Selbstverantwortung",
-      "Erreichen",
-      "Selbstwertgefühl",
-      "Gesundheit",
-      "Wahrhaftigkeit",
-      "Wahlmöglichkeit",
-      "Einbezogen sein",
-      "Dauerhaftigkeit",
-      "Integrität",
-      "Treue",
-      "Ehrlichkeit",
-      "Ruhe",
-      "Einfachheit",
-      "Wärme",
-      "Selbsterkenntnis",
-      "Offenheit",
-      "Verbundenheit",
-      "Intensität",
-      "Harmonie",
-      "Freude",
-      "Aufmerksamkeit",
-      "Selbstverwirklichung",
-      "Weiterkommen",
-      "Anregung",
-      "Unabhängigkeit",
-      "Gemeinschaft",
-      "Ordnung",
-      "Ursache sein",
-      "Kontinuität",
-      "Glück",
-      "Verbindlichkeit",
-      "Genauigkeit",
-      "Wachstum",
-      "Selbstbestimmung",
-      "Wissen",
-      "Unterstützung",
-      "Gewissen",
-      "Entspannung",
-      "Trost",
-      "Bewusstsein",
-      "Handeln",
-      "Akzeptanz",
-      "Teilnahme",
-      "Herausforderung",
-      "Anerkennung",
-      "Sein",
-      "Danksagung",
-      "Freiheit",
-      "Zweckbestimmung",
-      "Ästhetik",
-      "Verständnis",
-      "Stimmigkeit",
-      "Verstehen",
-      "Aufrichtigkeit",
-      "Bestätigung",
-      "Zusammenarbeit",
-      "Zärtlichkeit",
-      "Gemeinsamkeit",
-      "Ernst",
-      "Stabilität",
-      "Intimität",
-      "Liebe",
-      "Meisterschaft",
-      "Frieden",
-      "Schutz",
-      "Privatsphäre",
-      "Einfühlsamkeit",
-      "Besonderem",
-      "Stille",
-      "Menschlichkeit",
-      "Präsenz"
-    ];
-    shuffle(needs);
+    return array;
+  }
 
-    let html = "<h1>Bedürfnisse</h1>";
-    needs.slice(0, 100).forEach(need => {
-      html += `<p><label><input type="checkbox" value="${need}"> ${need}</label></p>`
-    })
-    html += "<h1>Zusammenfassung</h1>";
-    const root = document.querySelector('#root');
-    root.innerHTML = html;
-    const summary = document.createElement("p");
-    root.appendChild(summary);
-    document.querySelectorAll("input").forEach(checkbox => {
-      checkbox.addEventListener('change', (event) => {
-        summary.innerText = [...document.querySelectorAll("input:checked")].map(checked => checked.value).join(', ');
-      });
+  const needs = [
+    "Ausgeglichenheit",
+    "Nähe",
+    "Individualität",
+    "Fitness",
+    "Dienen",
+    "Selbstentfaltung",
+    "Spiritualität",
+    "Information",
+    "Zugehörigkeit",
+    "Respekt",
+    "Gleichwertigkeit",
+    "Tiefe",
+    "Ehrfurcht",
+    "Spaß",
+    "Kommunikation",
+    "Heilung",
+    "Humor",
+    "Inspiration",
+    "Erfahrung",
+    "Pflege",
+    "Gesellschaft",
+    "Toleranz",
+    "Transparenz",
+    "Entwicklung",
+    "Würde",
+    "Dankbarkeit",
+    "Achtsamkeit",
+    "Sicherheit",
+    "Zuneigung",
+    "Zeit für Integration",
+    "Geben",
+    "Freundschaft",
+    "Annahme",
+    "Mitgefühl",
+    "Selbstwertschätzung",
+    "Struktur(en)",
+    "Können",
+    "Wahrgenommen werden",
+    "Zuhören",
+    "Aktualisierung",
+    "Gleichgewicht",
+    "Sinn",
+    "Ganzheit",
+    "Ausgewogenheit",
+    "Gerechtigkeit",
+    "Mitteilung",
+    "Geborgenheit",
+    "Ausdruck",
+    "Orientierung",
+    "Kontakt",
+    "Authentizität",
+    "Selbstrespekt",
+    "Effektivität",
+    "Wechselbeziehung",
+    "Komfort",
+    "Berechenbarkeit",
+    "Entfaltung",
+    "Hoffnung",
+    "Austausch",
+    "Diskretion",
+    "Sexualität",
+    "Nahrung",
+    "Erholung",
+    "Wissen um den Weg",
+    "Kongruenz",
+    "Stimulation",
+    "Verbindung",
+    "Berührung",
+    "Sättigung",
+    "Schaffen",
+    "Trauer (Verlust)",
+    "Hilfe",
+    "Rituale einsetzen",
+    "Lernen",
+    "Klarheit",
+    "Zuspruch",
+    "eigenen Platz finden",
+    "Loslassen",
+    "Bewegung",
+    "Würdigung",
+    "Spiel",
+    "Vertrauen",
+    "Empathie",
+    "Beständigkeit",
+    "Unterkunft",
+    "Verantwortung",
+    "Wertschätzung",
+    "Rhythmus",
+    "Vitalität",
+    "Schönheit",
+    "Alleinsein",
+    "Vertraulichkeit",
+    "Kreativität",
+    "Entdecken",
+    "Feiern",
+    "Beitragen",
+    "Verständigung",
+    "Einsicht",
+    "Autonomie",
+    "Durchführen",
+    "Empfangen",
+    "Selbstverantwortung",
+    "Erreichen",
+    "Selbstwertgefühl",
+    "Gesundheit",
+    "Wahrhaftigkeit",
+    "Wahlmöglichkeit",
+    "Einbezogen sein",
+    "Dauerhaftigkeit",
+    "Integrität",
+    "Treue",
+    "Ehrlichkeit",
+    "Ruhe",
+    "Einfachheit",
+    "Wärme",
+    "Selbsterkenntnis",
+    "Offenheit",
+    "Verbundenheit",
+    "Intensität",
+    "Harmonie",
+    "Freude",
+    "Aufmerksamkeit",
+    "Selbstverwirklichung",
+    "Weiterkommen",
+    "Anregung",
+    "Unabhängigkeit",
+    "Gemeinschaft",
+    "Ordnung",
+    "Ursache sein",
+    "Kontinuität",
+    "Glück",
+    "Verbindlichkeit",
+    "Genauigkeit",
+    "Wachstum",
+    "Selbstbestimmung",
+    "Wissen",
+    "Unterstützung",
+    "Gewissen",
+    "Entspannung",
+    "Trost",
+    "Bewusstsein",
+    "Handeln",
+    "Akzeptanz",
+    "Teilnahme",
+    "Herausforderung",
+    "Anerkennung",
+    "Sein",
+    "Danksagung",
+    "Freiheit",
+    "Zweckbestimmung",
+    "Ästhetik",
+    "Verständnis",
+    "Stimmigkeit",
+    "Verstehen",
+    "Aufrichtigkeit",
+    "Bestätigung",
+    "Zusammenarbeit",
+    "Zärtlichkeit",
+    "Gemeinsamkeit",
+    "Ernst",
+    "Stabilität",
+    "Intimität",
+    "Liebe",
+    "Meisterschaft",
+    "Frieden",
+    "Schutz",
+    "Privatsphäre",
+    "Einfühlsamkeit",
+    "Besonderem",
+    "Stille",
+    "Menschlichkeit",
+    "Präsenz"
+  ];
+  shuffle(needs);
+
+  let html = "<p><strong>Bedürfnisse</strong></p>";
+  needs.slice(0, 100).forEach(need => {
+    html += `<p><label><input type="checkbox" value="${need}"> ${need}</label></p>`;
+  });
+  html += "<p><strong>Zusammenfassung</strong></p>";
+  const root = document.querySelector('#root');
+  root.innerHTML = html;
+  const summary = document.createElement("p");
+  root.appendChild(summary);
+  document.querySelectorAll("input").forEach(checkbox => {
+    checkbox.addEventListener('change', (event) => {
+      summary.innerText = [...document.querySelectorAll("input:checked")].map(checked => checked.value).join(', ');
     });
+  });
 
-    })();
-  </script>
-</body>
-
-</html>
+  })();
+</script>
