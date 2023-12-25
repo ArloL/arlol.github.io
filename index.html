@@ -3,7 +3,7 @@ title: Articles & Projects
 description: Stuff that I think is interesting
 ---
 {% for post in site.posts limit:10 %}
-    {% if post.quickpost %}
+    {% if post.categories contains "quick" %}
         <div class="post">
             {{ post.content }}
         </div>

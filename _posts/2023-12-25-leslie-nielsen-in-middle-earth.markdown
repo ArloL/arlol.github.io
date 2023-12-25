@@ -1,5 +1,5 @@
 ---
-quickpost: true
+category: quick
 via:
     text: Ronny
     link: https://www.kraftfuttermischwerk.de/blogg/leslie-nielsen-in-mittelerde/
