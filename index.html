@@ -3,10 +3,23 @@ title: Articles & Projects
 description: Stuff that I think is interesting
 ---
 {% for post in site.posts limit:10 %}
-    <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <div>
-        {{ post.content }}
-    </div>
+    {% if post.quickpost %}
+        <div class="post">
+            {{ post.content }}
+        </div>
+        <div class="meta">
+            <a href="{{ post.url }}">Share</a> ·
+            {% if post.via %}
+            via <a href="{{ post.via.link }}">{{ post.via.text }}</a> ·
+            {% endif %}
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+        </div>
+    {% else %}
+        <p class="post_date"><em><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time></em></p>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div>
+            {{ post.content }}
+        </div>
+    {% endif %}
     <hr>
 {% endfor %}
