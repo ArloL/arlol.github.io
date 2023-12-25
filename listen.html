@@ -1,0 +1,23 @@
+---
+title: Audio player
+---
+<iframe
+  style="border: none; height: 166px; width: 100%"
+  frameborder="0"
+  scrolling="no">
+</iframe>
+<script>
+  (function () {
+    var loc = new URL(window.location.href);
+    var src = new URL('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1693296885&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false');
+    if (loc.searchParams.has('url')) {
+        var url = loc.searchParams.get('url');
+        if (!url.startsWith("https")) {
+            url = 'https://soundcloud.com/' + url;
+        }
+        src.searchParams.set('url', url)
+    }
+    var iframe = document.querySelector('iframe');
+    iframe.setAttribute('src', src.toString());
+  })();
+</script>
