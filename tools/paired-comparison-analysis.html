@@ -100,7 +100,7 @@ const values = [
     "Resourcefulness",
     "Respect",
     "Responsibility",
-    "Risk -taking",
+    "Risk-taking",
     "Safety",
     "Security",
     "Self-discipline",
@@ -131,32 +131,50 @@ const values = [
     "Wisdom"
 ];
 
-var votes = {};
-values.forEach(value => votes[value] = 0);
+var index = -1;
 
-function randomElement(array) {
-    return array[Math.floor(Math.random() * array.length)];
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+
+    /* While there remain elements to shuffle. */
+    while (currentIndex != 0) {
+
+      /* Pick a remaining element. */
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      /* And swap it with the current element. */
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
+
+function incrementVoteBy(value, increment) {
+    const current = votes[value];
+    current.count = current.count + 1;
+    current.votes = current.votes + increment;
+    current.sum = current.count * current.votes;
+    votes[value] = current;
 }
 
-function nextRound(e, i) {
+function nextRound(e) {
     if (e) {
-        votes[e.target.dataset.value] = votes[e.target.dataset.value] + i;
-        const entries = Object.entries(votes);
-        entries.sort((a, b) => b[1] - a[1]);
-        votes = Object.fromEntries(entries);
-        console.log(votes);
-        results.innerHTML = `${entries.map(entry => `${entry[0]}: ${entry[1]}`).join('<br>')}`;
+        if (e.target == buttonTwo) {
+            [values[index], values[index - 1]] = [values[index - 1], values[index]];
+        }
+        results.innerHTML = `${values.join('<br>')}`;
+    } else {
+        index = values.length;
+        shuffle(values);
     }
-    const valueOne = randomElement(values);
-    const valueTwo = randomElement(values);
-    buttonOne.dataset.value = valueOne;
-    buttonOneFive.dataset.value = valueOne;
-    buttonTwo.dataset.value = valueTwo;
-    buttonTwoFive.dataset.value = valueTwo;
-    buttonOne.innerText = valueOne;
-    buttonTwo.innerText = valueTwo;
-    buttonOneFive.innerText = `${valueOne} +5`;
-    buttonTwoFive.innerText = `${valueTwo} +5`;
+    if (index < 2) {
+        index = values.length;
+    }
+    index--;
+    buttonOne.innerText = values[index - 1];
+    buttonTwo.innerText = values[index];
 }
 
 const root = document.querySelector('#root');
@@ -166,37 +184,36 @@ const results = document.createElement("p");
 const textarea = document.createElement("textarea");
 textarea.textContent = values.join("\n");
 
-const generate = document.createElement("button");
-generate.innerText = "Start";
-generate.addEventListener("click", () => {
+const start = document.createElement("button");
+start.innerText = "Start";
+start.addEventListener("click", () => {
+    if (buttonOne.parentNode) {
+        buttonOne.parentNode.removeChild(buttonOne);
+    }
+    if (buttonTwo.parentNode) {
+        buttonTwo.parentNode.removeChild(buttonTwo);
+    }
+    if (results.parentNode) {
+        results.parentNode.removeChild(results);
+    }
     root.appendChild(buttonOne);
-    root.appendChild(buttonOneFive);
     root.appendChild(buttonTwo);
-    root.appendChild(buttonTwoFive);
     root.appendChild(results);
     nextRound();
 });
 
 const buttonOne = document.createElement("button");
 buttonOne.addEventListener("click", (e) => {
-    nextRound(e, 1);
-});
-const buttonOneFive = document.createElement("button");
-buttonOneFive.addEventListener("click", (e) => {
-    nextRound(e, 5);
+    nextRound(e);
 });
 
 const buttonTwo = document.createElement("button");
 buttonTwo.addEventListener("click", (e) => {
-    nextRound(e, 1);
-});
-const buttonTwoFive = document.createElement("button");
-buttonTwoFive.addEventListener("click", (e) => {
-    nextRound(e, 5);
+    nextRound(e);
 });
 
 root.appendChild(textarea);
-root.appendChild(generate);
+root.appendChild(start);
 
 })();
 
