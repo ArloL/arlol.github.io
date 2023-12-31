@@ -1,0 +1,203 @@
+---
+title: Paired Comparison Analysis of Values
+---
+<h1>Paired Comparison Analysis of Values</h1>
+<div id="root"></div>
+<style>
+    button {
+        display: block;
+    }
+</style>
+<script>
+(function () {
+
+const values = [
+    "Accountability",
+    "Achievement",
+    "Adaptability",
+    "Adventure",
+    "Altruism",
+    "Ambition",
+    "Authenticity",
+    "Balance",
+    "Beauty",
+    "Being the best",
+    "Belonging",
+    "Career",
+    "Caring",
+    "Collaboration",
+    "Commitment",
+    "Community",
+    "Compassion",
+    "Competence",
+    "Confidence",
+    "Connection",
+    "Contentment",
+    "Contribution",
+    "Cooperation",
+    "Courage",
+    "Creativity",
+    "Curiosity",
+    "Dignity",
+    "Diversity",
+    "Environment",
+    "Efficiency",
+    "Equality",
+    "Ethics",
+    "Excellence",
+    "Fairness",
+    "Faith",
+    "Family",
+    "Financial stability",
+    "Forgiveness",
+    "Freedom",
+    "Friendship",
+    "Fun",
+    "Future generations",
+    "Generosity",
+    "Giving back",
+    "Grace",
+    "Gratitude",
+    "Growth",
+    "Harmony",
+    "Health",
+    "Home",
+    "Honesty",
+    "Hope",
+    "Humility",
+    "Humor",
+    "Inclusion",
+    "Independence",
+    "Initiative",
+    "Integrity",
+    "Intuition",
+    "Job security",
+    "Joy",
+    "Justice",
+    "Kindness",
+    "Knowledge",
+    "Leadership",
+    "Learning",
+    "Legacy",
+    "Leisure",
+    "Love",
+    "Loyalty",
+    "Making a difference",
+    "Nature",
+    "Openness",
+    "Optimism",
+    "Order",
+    "Parenting",
+    "Patience",
+    "Patriotism",
+    "Peace",
+    "Perseverance",
+    "Personal fulfillment",
+    "Power",
+    "Pride",
+    "Recognition",
+    "Reliability",
+    "Resourcefulness",
+    "Respect",
+    "Responsibility",
+    "Risk -taking",
+    "Safety",
+    "Security",
+    "Self-discipline",
+    "Self-expression",
+    "Self-respect",
+    "Serenity",
+    "Service",
+    "Simplicity",
+    "Spirituality",
+    "Sportsmanship",
+    "Stewardship",
+    "Success",
+    "Teamwork",
+    "Thrift",
+    "Time",
+    "Tradition",
+    "Travel",
+    "Trust",
+    "Truth",
+    "Understanding",
+    "Uniqueness",
+    "Usefulness",
+    "Vision",
+    "Vulnerability",
+    "Wealth",
+    "Well-being",
+    "Wholeheartedness",
+    "Wisdom"
+];
+
+var votes = {};
+values.forEach(value => votes[value] = 0);
+
+function randomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function nextRound(e, i) {
+    if (e) {
+        votes[e.target.dataset.value] = votes[e.target.dataset.value] + i;
+        const entries = Object.entries(votes);
+        entries.sort((a, b) => b[1] - a[1]);
+        votes = Object.fromEntries(entries);
+        console.log(votes);
+        results.innerHTML = `${entries.map(entry => `${entry[0]}: ${entry[1]}`).join('<br>')}`;
+    }
+    const valueOne = randomElement(values);
+    const valueTwo = randomElement(values);
+    buttonOne.dataset.value = valueOne;
+    buttonOneFive.dataset.value = valueOne;
+    buttonTwo.dataset.value = valueTwo;
+    buttonTwoFive.dataset.value = valueTwo;
+    buttonOne.innerText = valueOne;
+    buttonTwo.innerText = valueTwo;
+    buttonOneFive.innerText = `${valueOne} +5`;
+    buttonTwoFive.innerText = `${valueTwo} +5`;
+}
+
+const root = document.querySelector('#root');
+
+const results = document.createElement("p");
+
+const textarea = document.createElement("textarea");
+textarea.textContent = values.join("\n");
+
+const generate = document.createElement("button");
+generate.innerText = "Start";
+generate.addEventListener("click", () => {
+    root.appendChild(buttonOne);
+    root.appendChild(buttonOneFive);
+    root.appendChild(buttonTwo);
+    root.appendChild(buttonTwoFive);
+    root.appendChild(results);
+    nextRound();
+});
+
+const buttonOne = document.createElement("button");
+buttonOne.addEventListener("click", (e) => {
+    nextRound(e, 1);
+});
+const buttonOneFive = document.createElement("button");
+buttonOneFive.addEventListener("click", (e) => {
+    nextRound(e, 5);
+});
+
+const buttonTwo = document.createElement("button");
+buttonTwo.addEventListener("click", (e) => {
+    nextRound(e, 1);
+});
+const buttonTwoFive = document.createElement("button");
+buttonTwoFive.addEventListener("click", (e) => {
+    nextRound(e, 5);
+});
+
+root.appendChild(textarea);
+root.appendChild(generate);
+
+})();
+
+</script>
