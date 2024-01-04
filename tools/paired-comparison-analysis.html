@@ -11,7 +11,7 @@ title: Paired Comparison Analysis of Values
 <script>
 (function () {
 
-const values = [
+var values = [
     "Accountability",
     "Achievement",
     "Adaptability",
@@ -151,14 +151,6 @@ function shuffle(array) {
     return array;
   }
 
-function incrementVoteBy(value, increment) {
-    const current = votes[value];
-    current.count = current.count + 1;
-    current.votes = current.votes + increment;
-    current.sum = current.count * current.votes;
-    votes[value] = current;
-}
-
 function nextRound(e) {
     if (e) {
         if (e.target == buttonTwo) {
@@ -173,6 +165,7 @@ function nextRound(e) {
             values.unshift(spliced);
         }
     } else {
+        values = textarea.value.split("\n");
         index = values.length;
         shuffle(values);
     }
