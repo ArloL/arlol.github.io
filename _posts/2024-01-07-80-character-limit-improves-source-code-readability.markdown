@@ -9,7 +9,7 @@ We read code more than we write it. For prose [typography recommends line length
 
 Is our screen real estate thus wasted? No. Modern displays make it possible to read code side-by-side. For example to review diffs (e.g. git or pull requests) or to open two files together (e.g. implementation and test). With the standard font size of 12 pt two tabs in Visual Studio Code can show 156 characters. A more legible 16 pt reduces that to 118 characters. Another reason to keep the character limit sensible. Otherwise one has to start scrolling left and right to read everything. This makes it harder to understand because one can never _see_ everything. Ideally all tools would be “responsive” and wrap lines at the edge of the viewport dynamically (like e.g. Xcode). Sadly, they don’t.
 
-In summary: a limit of 80 non-whitespace characters makes sense. To account for indentation I recommend a limit between 80 and 120. Everything else makes your code harder to read and understand. 
+In summary: a limit of 80 non-whitespace characters makes sense. To account for indentation I recommend a limit between 80 and 120. Everything else makes your code harder to read and understand.
 
 Please be aware that this is an easy topic to discuss ad nauseam. Often *everybody* has a (strong) opinion about it. If you ever discuss this longer than 15 minutes, you are likely [bike-shedding](https://en.wiktionary.org/wiki/bikeshedding). Choose a value - even a [random one](https://www.random.org/integers/?num=1&min=80&max=120&col=1&base=10&format=html&rnd=new) - and stick with it. That consistency will help readability more than the difference between 90 and 110.
 
