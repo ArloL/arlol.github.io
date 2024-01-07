@@ -164,10 +164,6 @@ function nextRound(e) {
             var spliced = values.splice(index, 1);
             values.unshift(spliced);
         }
-    } else {
-        values = textarea.value.split("\n");
-        index = values.length;
-        shuffle(values);
     }
     results.innerHTML = `${values.join('<br>')}`;
     if (index < 2) {
@@ -178,16 +174,7 @@ function nextRound(e) {
     buttonTwo.innerText = values[index];
 }
 
-const root = document.querySelector('#root');
-
-const results = document.createElement("p");
-
-const textarea = document.createElement("textarea");
-textarea.textContent = values.join("\n");
-
-const start = document.createElement("button");
-start.innerText = "Start";
-start.addEventListener("click", () => {
+function start(randomized) {
     if (!buttonOne.parentNode) {
         root.appendChild(buttonOne);
         root.appendChild(topTenOne);
@@ -195,7 +182,31 @@ start.addEventListener("click", () => {
         root.appendChild(topTenTwo);
         root.appendChild(results);
     }
+    values = textarea.value.split("\n");
+    index = values.length;
+    if (randomized) {
+        shuffle(values);
+    }
     nextRound();
+}
+
+const root = document.querySelector('#root');
+
+const results = document.createElement("p");
+
+const textarea = document.createElement("textarea");
+textarea.textContent = values.join("\n");
+
+const startBtn = document.createElement("button");
+startBtn.innerText = "Start";
+startBtn.addEventListener("click", () => {
+    start(false);
+});
+
+const startRandomizedBtn = document.createElement("button");
+startRandomizedBtn.innerText = "Randomize & Start";
+startRandomizedBtn.addEventListener("click", () => {
+    start(true);
 });
 
 const buttonOne = document.createElement("button");
@@ -219,7 +230,8 @@ topTenTwo.addEventListener("click", (e) => {
 });
 
 root.appendChild(textarea);
-root.appendChild(start);
+root.appendChild(startBtn);
+root.appendChild(startRandomizedBtn);
 
 })();
 
