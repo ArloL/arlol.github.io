@@ -33,7 +33,7 @@ jobs:
     - name: Build with Jekyll
       run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3.0.0
+      uses: actions/upload-pages-artifact@v3.0.1
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4.0.4
