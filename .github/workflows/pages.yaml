@@ -5,10 +5,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: "pages"
@@ -23,6 +20,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.2.2
+      with:
+        persist-credentials: false
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1.221.0
       with:
@@ -31,7 +30,9 @@ jobs:
       id: pages
       uses: actions/configure-pages@v5.0.0
     - name: Build with Jekyll
-      run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      env:
+        BASEURL: ${{ steps.pages.outputs.base_path }}
+      run: bundle exec jekyll build --baseurl "${BASEURL}"
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3.0.1
     - name: Deploy to GitHub Pages
