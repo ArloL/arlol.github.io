@@ -2,60 +2,60 @@
 ---
 @use "sass:math";
 
-@import "config";
+@use "config";
 
 html {
     font-family: sans-serif;
     font-size: 1em;
-    line-height: $line-height;
+    line-height: config.$line-height;
 }
 
 h1 {
-    margin: (0em + math.div($line-height, $h1-font-size)) 0;
-    font-size: 0em + $h1-font-size;
-    line-height: math.div($line-height, $h1-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h1-font-size)) 0;
+    font-size: 0em + config.$h1-font-size;
+    line-height: math.div(config.$line-height, config.$h1-font-size);
 }
 
 h2 {
-    margin: (0em + math.div($line-height, $h2-font-size)) 0;
-    font-size: 0em + $h2-font-size;
-    line-height: math.div($line-height, $h2-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h2-font-size)) 0;
+    font-size: 0em + config.$h2-font-size;
+    line-height: math.div(config.$line-height, config.$h2-font-size);
 }
 
 h3 {
-    margin: (0em + math.div($line-height, $h3-font-size)) 0;
-    font-size: 0em + $h3-font-size;
-    line-height: math.div($line-height, $h3-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h3-font-size)) 0;
+    font-size: 0em + config.$h3-font-size;
+    line-height: math.div(config.$line-height, config.$h3-font-size);
 }
 
 h4 {
-    margin: (0em + math.div($line-height, $h4-font-size)) 0;
-    font-size: 0em + $h4-font-size;
+    margin: (0em + math.div(config.$line-height, config.$h4-font-size)) 0;
+    font-size: 0em + config.$h4-font-size;
     font-style: italic;
-    line-height: math.div($line-height, $h4-font-size);
+    line-height: math.div(config.$line-height, config.$h4-font-size);
 }
 
 h5 {
-    margin: (0em + math.div($line-height, $h5-font-size)) 0;
-    font-size: 0em + $h5-font-size;
-    line-height: math.div($line-height, $h5-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h5-font-size)) 0;
+    font-size: 0em + config.$h5-font-size;
+    line-height: math.div(config.$line-height, config.$h5-font-size);
 }
 
 h6 {
-    margin: (0em + math.div($line-height, $h6-font-size)) 0;
-    font-size: 0em + $h6-font-size;
+    margin: (0em + math.div(config.$line-height, config.$h6-font-size)) 0;
+    font-size: 0em + config.$h6-font-size;
     font-style: italic;
-    line-height: math.div($line-height, $h6-font-size);
+    line-height: math.div(config.$line-height, config.$h6-font-size);
 }
 
 p {
-    margin: (0em + $line-height) 0;
+    margin: (0em + config.$line-height) 0;
 }
 
 ol,
 ul {
-    padding: 0 0 0 (0em + $line-height);
-    margin: (0em + $line-height) 0;
+    padding: 0 0 0 (0em + config.$line-height);
+    margin: (0em + config.$line-height) 0;
 }
 
 ul ul,

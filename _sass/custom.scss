@@ -1,3 +1,5 @@
+@use "config";
+
 @use "sass:math";
 
 /* ==========================================================================
@@ -19,45 +21,45 @@
 
 html {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: $line-height;
+    line-height: config.$line-height;
 }
 
 h1 {
-    margin: (0em + math.div($line-height, $h1-font-size)) 0;
-    font-size: 0em + $h1-font-size;
-    line-height: math.div($line-height, $h1-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h1-font-size)) 0;
+    font-size: 0em + config.$h1-font-size;
+    line-height: math.div(config.$line-height, config.$h1-font-size);
 }
 
 h2 {
-    margin: (0em + math.div($line-height, $h2-font-size)) 0;
-    font-size: 0em + $h2-font-size;
-    line-height: math.div($line-height, $h2-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h2-font-size)) 0;
+    font-size: 0em + config.$h2-font-size;
+    line-height: math.div(config.$line-height, config.$h2-font-size);
 }
 
 h3 {
-    margin: (0em + math.div($line-height, $h3-font-size)) 0;
-    font-size: 0em + $h3-font-size;
-    line-height: math.div($line-height, $h3-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h3-font-size)) 0;
+    font-size: 0em + config.$h3-font-size;
+    line-height: math.div(config.$line-height, config.$h3-font-size);
 }
 
 h4 {
-    margin: (0em + math.div($line-height, $h4-font-size)) 0;
-    font-size: 0em + $h4-font-size;
+    margin: (0em + math.div(config.$line-height, config.$h4-font-size)) 0;
+    font-size: 0em + config.$h4-font-size;
     font-style: italic;
-    line-height: math.div($line-height, $h4-font-size);
+    line-height: math.div(config.$line-height, config.$h4-font-size);
 }
 
 h5 {
-    margin: (0em + math.div($line-height, $h5-font-size)) 0;
-    font-size: 0em + $h5-font-size;
-    line-height: math.div($line-height, $h5-font-size);
+    margin: (0em + math.div(config.$line-height, config.$h5-font-size)) 0;
+    font-size: 0em + config.$h5-font-size;
+    line-height: math.div(config.$line-height, config.$h5-font-size);
 }
 
 h6 {
-    margin: (0em + math.div($line-height, $h6-font-size)) 0;
-    font-size: 0em + $h6-font-size;
+    margin: (0em + math.div(config.$line-height, config.$h6-font-size)) 0;
+    font-size: 0em + config.$h6-font-size;
     font-style: italic;
-    line-height: math.div($line-height, $h6-font-size);
+    line-height: math.div(config.$line-height, config.$h6-font-size);
 }
 
 h1:hover .anchor,
@@ -83,13 +85,13 @@ h6:hover .anchor {
 }
 
 p {
-    margin: (0em + $line-height) 0;
+    margin: (0em + config.$line-height) 0;
 }
 
 ol,
 ul {
-    padding: 0 0 0 (0em + $line-height);
-    margin: (0em + $line-height) 0;
+    padding: 0 0 0 (0em + config.$line-height);
+    margin: (0em + config.$line-height) 0;
 }
 
 ul ul,
@@ -108,7 +110,7 @@ pre {
 }
 
 mark {
-    background-color: $blue;
+    background-color: config.$blue;
 }
 
 .nav ul, nav ul {
@@ -182,11 +184,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @mixin light {
-    @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
+    @include rebase(config.$base3,config.$base2,config.$base1,config.$base0,config.$base00,config.$base01,config.$base02,config.$base03)
 }
 
 @mixin dark  {
-    @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+    @include rebase(config.$base03,config.$base02,config.$base01,config.$base00,config.$base0,config.$base1,config.$base2,config.$base3)
 }
 
 @media (prefers-color-scheme: dark) {

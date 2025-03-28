@@ -1,5 +1,6 @@
-@import "normalize";
-@import "config";
+@use "sass:meta";
+@use "normalize";
+@use "config";
 
 /*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
 
@@ -16,7 +17,7 @@
 
 html {
   font-size: 1em;
-  line-height: $line-height;
+  line-height: config.$line-height;
 }
 
 /*
@@ -27,12 +28,12 @@ html {
  */
 
 ::-moz-selection {
-  background: $blue;
+  background: config.$blue;
   text-shadow: none;
 }
 
 ::selection {
-  background: $blue;
+  background: config.$blue;
   text-shadow: none;
 }
 
@@ -45,7 +46,7 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  margin: (0em + $line-height) 0;
+  margin: (0em + config.$line-height) 0;
   padding: 0;
 }
 
@@ -86,13 +87,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-@import "custom";
+@include meta.load-css("custom");
 
 /* ==========================================================================
    Media Queries for Responsive Design.
    ========================================================================== */
 
-@import "responsive";
+@include meta.load-css("responsive");
 
 /* ==========================================================================
    Print styles.

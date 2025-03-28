@@ -1,3 +1,5 @@
+@use "config";
+
 /* <= 480 */
 @media only screen and (max-width: 480px) {
 }
@@ -11,7 +13,7 @@
 
     .github_link, .post_date, .project_date {
         float: right;
-        margin: 0 0 (0em + $line-height) 1em;
+        margin: 0 0 (0em + config.$line-height) 1em;
     }
 }
 
