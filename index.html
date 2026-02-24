@@ -4,9 +4,6 @@ description: Stuff that I think is interesting
 ---
 {% for post in site.posts limit:10 %}
     {% if post.categories contains "quick" %}
-        {% if post.title %}
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        {% endif %}
         <div class="post">
             {{ post.content }}
         </div>
